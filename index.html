@@ -52,14 +52,6 @@
             padding: 1.2rem 2rem;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--accent-yellow);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
         .logo-container {
             display: flex;
             align-items: center;
@@ -68,7 +60,7 @@
         }
 
         .site-logo {
-            height: 35px; /* Προσαρμόζετε το ύψος ανάλογα με το γούστο σας */
+            height: 40px;
             width: auto;
             display: block;
         }
@@ -148,6 +140,7 @@
             font-weight: bold;
             cursor: pointer;
             transition: 0.3s;
+            display: inline-block;
         }
 
         .btn-primary {
@@ -297,7 +290,7 @@
         /* --- MOBILE RESPONSIVE --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
-            .nav-links { display: none; } /* Μπορεί να προστεθεί mobile menu μελλοντικά */
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -307,7 +300,7 @@
     <header>
         <nav>
             <a href="#" class="logo-container">
-                <img src="logo.png" alt="Monkey Business Logo" class="site-logo" style="height: 40px; width: auto;">
+                <img src="logo.png" alt="Monkey Business Logo" class="site-logo">
                 <span class="logo-text">Monkey Business</span>
             </a>
             <ul class="nav-links">
@@ -333,21 +326,24 @@
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="sponsors">
-        <h2 class="section-title">Υποστήριξη & Χορηγίες</h2>
-        <div class="sponsors-box">
-            <h3>Γίνετε συνεργάτης στο ταξίδι μας</h3>
-            <p style="color: var(--text-muted); margin-top: 1rem;">
-                Κατεβάστε το ενημερωτικό μας υλικό για να δείτε τα ανταποδοτικά οφέλη χορηγίας.
-            </p>
-            <div class="sponsor-btn-container">
-                <a href="https://drive.google.com/file/d/1QmoXx-4uDo63x6xJRmePUCUA-Gggmwdn/preview" target="_blank" class="btn btn-primary">📄 Ενημερωτικό Φυλλάδιο (PDF)</a>
-                <a href="https://drive.google.com/file/d/1MJS3PRTvV_GLZcWqLnWKzUhVMBp23Dnr/preview" target="_blank" class="btn btn-secondary">📊 Αναλυτική Παρουσίαση (PDF)</a>
+    <section id="about">
+        <h2 class="section-title">Σχετικά με Εμάς</h2>
+        <div class="about-container">
+            <p>Είμαστε η ομάδα ρομποτικής <strong>Monkey Business</strong>. Εκπροσωπούμε την Ελλάδα στην κατηγορία RoboMission Senior της WRO. Στόχος μας είναι η κορυφή στον Παγκόσμιο Τελικό στο Πουέρτο Ρίκο!</p>
+            
+            <div class="progress-box">
+                <div style="display: flex; justify-content: space-between; font-weight: bold;">
+                    <span>Πρόοδος Προετοιμασίας & Στόχου</span>
+                    <span>45%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- STORE SECTION (PLACEHOLDERS) -->
+    <!-- STORE SECTION -->
     <section id="store">
         <h2 class="section-title">Lego MOC Store</h2>
         <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
@@ -393,11 +389,8 @@
                 Κατεβάστε το ενημερωτικό μας υλικό για να δείτε τα ανταποδοτικά οφέλη χορηγίας.
             </p>
             <div class="sponsor-btn-container">
-                <!-- Σύνδεσμος Google Drive για το Φυλλάδιο -->
-                <a href="https://drive.google.com/file/d/1QmoXx-4uDo63x6xJRmePUCUA-Gggmwdn/view?usp=drive_link" target="_blank" class="btn btn-primary">📄 Ενημερωτικό Φυλλάδιο (PDF)</a>
-                
-                <!-- Σύνδεσμος Google Drive για την Παρουσίαση -->
-                <a href="https://drive.google.com/file/d/1MJS3PRTvV_GLZcWqLnWKzUhVMBp23Dnr/view?usp=drive_link" target="_blank" class="btn btn-secondary">📊 Αναλυτική Παρουσίαση (PDF)</a>
+                <a href="https://drive.google.com/file/d/1QmoXx-4uDo63x6xJRmePUCUA-Gggmwdn/preview" target="_blank" rel="noopener noreferrer" class="btn btn-primary">📄 Ενημερωτικό Φυλλάδιο (PDF)</a>
+                <a href="https://drive.google.com/file/d/1MJS3PRTvV_GLZcWqLnWKzUhVMBp23Dnr/preview" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">📊 Αναλυτική Παρουσίαση (PDF)</a>
             </div>
         </div>
     </section>
