@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monkey Business Robotics | WRO 2026</title>
-    <!-- Font Awesome για εικονίδια Social Media -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* --- RESET & BASIC STYLES --- */
         * {
             margin: 0;
             padding: 0;
@@ -35,7 +33,6 @@
             color: inherit;
         }
 
-        /* --- NAVBAR --- */
         header {
             background-color: rgba(18, 18, 18, 0.95);
             position: fixed;
@@ -87,7 +84,6 @@
             transition: 0.3s;
         }
 
-        /* --- HERO SECTION --- */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -168,7 +164,6 @@
             transform: translateY(-2px);
         }
 
-        /* --- SECTIONS COMMON --- */
         section {
             padding: 5rem 2rem;
             max-width: 1200px;
@@ -192,7 +187,6 @@
             border-radius: 2px;
         }
 
-        /* --- ABOUT & PROGRESS --- */
         .about-container {
             background-color: var(--card-bg);
             padding: 2.5rem;
@@ -215,11 +209,10 @@
         .progress-bar-fill {
             background-color: var(--accent-green);
             height: 100%;
-            width: 45%; /* Αλλάξτε το ποσοστό ανάλογα με την πρόοδο */
+            width: 45%;
             border-radius: 10px;
         }
 
-        /* --- STORE SECTION --- */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -263,7 +256,6 @@
             margin: 1rem 0;
         }
 
-        /* --- SPONSORSHIP --- */
         .sponsors-box {
             background-color: var(--card-bg);
             padding: 3rem;
@@ -280,7 +272,6 @@
             flex-wrap: wrap;
         }
 
-        /* --- FOOTER --- */
         footer {
             background-color: #0a0a0a;
             text-align: center;
@@ -300,7 +291,6 @@
             color: var(--accent-green);
         }
 
-        /* --- MOBILE RESPONSIVE --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .nav-links { display: none; }
@@ -309,7 +299,6 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
     <header>
         <nav>
             <a href="#" class="logo-container">
@@ -322,7 +311,7 @@
                 <li><a href="#sponsors">Χορηγοί</a></li>
                 <li><a href="#contact">Επικοινωνία</a></li>
                 <li>
-                    <a href="https://www.instagram.com/το_username_σας" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
                 </li>
@@ -330,7 +319,6 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
             <span class="badge">🏆 1η Θέση - WRO RoboMission Senior</span>
@@ -343,7 +331,6 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
     <section id="about">
         <h2 class="section-title">Σχετικά με Εμάς</h2>
         <div class="about-container">
@@ -361,7 +348,6 @@
         </div>
     </section>
 
-    <!-- STORE SECTION -->
     <section id="store">
         <h2 class="section-title">Lego MOC Store</h2>
         <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
@@ -369,7 +355,6 @@
         </p>
         
         <div class="grid">
-            <!-- MOC Card 1 -->
             <div class="card">
                 <div class="card-img-placeholder">Εικόνα MOC #1</div>
                 <h3>Robotics Gripper Mechanism</h3>
@@ -378,7 +363,6 @@
                 <a href="#" class="btn btn-primary" style="display: block;">Σύντομα Διαθέσιμο</a>
             </div>
 
-            <!-- MOC Card 2 -->
             <div class="card">
                 <div class="card-img-placeholder">Εικόνα MOC #2</div>
                 <h3>Self-Balancing Chassis</h3>
@@ -387,7 +371,6 @@
                 <a href="#" class="btn btn-primary" style="display: block;">Σύντομα Διαθέσιμο</a>
             </div>
 
-            <!-- MOC Card 3 -->
             <div class="card">
                 <div class="card-img-placeholder">Εικόνα MOC #3</div>
                 <h3>Custom LEGO Sorting Arm</h3>
@@ -398,7 +381,6 @@
         </div>
     </section>
 
-    <!-- SPONSORSHIP SECTION -->
     <section id="sponsors">
         <h2 class="section-title">Υποστήριξη & Χορηγίες</h2>
         <div class="sponsors-box">
@@ -413,14 +395,12 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer id="contact">
         <p>Monkey Business Robotics Team © 2026</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">Email: monkeybusinesswro@gmail.com</p>
         
-        <!-- Social Media Links -->
         <div style="margin-top: 1.2rem;">
-            <a href="https://www.instagram.com/το_username_σας" target="_blank" rel="noopener noreferrer" class="social-link" title="Ακολουθήστε μας στο Instagram">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
                 <i class="fa-brands fa-instagram"></i>
             </a>
         </div>
