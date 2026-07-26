@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monkey Business Robotics | WRO 2026</title>
+    <!-- Font Awesome για εικονίδια Social Media -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* --- RESET & BASIC STYLES --- */
         * {
@@ -77,6 +79,7 @@
             display: flex;
             list-style: none;
             gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a:hover {
@@ -287,6 +290,16 @@
             margin-top: 4rem;
         }
 
+        .social-link {
+            color: var(--accent-yellow);
+            font-size: 1.8rem;
+            transition: 0.3s;
+        }
+
+        .social-link:hover {
+            color: var(--accent-green);
+        }
+
         /* --- MOBILE RESPONSIVE --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
@@ -309,7 +322,7 @@
                 <li><a href="#sponsors">Χορηγοί</a></li>
                 <li><a href="#contact">Επικοινωνία</a></li>
                 <li>
-                    <a href="https://www.instagram.com/monkeybusiness_wro" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow);">
+                    <a href="https://www.instagram.com/το_username_σας" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
                 </li>
@@ -404,6 +417,13 @@
     <footer id="contact">
         <p>Monkey Business Robotics Team © 2026</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">Email: monkeybusinesswro@gmail.com</p>
+        
+        <!-- Social Media Links -->
+        <div style="margin-top: 1.2rem;">
+            <a href="https://www.instagram.com/το_username_σας" target="_blank" rel="noopener noreferrer" class="social-link" title="Ακολουθήστε μας στο Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
     </footer>
 
 </body>
