@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ιστορικό & Επιτεύγματα | Monkey Business Robotics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --accent-yellow: #FFC700;
+            --accent-green: #10B981;
+            --text-light: #F3F4F6;
+            --text-muted: #9CA3AF;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .site-logo {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+        
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--accent-yellow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-yellow);
+            transition: 0.3s;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .page-header h1 span {
+            color: var(--accent-yellow);
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #2a2a2a;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-green);
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: #2a2a2a;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: 50%;
+            padding: 0 2rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 15px;
+            width: 16px;
+            height: 16px;
+            background-color: var(--accent-yellow);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -8px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -8px;
+        }
+
+        .timeline-content {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #2a2a2a;
+            transition: 0.3s;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--accent-yellow);
+        }
+
+        .timeline-date {
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-body {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-yellow);
+            color: var(--accent-yellow);
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            background-color: var(--accent-yellow);
+            color: #000;
+        }
+
+        footer {
+            background-color: #0a0a0a;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #2a2a2a;
+            color: var(--text-muted);
+            margin-top: 4rem;
+        }
+
+        .social-link {
+            color: var(--accent-yellow);
+            font-size: 1.8rem;
+            transition: 0.3s;
+        }
+
+        .social-link:hover {
+            color: var(--accent-green);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 3rem;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                left: 0;
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 12px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="logo.png" alt="Monkey Business Logo" class="site-logo">
+                <span class="logo-text">Monkey Business</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">Σχετικά</a></li>
+                <li><a href="history.html" style="color: var(--accent-yellow);">Ιστορικό</a></li>
+                <li><a href="index.html#store">Lego MOCs</a></li>
+                <li><a href="index.html#sponsors">Χορηγοί</a></li>
+                <li><a href="index.html#contact">Επικοινωνία</a></li>
+                <li>
+                    <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Το Ιστορικό της <span>Ομάδας</span></h1>
+            <p>Η πορεία, οι σταθμοί και οι διακρίσεις της Monkey Business στους διαγωνισμούς ρομποτικής.</p>
+        </div>
+
+        <!-- Highlight Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">1η</div>
+                <div class="stat-label">Θέση WRO Greece 2026</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Senior</div>
+                <div class="stat-label">Κατηγορία RoboMission</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2026</div>
+                <div class="stat-label">Παγκόσμιος Τελικός Πουέρτο Ρίκο</div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Ιούνιος 2026</div>
+                    <h3 class="timeline-title">1η Θέση στους Ελληνικούς Προκριματικούς WRO</h3>
+                    <p class="timeline-body">
+                        Κατάκτηση της 1ης θέσης στην κατηγορία RoboMission Senior, εξασφαλίζοντας την πρόκριση για τον Παγκόσμιο Τελικό στο Πουέρτο Ρίκο.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2025 - 2026</div>
+                    <h3 class="timeline-title">Σχεδιασμός & Βελτιστοποίηση Ρομπότ</h3>
+                    <p class="timeline-body">
+                        Εντατική ανάπτυξη αυτόνομων μηχανισμών συλλογής, ταξινόμησης και πλοήγησης υψηλής ακρίβειας για τις απαιτήσεις της σεζόν.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Σύσταση Ομάδας</div>
+                    <h3 class="timeline-title">Η Αρχή της Monkey Business</h3>
+                    <p class="timeline-body">
+                        Δημιουργία της ομάδας από παθιασμένους μαθητές και προπονητή με κοινό όραμα τη διάκριση στην εκπαιδευτική ρομποτική.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Επιστροφή στην Αρχική</a>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <p>Monkey Business Robotics Team © 2026</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Email: monkeybusinesswro@gmail.com</p>
+        
+        <div style="margin-top: 1.2rem;">
+            <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
