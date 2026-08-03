@@ -192,7 +192,25 @@
             padding: 2.5rem;
             border-radius: 12px;
             border: 1px solid #2a2a2a;
-            text-align: center;
+        }
+
+        .progress-box {
+            margin-top: 2rem;
+        }
+
+        .progress-bar-bg {
+            background-color: #333;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .progress-bar-fill {
+            background-color: var(--accent-green);
+            height: 100%;
+            width: 45%;
+            border-radius: 10px;
         }
 
         .grid {
@@ -289,10 +307,10 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#about">Σχετικά</a></li>
+                <li><a href="history.html">Ιστορικό</a></li>
                 <li><a href="#store">Lego MOCs</a></li>
                 <li><a href="#sponsors">Χορηγοί</a></li>
                 <li><a href="#contact">Επικοινωνία</a></li>
-                <li><a href="history.html">Ιστορικό</a></li>
                 <li>
                     <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;">
                         <i class="fa-brands fa-instagram"></i>
@@ -318,6 +336,16 @@
         <h2 class="section-title">Σχετικά με Εμάς</h2>
         <div class="about-container">
             <p>Είμαστε η ομάδα ρομποτικής <strong>Monkey Business</strong>. Εκπροσωπούμε την Ελλάδα στην κατηγορία RoboMission Senior της WRO. Στόχος μας είναι η κορυφή στον Παγκόσμιο Τελικό στο Πουέρτο Ρίκο!</p>
+            
+            <div class="progress-box">
+                <div style="display: flex; justify-content: space-between; font-weight: bold;">
+                    <span>Πρόοδος Προετοιμασίας & Στόχου</span>
+                    <span>45%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill"></div>
+                </div>
+            </div>
         </div>
     </section>
 
