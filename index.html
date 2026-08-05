@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,6 +82,63 @@
         .nav-links a:hover {
             color: var(--accent-yellow);
             transition: 0.3s;
+        }
+
+        /* Language Dropdown Styles */
+        .lang-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #333;
+            color: var(--text-light);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent-yellow);
+            color: var(--accent-yellow);
+        }
+
+        .lang-content {
+            display: none;
+            position: absolute;
+            background-color: var(--card-bg);
+            min-width: 100px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            z-index: 1;
+            right: 0;
+            top: 100%;
+            overflow: hidden;
+        }
+
+        .lang-content a {
+            color: var(--text-light);
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .lang-content a:hover {
+            background-color: #2a2a2a;
+            color: var(--accent-yellow);
+        }
+
+        .lang-dropdown:hover .lang-content {
+            display: block;
         }
 
         .hero {
@@ -288,12 +345,12 @@
                 <span class="logo-text">Monkey Business</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#about">Σχετικά</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#store">Lego MOCs</a></li>
-                <li><a href="#sponsors">Χορηγοί</a></li>
-                <li><a href="#contact">Επικοινωνία</a></li>
-                <li><a href="history.html">Ιστορικό</a></li>
-                <li style="display: flex; gap: 1rem;">
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="history.html">History</a></li>
+                <li style="display: flex; gap: 1rem; align-items: center;">
                     <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;" title="Instagram">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
@@ -301,72 +358,80 @@
                         <i class="fa-brands fa-youtube"></i>
                     </a>
                 </li>
+                <!-- Language Switcher -->
+                <li class="lang-dropdown">
+                    <button class="lang-btn">🇬🇧 EN <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i></button>
+                    <div class="lang-content">
+                        <a href="el/index.html">🇬🇷 ΕΛ (Greek)</a>
+                        <a href="es/index.html">🇪🇸 ES (Spanish)</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <span class="badge">🏆 1η Θέση - WRO RoboMission Senior</span>
+            <span class="badge">🏆 1st Place - WRO RoboMission Senior</span>
             <h1>Monkey Business <span>Robotics</span></h1>
-            <p>Ετοιμαζόμαστε για τον Παγκόσμιο Τελικό Ρομποτικής στο Πουέρτο Ρίκο (Δεκέμβριος 2026). Υποστηρίξτε το ταξίδι μας!</p>
+            <p>We are gearing up for the World Robot Olympiad Final in Puerto Rico (December 2026). Support our journey!</p>
             <div class="cta-buttons">
-                <a href="#sponsors" class="btn btn-primary">Γίνετε Χορηγός</a>
-                <a href="#store" class="btn btn-secondary">Αγοράστε Οδηγίες Lego</a>
+                <a href="#sponsors" class="btn btn-primary">Become a Sponsor</a>
+                <a href="#store" class="btn btn-secondary">Buy Lego Instructions</a>
             </div>
         </div>
     </section>
 
     <section id="about">
-        <h2 class="section-title">Σχετικά με Εμάς</h2>
+        <h2 class="section-title">About Us</h2>
         <div class="about-container">
-            <p>Είμαστε η ομάδα ρομποτικής <strong>Monkey Business</strong>. Εκπροσωπούμε την Ελλάδα στην κατηγορία RoboMission Senior της WRO. Στόχος μας είναι η κορυφή στον Παγκόσμιο Τελικό στο Πουέρτο Ρίκο!</p>
+            <p>We are the <strong>Monkey Business</strong> robotics team. We proudly represent Greece in the WRO RoboMission Senior category. Our ultimate goal is the top spot at the World Final in Puerto Rico!</p>
         </div>
     </section>
 
     <section id="store">
         <h2 class="section-title">Lego MOC Store</h2>
         <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
-            Αγοράζοντας τις οδηγίες για τις Lego κατασκευές μας, ενισχύετε άμεσα την προσπάθειά μας για το Πουέρτο Ρίκο!
+            By purchasing the instructions for our custom Lego builds, you directly fund our journey to Puerto Rico!
         </p>
         
         <div class="grid">
             <div class="card">
-                <div class="card-img-placeholder">Εικόνα MOC #1</div>
+                <div class="card-img-placeholder">MOC Image #1</div>
                 <h3>Robotics Gripper Mechanism</h3>
                 <p style="color: var(--text-muted); font-size: 0.9rem;">BUILDING INSTRUCTIONS</p>
                 <div class="price">€5.00</div>
-                <a href="#" class="btn btn-primary" style="display: block;">Σύντομα Διαθέσιμο</a>
+                <a href="#" class="btn btn-primary" style="display: block;">Coming Soon</a>
             </div>
 
             <div class="card">
-                <div class="card-img-placeholder">Εικόνα MOC #2</div>
+                <div class="card-img-placeholder">MOC Image #2</div>
                 <h3>Self-Balancing Chassis</h3>
                 <p style="color: var(--text-muted); font-size: 0.9rem;">BUILDING INSTRUCTIONS</p>
                 <div class="price">€7.00</div>
-                <a href="#" class="btn btn-primary" style="display: block;">Σύντομα Διαθέσιμο</a>
+                <a href="#" class="btn btn-primary" style="display: block;">Coming Soon</a>
             </div>
 
             <div class="card">
-                <div class="card-img-placeholder">Εικόνα MOC #3</div>
+                <div class="card-img-placeholder">MOC Image #3</div>
                 <h3>Custom LEGO Sorting Arm</h3>
                 <p style="color: var(--text-muted); font-size: 0.9rem;">BUILDING INSTRUCTIONS</p>
                 <div class="price">€10.00</div>
-                <a href="#" class="btn btn-primary" style="display: block;">Σύντομα Διαθέσιμο</a>
+                <a href="#" class="btn btn-primary" style="display: block;">Coming Soon</a>
             </div>
         </div>
     </section>
 
     <section id="sponsors">
-        <h2 class="section-title">Υποστήριξη & Χορηγίες</h2>
+        <h2 class="section-title">Support & Sponsorships</h2>
         <div class="sponsors-box">
-            <h3>Γίνετε συνεργάτης στο ταξίδι μας</h3>
+            <h3>Become a partner in our journey</h3>
             <p style="color: var(--text-muted); margin-top: 1rem;">
-                Κατεβάστε το ενημερωτικό μας υλικό για να δείτε τα ανταποδοτικά οφέλη χορηγίας.
+                Download our informational material to explore the benefits of sponsoring our team.
             </p>
             <div class="sponsor-btn-container">
-                <a href="https://drive.google.com/file/d/1QmoXx-4uDo63x6xJRmePUCUA-Gggmwdn/preview" target="_blank" rel="noopener noreferrer" class="btn btn-primary">📄 Ενημερωτικό Φυλλάδιο (PDF)</a>
-                <a href="https://drive.google.com/file/d/1MJS3PRTvV_GLZcWqLnWKzUhVMBp23Dnr/preview" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">📊 Αναλυτική Παρουσίαση (PDF)</a>
+                <a href="https://drive.google.com/file/d/1QmoXx-4uDo63x6xJRmePUCUA-Gggmwdn/preview" target="_blank" rel="noopener noreferrer" class="btn btn-primary">📄 Info Brochure (PDF)</a>
+                <a href="https://drive.google.com/file/d/1MJS3PRTvV_GLZcWqLnWKzUhVMBp23Dnr/preview" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">📊 Detailed Presentation (PDF)</a>
             </div>
         </div>
     </section>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ιστορικό & Συμμετοχές | Monkey Business Robotics</title>
+    <title>History & Achievements | Monkey Business Robotics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
@@ -83,6 +83,63 @@
             transition: 0.3s;
         }
 
+        /* Language Dropdown Styles */
+        .lang-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #333;
+            color: var(--text-light);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent-yellow);
+            color: var(--accent-yellow);
+        }
+
+        .lang-content {
+            display: none;
+            position: absolute;
+            background-color: var(--card-bg);
+            min-width: 100px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            z-index: 1;
+            right: 0;
+            top: 100%;
+            overflow: hidden;
+        }
+
+        .lang-content a {
+            color: var(--text-light);
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .lang-content a:hover {
+            background-color: #2a2a2a;
+            color: var(--accent-yellow);
+        }
+
+        .lang-dropdown:hover .lang-content {
+            display: block;
+        }
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -122,7 +179,6 @@
             color: var(--text-muted);
         }
 
-        /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -149,7 +205,6 @@
             font-size: 0.9rem;
         }
 
-        /* Timeline Styles */
         .timeline {
             position: relative;
             margin: 0 auto;
@@ -314,7 +369,6 @@
             color: var(--accent-green);
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .timeline::before {
                 left: 20px;
@@ -356,12 +410,12 @@
                 <span class="logo-text">Monkey Business</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html#about">Σχετικά</a></li>
+                <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#store">Lego MOCs</a></li>
-                <li><a href="index.html#sponsors">Χορηγοί</a></li>
-                <li><a href="index.html#contact">Επικοινωνία</a></li>
-                <li><a href="history.html" style="color: var(--accent-yellow);">Ιστορικό</a></li>
-                <li style="display: flex; gap: 1rem;">
+                <li><a href="index.html#sponsors">Sponsors</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="history.html" style="color: var(--accent-yellow);">History</a></li>
+                <li style="display: flex; gap: 1rem; align-items: center;">
                     <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;" title="Instagram">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
@@ -369,33 +423,41 @@
                         <i class="fa-brands fa-youtube"></i>
                     </a>
                 </li>
+                <!-- Language Switcher -->
+                <li class="lang-dropdown">
+                    <button class="lang-btn">🇬🇧 EN <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i></button>
+                    <div class="lang-content">
+                        <a href="el/index.html">🇬🇷 ΕΛ (Greek)</a>
+                        <a href="es/index.html">🇪🇸 ES (Spanish)</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main class="container">
         <div class="page-header">
-            <h1>Ιστορικό & <span>Συμμετοχές</span></h1>
-            <p>Η διαδρομή, οι προκλήσεις και οι εθνικές & παγκόσμιες διακρίσεις της ομάδας μας από το 2022 έως σήμερα.</p>
+            <h1>History & <span>Achievements</span></h1>
+            <p>The journey, challenges, and national & global distinctions of our team from 2022 to today.</p>
         </div>
 
         <div class="disclaimer-box">
-            ℹ️ <em>Ιστορικά, η ονομασία και η σύνθεση της ομάδας ενδέχεται να διαφέρει ανά διαγωνισμό, ανάλογα με τις προκλήσεις της κάθε σεζόν, διατηρώντας πάντα σταθερό τον πυρήνα της ομάδας.</em>
+            ℹ️ <em>Historically, the team's name and composition may vary per competition, depending on the challenges of each season, while always maintaining the core of the team.</em>
         </div>
 
         <!-- Highlight Stats -->
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-number">11+</div>
-                <div class="stat-label">Επίσημες Συμμετοχές</div>
+                <div class="stat-label">Official Participations</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">2x</div>
-                <div class="stat-label">1η Θέση RoboMission Senior (2024, 2026)</div>
+                <div class="stat-label">1st Place RoboMission Senior (2024, 2026)</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">2x</div>
-                <div class="stat-label">Πρόκριση σε Παγκόσμιο Τελικό WRO</div>
+                <div class="stat-label">Qualified for WRO World Final</div>
             </div>
         </div>
 
@@ -406,12 +468,12 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date">27 Ιουνίου 2026</div>
-                    <h3 class="timeline-title">Εθνικός Τελικός WRO 2026</h3>
-                    <div class="team-alias">Ομάδα: MonkeyBusiness</div>
-                    <div class="award-badge">🏆 1η Θέση (RoboMission Senior)</div>
+                    <div class="timeline-date">June 27, 2026</div>
+                    <h3 class="timeline-title">WRO Greece National Final 2026</h3>
+                    <div class="team-alias">Team: MonkeyBusiness</div>
+                    <div class="award-badge">🏆 1st Place (RoboMission Senior)</div>
                     <p style="color: var(--text-muted); font-size: 0.85rem;">
-                        Πρόκριση στον Παγκόσμιο Τελικό WRO 2026 στο Πουέρτο Ρίκο!
+                        Qualification to the WRO 2026 World Final in Puerto Rico!
                     </p>
                 </div>
             </div>
@@ -420,10 +482,10 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date">26 Απριλίου 2026</div>
-                    <h3 class="timeline-title">Πανελλήνιος Διαγωνισμός STEM 2026</h3>
-                    <div class="team-alias">Ομάδα: MonkeyBusiness</div>
-                    <div class="award-badge">🥈 2η Θέση (Regular Προχωρημένων)</div>
+                    <div class="timeline-date">April 26, 2026</div>
+                    <h3 class="timeline-title">Panhellenic STEM Competition 2026</h3>
+                    <div class="team-alias">Team: MonkeyBusiness</div>
+                    <div class="award-badge">🥈 2nd Place (Advanced Regular)</div>
                 </div>
             </div>
 
@@ -431,13 +493,13 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date">28 - 30 Νοεμβρίου 2024</div>
-                    <h3 class="timeline-title">Παγκόσμιος Τελικός WRO 2024 (Σμύρνη)</h3>
-                    <div class="team-alias">Ομάδα: EarPhones</div>
-                    <div class="award-badge">🌍 25η Θέση Παγκοσμίως (RoboMission Senior)</div>
+                    <div class="timeline-date">Nov 28 - 30, 2024</div>
+                    <h3 class="timeline-title">WRO World Final 2024 (Izmir)</h3>
+                    <div class="team-alias">Team: EarPhones</div>
+                    <div class="award-badge">🌍 25th Place Worldwide (RoboMission Senior)</div>
                     <div class="article-links">
                         <a href="https://greekreporter.com/2024/12/20/greek-teams-excel-2024-world-robot-olympiad/" target="_blank" class="link-btn"><i class="fa-solid fa-newspaper"></i> Greek Reporter</a>
-                        <a href="https://www.kathimerini.gr/life/563376808/ellinikes-diakriseis-stin-pagkosmia-olympiada-rompotikis-wro-2024/" target="_blank" class="link-btn"><i class="fa-solid fa-newspaper"></i> Καθημερινή</a>
+                        <a href="https://www.kathimerini.gr/life/563376808/ellinikes-diakriseis-stin-pagkosmia-olympiada-rompotikis-wro-2024/" target="_blank" class="link-btn"><i class="fa-solid fa-newspaper"></i> Kathimerini</a>
                     </div>
                 </div>
             </div>
@@ -446,27 +508,27 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date">29 Ιουνίου 2024</div>
-                    <h3 class="timeline-title">Εθνικός Τελικός WRO 2024</h3>
-                    <div class="team-alias">Ομάδα: EarPhones</div>
-                    <div class="award-badge">🏆 1η Θέση (RoboMission Senior)</div>
+                    <div class="timeline-date">June 29, 2024</div>
+                    <h3 class="timeline-title">WRO Greece National Final 2024</h3>
+                    <div class="team-alias">Team: EarPhones</div>
+                    <div class="award-badge">🏆 1st Place (RoboMission Senior)</div>
                     <div class="article-links">
-                        <a href="https://www.kathimerini.gr/life/563130475/panetoimi-gia-tin-pagkosmia-olympiada-rompotikis-2024-i-elliniki-apostoli/" target="_blank" class="link-btn"><i class="fa-solid fa-newspaper"></i> Καθημερινή</a>
+                        <a href="https://www.kathimerini.gr/life/563130475/panetoimi-gia-tin-pagkosmia-olympiada-rompotikis-2024-i-elliniki-apostoli/" target="_blank" class="link-btn"><i class="fa-solid fa-newspaper"></i> Kathimerini</a>
                         <a href="https://www.thepresident.gr/2024/07/18/me-prototypa-erga-oi-epta-omades-tis-ellinikis-apostolis-stin-pagkosmia-olympiada-rompotikis-2024/" target="_blank" class="link-btn"><i class="fa-solid fa-newspaper"></i> The President</a>
                     </div>
                 </div>
             </div>
 
-            <!-- 2024 - Συνέδριο -->
+            <!-- 2024 - Conference -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date">2 Απριλίου 2024</div>
-                    <h3 class="timeline-title">16ο Μαθητικό Συνέδριο Πληροφορικής</h3>
-                    <div class="team-alias">Σχολικό Project</div>
-                    <div class="award-badge">🎓 Παρουσίαση Καινοτόμου Project</div>
+                    <div class="timeline-date">April 2, 2024</div>
+                    <h3 class="timeline-title">16th Student Conference on Informatics</h3>
+                    <div class="team-alias">School Project</div>
+                    <div class="award-badge">🎓 Innovative Project Presentation</div>
                     <div class="article-links">
-                        <a href="https://draseiskmaked.sch.gr/mathsynpli16/" target="_blank" class="link-btn"><i class="fa-solid fa-link"></i> Ιστοσελίδα Συνεδρίου</a>
+                        <a href="https://draseiskmaked.sch.gr/mathsynpli16/" target="_blank" class="link-btn"><i class="fa-solid fa-link"></i> Conference Website</a>
                         <a href="https://www.emakedonia.gr/thessaloniki-mathites-peiramatikon-scholeion-kataskeyasan-efarmoges-toy-ayrio-698335" target="_blank" class="link-btn"><i class="fa-solid fa-newspaper"></i> e-Makedonia</a>
                     </div>
                 </div>
@@ -476,23 +538,23 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date">30 Μαρτίου 2024</div>
-                    <h3 class="timeline-title">Πανελλήνιος Διαγωνισμός STEM 2024</h3>
-                    <div class="team-alias">Ομάδα: Χήρες</div>
-                    <div class="award-badge">🎖️ 4η Θέση (Regular Προχωρημένων)</div>
+                    <div class="timeline-date">March 30, 2024</div>
+                    <h3 class="timeline-title">Panhellenic STEM Competition 2024</h3>
+                    <div class="team-alias">Team: Widows</div>
+                    <div class="award-badge">🎖️ 4th Place (Advanced Regular)</div>
                 </div>
             </div>
 
-            <!-- 2023 - 9o MFR -->
+            <!-- 2023 - 9th MFR -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date">9 Δεκεμβρίου 2023</div>
-                    <h3 class="timeline-title">9ο Μαθητικό Φεστιβάλ Ρομποτικής (ΜΦΡ)</h3>
-                    <div class="team-alias">Σχολικό Project</div>
-                    <div class="award-badge">🤖 Συμμετοχή & Έκθεση Project</div>
+                    <div class="timeline-date">December 9, 2023</div>
+                    <h3 class="timeline-title">9th Student Robotics Festival (MFR)</h3>
+                    <div class="team-alias">School Project</div>
+                    <div class="award-badge">🤖 Participation & Project Exhibition</div>
                     <div class="article-links">
-                        <a href="https://gym-peir-uom.thess.sch.gr/draseis/mathitiko-festival-rompotikis/arxeia/13-9o-mfr" target="_blank" class="link-btn"><i class="fa-solid fa-link"></i> Απολογισμός ΜΦΡ</a>
+                        <a href="https://gym-peir-uom.thess.sch.gr/draseis/mathitiko-festival-rompotikis/arxeia/13-9o-mfr" target="_blank" class="link-btn"><i class="fa-solid fa-link"></i> MFR Report</a>
                     </div>
                 </div>
             </div>
@@ -501,10 +563,10 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date">1 Ιουλίου 2023</div>
-                    <h3 class="timeline-title">Εθνικός Τελικός WRO 2023</h3>
-                    <div class="team-alias">Ομάδα: Θανάσιμες Πεθέρες</div>
-                    <div class="award-badge">🏅 Συμμετοχή στους Τελικούς</div>
+                    <div class="timeline-date">July 1, 2023</div>
+                    <h3 class="timeline-title">WRO Greece National Final 2023</h3>
+                    <div class="team-alias">Team: Deadly Mothers-in-law</div>
+                    <div class="award-badge">🏅 Finalist Participation</div>
                 </div>
             </div>
 
@@ -512,26 +574,26 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date">26 Μαρτίου 2023</div>
-                    <h3 class="timeline-title">Πανελλήνιος Διαγωνισμός STEM 2023</h3>
-                    <div class="team-alias">Ομάδα: 3 Θανάσιμες Πεθερές</div>
-                    <div class="award-badge">🛠️ 4η Θέση & Βραβείο Κατασκευής</div>
+                    <div class="timeline-date">March 26, 2023</div>
+                    <h3 class="timeline-title">Panhellenic STEM Competition 2023</h3>
+                    <div class="team-alias">Team: 3 Deadly Mothers-in-law</div>
+                    <div class="award-badge">🛠️ 4th Place & Construction Award</div>
                     <div class="article-links">
-                        <a href="https://stem.edu.gr/panellhnios-telikos-dyo-chiliades-eikosi-tria/" target="_blank" class="link-btn"><i class="fa-solid fa-award"></i> Αποτελέσματα STEM</a>
+                        <a href="https://stem.edu.gr/panellhnios-telikos-dyo-chiliades-eikosi-tria/" target="_blank" class="link-btn"><i class="fa-solid fa-award"></i> STEM Results</a>
                     </div>
                 </div>
             </div>
 
-            <!-- 2022 - 8o MFR -->
+            <!-- 2022 - 8th MFR -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date">10 Δεκεμβρίου 2022</div>
-                    <h3 class="timeline-title">8ο Μαθητικό Φεστιβάλ Ρομποτικής (ΜΦΡ)</h3>
-                    <div class="team-alias">Σχολικό Project</div>
-                    <div class="award-badge">🌱 1ο Βραβείο Προσφοράς στο Περιβάλλον & Αειφορία</div>
+                    <div class="timeline-date">December 10, 2022</div>
+                    <h3 class="timeline-title">8th Student Robotics Festival (MFR)</h3>
+                    <div class="team-alias">School Project</div>
+                    <div class="award-badge">🌱 1st Prize for Environment & Sustainability</div>
                     <div class="article-links">
-                        <a href="https://kmaked.pde.sch.gr/2022/12/28/8mfr_apologismos/" target="_blank" class="link-btn"><i class="fa-solid fa-newspaper"></i> Απολογισμός ΠΔΕ</a>
+                        <a href="https://kmaked.pde.sch.gr/2022/12/28/8mfr_apologismos/" target="_blank" class="link-btn"><i class="fa-solid fa-newspaper"></i> PDE Report</a>
                     </div>
                 </div>
             </div>
@@ -540,12 +602,12 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date">1 Οκτωβρίου 2022</div>
-                    <h3 class="timeline-title">Εθνικός Τελικός WRO 2022</h3>
-                    <div class="team-alias">Ομάδα: Kraftwerk 2048</div>
-                    <div class="award-badge">⚙️ 2ο Βραβείο Μηχανικής</div>
+                    <div class="timeline-date">October 1, 2022</div>
+                    <h3 class="timeline-title">WRO Greece National Final 2022</h3>
+                    <div class="team-alias">Team: Kraftwerk 2048</div>
+                    <div class="award-badge">⚙️ 2nd Engineering Award</div>
                     <div class="article-links">
-                        <a href="https://gym-peir-uom.thess.sch.gr/to-sxoleio-mas/diakriseis/olympiada-rompotikis" target="_blank" class="link-btn"><i class="fa-solid fa-award"></i> Διακρίσεις Σχολείου</a>
+                        <a href="https://gym-peir-uom.thess.sch.gr/to-sxoleio-mas/diakriseis/olympiada-rompotikis" target="_blank" class="link-btn"><i class="fa-solid fa-award"></i> School Distinctions</a>
                     </div>
                 </div>
             </div>
@@ -553,7 +615,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 3rem;">
-            <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Επιστροφή στην Αρχική</a>
+            <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
         </div>
     </main>
 
