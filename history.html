@@ -207,7 +207,7 @@
             border-radius: 12px;
             border: 1px solid #2a2a2a;
             transition: 0.3s;
-            cursor: pointer; /* Δείχνει ότι πατιέται */
+            cursor: pointer;
             position: relative;
         }
 
@@ -217,7 +217,6 @@
             box-shadow: 0 5px 15px rgba(255, 199, 0, 0.1);
         }
 
-        /* Μικρό εικονίδιο για να ξέρει ότι κάνει κλικ */
         .click-hint {
             position: absolute;
             top: 1rem;
@@ -290,8 +289,21 @@
         .modal-title { font-size: 1.6rem; color: #fff; margin-bottom: 1rem; }
         .modal-body { color: var(--text-light); line-height: 1.7; font-size: 1rem; }
         
-        /* Κρυφό περιεχόμενο μέσα στην κάρτα για να το διαβάζει το modal */
         .hidden-details { display: none; }
+
+        /* Styling για τη λίστα μελών της ομάδας στο Modal */
+        .team-members-list {
+            background-color: #2a2a2a;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .team-members-list span {
+            color: var(--accent-yellow);
+            font-weight: bold;
+        }
 
         .timeline-date {
             color: var(--accent-green);
@@ -471,9 +483,21 @@
                     <div class="award-badge">🏆 1η Θέση (RoboMission Senior)</div>
                     <p style="color: var(--text-muted); font-size: 0.85rem;">Πρόκριση στον Παγκόσμιο Τελικό WRO 2026 στο Πουέρτο Ρίκο!</p>
                     
+                    <div class="article-links">
+                        <a href="https://anagennisi.edu.gr/%ce%b7-%ce%b5%ce%ba%cf%80%ce%b1%ce%b9%ce%b4%ce%b5%cf%85%cf%84%ce%b9%ce%ba%ce%ae-%ce%b1%ce%bd%ce%b1%ce%b3%ce%ad%ce%bd%ce%bd%ce%b7%cf%83%ce%b7-%cf%86%ce%b9%ce%bb%ce%bf%ce%be%ce%ad%ce%bd%ce%b7%cf%83-2/" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-newspaper"></i> Εκπ. Αναγέννηση</a>
+                    </div>
+                    
                     <!-- Κρυφό κείμενο για το Modal -->
                     <div class="hidden-details">
-                        <p>Αυτή ήταν η πιο επική μας νίκη! Σπάσαμε το ρεκόρ της κατηγορίας με διαφορά 93 βαθμών από τη δεύτερη ομάδα. Το ρομπότ μας ήταν απόλυτα σταθερό χάρη στον νέο αλγόριθμο του Θανάση και την αψεγάδιαστη κατασκευή του Γιώργου. Τώρα, όλα τα βλέμματα είναι στραμμένα στο Πουέρτο Ρίκο!</p>
+                        <div class="team-members-list">
+                            <p><span>Προπονητής:</span> Φοίβος-Παναγιώτης Φιλιππίδης</p>
+                            <p><span>Μαθητές:</span> Γεώργιος Τριανταφυλλίδης, Αθανάσιος Τριανταφυλλίδης, Χρήστος Κατσιαμάνης</p>
+                        </div>
+                        <p>Ο τελικός φιλοξενήθηκε στις εγκαταστάσεις της Εκπαιδευτικής Αναγέννησης και αποτέλεσε ίσως τη μεγαλύτερη δοκιμασία αντοχής για την ομάδα μας. Έχοντας στη διάθεσή μας μόλις 2 μήνες μετά τον Πανελλήνιο Διαγωνισμό STEM, κληθήκαμε να προετοιμαστούμε για μια εντελώς νέα πίστα. Η πίεση ήταν ασφυκτική: ο προπονητής και δύο μέλη βρίσκονταν στη δίνη της θερινής πανεπιστημιακής εξεταστικής, ενώ το τέταρτο μέλος έδινε Πανελλήνιες εξετάσεις!</p>
+                        <br>
+                        <p>Παρά την κούραση και τον ελάχιστο ελεύθερο χρόνο, η στρατηγική μας απέδωσε στο έπακρο. Το αποκορύφωμα ήρθε στο απρόβλεπτο <strong>Afternoon Challenge</strong>, όπου διαπρέψαμε: το ρομπότ μας συγκέντρωσε <strong>140 πόντους σε μόλις 68 δευτερόλεπτα</strong>, τη στιγμή που η δεύτερη καλύτερη επίδοση ήταν στους 55 πόντους! Αυτή η επιβλητική διαφορά σφράγισε την πρωτιά και μας έδωσε το χρυσό εισιτήριο για το Πουέρτο Ρίκο.</p>
+                        <br>
+                        <a href="https://anagennisi.edu.gr/%ce%b7-%ce%b5%ce%ba%cf%80%ce%b1%ce%b9%ce%b4%ce%b5%cf%85%cf%84%ce%b9%ce%ba%ce%ae-%ce%b1%ce%bd%ce%b1%ce%b3%ce%ad%ce%bd%ce%bd%ce%b7%cf%83%ce%b7-%cf%86%ce%b9%ce%bb%ce%bf%ce%be%ce%ad%ce%bd%ce%b7%cf%83-2/" target="_blank" style="color:var(--accent-yellow);">🔗 Διαβάστε το άρθρο της διοργάνωσης</a>
                     </div>
                 </div>
             </div>
@@ -488,8 +512,20 @@
                     <div class="team-alias">Ομάδα: MonkeyBusiness</div>
                     <div class="award-badge">🥈 2η Θέση (Regular Προχωρημένων)</div>
                     
+                    <div class="article-links">
+                        <a href="https://www.newsit.gr/ellada/panellinios-diagonismos-stem-2026-to-mellon-grafetai-apo-ta-paidia-me-symmaxo-tin-texniti-noimosyni/4673262/?utm_source=chatgpt.com" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-newspaper"></i> NewsIT</a>
+                    </div>
+                    
                     <div class="hidden-details">
-                        <p>Μια απαιτητική κούρσα στον Πανελλήνιο Διαγωνισμό STEM. Παρόλο που αντιμετωπίσαμε τεχνικά θέματα στον πρώτο γύρο, καταφέραμε να ανακάμψουμε και να διεκδικήσουμε τη 2η θέση, χτίζοντας την αυτοπεποίθησή μας για τα προκριματικά της WRO που ακολούθησαν.</p>
+                        <div class="team-members-list">
+                            <p><span>Προπονητής:</span> Φοίβος-Παναγιώτης Φιλιππίδης</p>
+                            <p><span>Μαθητές:</span> Γεώργιος Τριανταφυλλίδης, Αθανάσιος Τριανταφυλλίδης, Χρήστος Κατσιαμάνης</p>
+                        </div>
+                        <p>Στον Πανελλήνιο Διαγωνισμό STEM 2026, η ομάδα μας ακολούθησε μια εντελώς διαφορετική στρατηγική σε σχέση με τον ανταγωνισμό. Αντί για μια βαριά κατασκευή, σχεδιάσαμε ένα εξαιρετικά λεπτό και ελαφρύ ρομπότ. Ο στόχος μας ήταν η ευελιξία: θέλαμε το ρομπότ να μπορεί να κινείται με μεγάλη ταχύτητα μέσα από τα "στενά περάσματα" της πίστας, αποφεύγοντας επιδέξια τα πολύπλοκα εμπόδια.</p>
+                        <br>
+                        <p>Αυτή η καινοτόμα προσέγγιση απέδωσε! Η απόδοση του ρομπότ στην κατηγορία Regular Προχωρημένων ήταν εξαιρετική, χαρίζοντάς μας τη 2η θέση πανελλαδικά. Μείναμε απόλυτα ικανοποιημένοι με το αποτέλεσμα, το οποίο αποτέλεσε και την τέλεια "προθέρμανση" για τον θρίαμβό μας στον Εθνικό Τελικό της WRO λίγους μήνες μετά!</p>
+                        <br>
+                        <a href="https://www.newsit.gr/ellada/panellinios-diagonismos-stem-2026-to-mellon-grafetai-apo-ta-paidia-me-symmaxo-tin-texniti-noimosyni/4673262/?utm_source=chatgpt.com" target="_blank" style="color:var(--accent-yellow);">🔗 Διαβάστε το άρθρο στο NewsIT</a>
                     </div>
                 </div>
             </div>
@@ -504,10 +540,14 @@
                     <div class="team-alias">Ομάδα: EarPhones</div>
                     <div class="award-badge">🌍 25η Θέση Παγκοσμίως (RoboMission Senior)</div>
                     
+                    <div class="article-links">
+                        <a href="https://greekreporter.com/2024/12/20/greek-teams-excel-2024-world-robot-olympiad/" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-newspaper"></i> Greek Reporter</a>
+                        <a href="https://www.kathimerini.gr/life/563376808/ellinikes-diakriseis-stin-pagkosmia-olympiada-rompotikis-wro-2024/" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-newspaper"></i> Καθημερινή</a>
+                    </div>
+                    
                     <div class="hidden-details">
-                        <p>Το πρώτο μας ταξίδι σε Παγκόσμιο Τελικό ως διαγωνιζόμενοι! Στη Σμύρνη αναμετρηθήκαμε με 104 ομάδες από όλο τον κόσμο. Η 25η θέση μας γέμισε με τεράστια εμπειρία, καθώς είδαμε από κοντά πώς δουλεύουν οι κορυφαίες ομάδες της Ασίας και της Ευρώπης. Μια αξέχαστη εμπειρία!</p>
-                        <br>
-                        <a href="https://greekreporter.com/2024/12/20/greek-teams-excel-2024-world-robot-olympiad/" target="_blank" style="color:var(--accent-yellow);">🔗 Δείτε το άρθρο στο Greek Reporter</a>
+                        <!-- ToDo: Εδώ θα προστεθούν τα μέλη και η ιστορία όταν μου τα δώσεις -->
+                        <p>Το πρώτο μας ταξίδι σε Παγκόσμιο Τελικό ως διαγωνιζόμενοι! Στη Σμύρνη αναμετρηθήκαμε με εκατοντάδες ομάδες από όλο τον κόσμο. Η 25η θέση μας γέμισε με τεράστια εμπειρία, καθώς είδαμε από κοντά πώς δουλεύουν οι κορυφαίες ομάδες της Ασίας και της Ευρώπης. Μια αξέχαστη εμπειρία!</p>
                     </div>
                 </div>
             </div>
@@ -522,7 +562,13 @@
                     <div class="team-alias">Ομάδα: EarPhones</div>
                     <div class="award-badge">🏆 1η Θέση (RoboMission Senior)</div>
                     
+                    <div class="article-links">
+                        <a href="https://www.kathimerini.gr/life/563130475/panetoimi-gia-tin-pagkosmia-olympiada-rompotikis-2024-i-elliniki-apostoli/" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-newspaper"></i> Καθημερινή</a>
+                        <a href="https://www.thepresident.gr/2024/07/18/me-prototypa-erga-oi-epta-omades-tis-ellinikis-apostolis-stin-pagkosmia-olympiada-rompotikis-2024/" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-newspaper"></i> The President</a>
+                    </div>
+                    
                     <div class="hidden-details">
+                        <!-- ToDo: Εδώ θα προστεθούν τα μέλη και η ιστορία αργότερα -->
                         <p>Η στιγμή που "ξεκλείδωσε" η πόρτα για το Παγκόσμιο. Με την ομάδα "EarPhones" παρουσιάσαμε μια λύση τόσο σταθερή που εξέπληξε τους κριτές. Αυτή η 1η θέση επιβεβαίωσε ότι οι ατελείωτες ώρες δουλειάς και τα ξενύχτια άξιζαν τον κόπο.</p>
                     </div>
                 </div>
@@ -538,7 +584,13 @@
                     <div class="team-alias">Σχολικό Project</div>
                     <div class="award-badge">🎓 Παρουσίαση Καινοτόμου Project</div>
                     
+                    <div class="article-links">
+                        <a href="https://draseiskmaked.sch.gr/mathsynpli16/" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-link"></i> Συνέδριο</a>
+                        <a href="https://www.emakedonia.gr/thessaloniki-mathites-peiramatikon-scholeion-kataskeyasan-efarmoges-toy-ayrio-698335" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-newspaper"></i> e-Makedonia</a>
+                    </div>
+                    
                     <div class="hidden-details">
+                        <!-- ToDo: Εδώ θα προστεθούν τα μέλη και η ιστορία αργότερα -->
                         <p>Ξεφεύγοντας λίγο από τον καθαρό ανταγωνισμό της ρομποτικής, παρουσιάσαμε σε ακαδημαϊκό κοινό ένα καινοτόμο project λογισμικού, αναδεικνύοντας τις ικανότητές μας όχι μόνο στο Hardware, αλλά και στο Development εφαρμογών.</p>
                     </div>
                 </div>
@@ -554,6 +606,7 @@
                     <div class="team-alias">Ομάδα: Χήρες</div>
                     <div class="award-badge">🎖️ 4η Θέση (Regular Προχωρημένων)</div>
                     <div class="hidden-details">
+                        <!-- ToDo: Εδώ θα προστεθούν τα μέλη και η ιστορία αργότερα -->
                         <p>Ένας από τους πιο αμφίρροπους διαγωνισμούς. Για λίγους πόντους χάσαμε το βάθρο, αλλά το ρομπότ "Χήρες" μας δίδαξε πολλά για την ανάγκη redundancy (εφεδρείας) στους αισθητήρες, κάτι που εφαρμόσαμε άμεσα στα επόμενα projects μας.</p>
                     </div>
                 </div>
@@ -568,7 +621,11 @@
                     <h3 class="timeline-title">9ο Μαθητικό Φεστιβάλ Ρομποτικής (ΜΦΡ)</h3>
                     <div class="team-alias">Σχολικό Project</div>
                     <div class="award-badge">🤖 Συμμετοχή & Έκθεση Project</div>
+                    <div class="article-links">
+                        <a href="https://gym-peir-uom.thess.sch.gr/draseis/mathitiko-festival-rompotikis/arxeia/13-9o-mfr" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-link"></i> Απολογισμός</a>
+                    </div>
                     <div class="hidden-details">
+                        <!-- ToDo: Εδώ θα προστεθούν τα μέλη και η ιστορία αργότερα -->
                         <p>Συμμετείχαμε σε γιορτινό κλίμα στο ΜΦΡ. Το Φεστιβάλ είναι πάντα μια εξαιρετική ευκαιρία να μοιραστούμε το πάθος μας για τη ρομποτική με μικρότερα παιδιά και να εμπνεύσουμε την επόμενη γενιά STEM.</p>
                     </div>
                 </div>
@@ -584,6 +641,7 @@
                     <div class="team-alias">Ομάδα: Θανάσιμες Πεθέρες</div>
                     <div class="award-badge">🏅 Συμμετοχή στους Τελικούς</div>
                     <div class="hidden-details">
+                        <!-- ToDo: Εδώ θα προστεθούν τα μέλη και η ιστορία αργότερα -->
                         <p>Αν και δεν κατακτήσαμε μετάλλιο αυτή τη χρονιά, η ομάδα "Θανάσιμες Πεθέρες" παρουσίασε έναν από τους πιο γρήγορους μηχανισμούς συλλογής αντικειμένων που είχαμε φτιάξει μέχρι τότε.</p>
                     </div>
                 </div>
@@ -598,7 +656,11 @@
                     <h3 class="timeline-title">Πανελλήνιος Διαγωνισμός STEM 2023</h3>
                     <div class="team-alias">Ομάδα: 3 Θανάσιμες Πεθερές</div>
                     <div class="award-badge">🛠️ Βραβείο Κατασκευής</div>
+                    <div class="article-links">
+                        <a href="https://stem.edu.gr/panellhnios-telikos-dyo-chiliades-eikosi-tria/" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-award"></i> Αποτελέσματα</a>
+                    </div>
                     <div class="hidden-details">
+                        <!-- ToDo: Εδώ θα προστεθούν τα μέλη και η ιστορία αργότερα -->
                         <p>Εδώ λάμψαμε σχεδιαστικά! Η κριτική επιτροπή μας βράβευσε αποκλειστικά για την πρωτότυπη αρχιτεκτονική του ρομπότ, το οποίο χρησιμοποιούσε έξυπνα γρανάζια για πολλαπλασιασμό δύναμης χωρίς επιπλέον μοτέρ.</p>
                     </div>
                 </div>
@@ -613,7 +675,11 @@
                     <h3 class="timeline-title">8ο Μαθητικό Φεστιβάλ Ρομποτικής (ΜΦΡ)</h3>
                     <div class="team-alias">Σχολικό Project</div>
                     <div class="award-badge">🌱 1ο Βραβείο Προσφοράς στο Περιβάλλον</div>
+                    <div class="article-links">
+                        <a href="https://kmaked.pde.sch.gr/2022/12/28/8mfr_apologismos/" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-newspaper"></i> Απολογισμός</a>
+                    </div>
                     <div class="hidden-details">
+                        <!-- ToDo: Εδώ θα προστεθούν τα μέλη και η ιστορία αργότερα -->
                         <p>Ένα project με μεγάλη κοινωνική αξία. Συνδυάσαμε τους αυτοματισμούς με την οικολογία, παρουσιάζοντας μια έξυπνη λύση που βραβεύτηκε για την καινοτομία της στην Αειφορία.</p>
                     </div>
                 </div>
@@ -628,7 +694,11 @@
                     <h3 class="timeline-title">Εθνικός Τελικός WRO 2022</h3>
                     <div class="team-alias">Ομάδα: Kraftwerk 2048</div>
                     <div class="award-badge">⚙️ 2ο Βραβείο Μηχανικής</div>
+                    <div class="article-links">
+                        <a href="https://gym-peir-uom.thess.sch.gr/to-sxoleio-mas/diakriseis/olympiada-rompotikis" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-award"></i> Διακρίσεις</a>
+                    </div>
                     <div class="hidden-details">
+                        <!-- ToDo: Εδώ θα προστεθούν τα μέλη και η ιστορία αργότερα -->
                         <p>Από τις πρώτες μας δυνατές εμφανίσεις. Η στιβαρότητα του σασί και η αντοχή του στην πίστα κέρδισε τις εντυπώσεις, φέρνοντάς μας το 2ο βραβείο Μηχανικής σε Εθνικό επίπεδο!</p>
                     </div>
                 </div>
@@ -668,21 +738,18 @@
     <!-- JAVASCRIPT ΓΙΑ ΤΟ ΠΑΡΑΘΥΡΟ -->
     <script>
         function openModal(cardElement) {
-            // Αντλούμε τα δεδομένα από την κάρτα που πατήθηκε
             const date = cardElement.querySelector('.timeline-date').innerText;
             const title = cardElement.querySelector('.timeline-title').innerText;
             const alias = cardElement.querySelector('.team-alias').innerText;
             const badge = cardElement.querySelector('.award-badge').innerText;
             const detailsHTML = cardElement.querySelector('.hidden-details').innerHTML;
 
-            // Τα βάζουμε στο Modal
             document.getElementById('modalDate').innerText = date;
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalAlias').innerText = alias;
             document.getElementById('modalBadge').innerText = badge;
             document.getElementById('modalBody').innerHTML = detailsHTML;
 
-            // Εμφανίζουμε το Modal
             document.getElementById('eventModal').style.display = 'flex';
         }
 
