@@ -18,6 +18,7 @@
             --card-bg: #1e1e1e;
             --accent-yellow: #FFC700;
             --accent-green: #10B981;
+            --accent-blue: #38bdf8;
             --text-light: #F3F4F6;
             --text-muted: #9CA3AF;
         }
@@ -286,6 +287,38 @@
 
         .modal-date { color: var(--accent-green); font-weight: bold; margin-bottom: 0.5rem; }
         .modal-title { font-size: 1.6rem; color: #fff; margin-bottom: 1rem; }
+        
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .team-alias, .competition-category {
+            display: inline-block;
+            background-color: #2a2a2a;
+            font-size: 0.8rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .team-alias {
+            color: var(--accent-yellow);
+        }
+
+        .competition-category {
+            color: var(--accent-blue);
+        }
+
+        .award-badge {
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
         .modal-body { color: var(--text-light); line-height: 1.7; font-size: 1rem; }
         
         .hidden-details { display: none; }
@@ -314,25 +347,7 @@
         .timeline-title {
             font-size: 1.25rem;
             color: #fff;
-            margin-bottom: 0.3rem;
-        }
-
-        .team-alias {
-            display: inline-block;
-            background-color: #2a2a2a;
-            color: var(--accent-yellow);
-            font-size: 0.8rem;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-        }
-
-        .award-badge {
-            color: #fff;
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
         }
 
         .article-links {
@@ -494,7 +509,12 @@
                     <i class="fa-solid fa-expand click-hint"></i>
                     <div class="timeline-date">27 Ιουνίου 2026</div>
                     <h3 class="timeline-title">Εθνικός Τελικός WRO 2026</h3>
-                    <div class="team-alias">Ομάδα: MonkeyBusiness</div>
+                    
+                    <div class="tags-container">
+                        <div class="team-alias">Ομάδα: MonkeyBusiness</div>
+                        <div class="competition-category">Κατηγορία: RoboMission Senior</div>
+                    </div>
+                    
                     <div class="award-badge">🏆 1η Θέση (RoboMission Senior)</div>
                     <p style="color: var(--text-muted); font-size: 0.85rem;">Πρόκριση στον Παγκόσμιο Τελικό WRO 2026 στο Πουέρτο Ρίκο!</p>
                     
@@ -523,8 +543,13 @@
                     <i class="fa-solid fa-expand click-hint"></i>
                     <div class="timeline-date">26 Απριλίου 2026</div>
                     <h3 class="timeline-title">Πανελλήνιος Διαγωνισμός STEM 2026</h3>
-                    <div class="team-alias">Ομάδα: MonkeyBusiness</div>
-                    <div class="award-badge">🥈 2η Θέση (Regular Προχωρημένων)</div>
+                    
+                    <div class="tags-container">
+                        <div class="team-alias">Ομάδα: MonkeyBusiness</div>
+                        <div class="competition-category">Κατηγορία: Regular Προχωρημένων</div>
+                    </div>
+                    
+                    <div class="award-badge">🥈 2η Θέση</div>
                     
                     <div class="article-links">
                         <a href="https://www.newsit.gr/ellada/panellinios-diagonismos-stem-2026-to-mellon-grafetai-apo-ta-paidia-me-symmaxo-tin-texniti-noimosyni/4673262/?utm_source=chatgpt.com" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-newspaper"></i> NewsIT</a>
@@ -551,7 +576,12 @@
                     <i class="fa-solid fa-expand click-hint"></i>
                     <div class="timeline-date">28 - 30 Νοεμβρίου 2024</div>
                     <h3 class="timeline-title">Παγκόσμιος Τελικός WRO 2024 (Σμύρνη)</h3>
-                    <div class="team-alias">Ομάδα: EarPhones</div>
+                    
+                    <div class="tags-container">
+                        <div class="team-alias">Ομάδα: EarPhones</div>
+                        <div class="competition-category">Κατηγορία: RoboMission Senior</div>
+                    </div>
+                    
                     <div class="award-badge">🌍 25η Θέση Παγκοσμίως & 4η στην Ευρώπη</div>
                     
                     <div class="article-links">
@@ -585,8 +615,13 @@
                     <i class="fa-solid fa-expand click-hint"></i>
                     <div class="timeline-date">29 Ιουνίου 2024</div>
                     <h3 class="timeline-title">Εθνικός Τελικός WRO 2024</h3>
-                    <div class="team-alias">Ομάδα: EarPhones</div>
-                    <div class="award-badge">🏆 1η Θέση (RoboMission Senior)</div>
+                    
+                    <div class="tags-container">
+                        <div class="team-alias">Ομάδα: EarPhones</div>
+                        <div class="competition-category">Κατηγορία: RoboMission Senior</div>
+                    </div>
+                    
+                    <div class="award-badge">🏆 1η Θέση</div>
                     
                     <div class="article-links">
                         <a href="https://www.kathimerini.gr/life/563130475/panetoimi-gia-tin-pagkosmia-olympiada-rompotikis-2024-i-elliniki-apostoli/" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-newspaper"></i> Καθημερινή</a>
@@ -612,7 +647,11 @@
                     <i class="fa-solid fa-expand click-hint"></i>
                     <div class="timeline-date">2 Απριλίου 2024</div>
                     <h3 class="timeline-title">16ο Μαθητικό Συνέδριο Πληροφορικής</h3>
-                    <div class="team-alias">Σχολικό Project</div>
+                    
+                    <div class="tags-container">
+                        <div class="team-alias">Σχολικό Project</div>
+                    </div>
+                    
                     <div class="award-badge">🎓 Παρουσίαση Καινοτόμου Project</div>
                     
                     <div class="article-links">
@@ -639,7 +678,12 @@
                     <i class="fa-solid fa-expand click-hint"></i>
                     <div class="timeline-date">30 Μαρτίου 2024</div>
                     <h3 class="timeline-title">Πανελλήνιος Διαγωνισμός STEM 2024</h3>
-                    <div class="team-alias">Ομάδες: Χήρες & EarPhones</div>
+                    
+                    <div class="tags-container">
+                        <div class="team-alias">Ομάδες: Χήρες & EarPhones</div>
+                        <div class="competition-category">Κατηγορία: Regular Προχωρημένων</div>
+                    </div>
+                    
                     <div class="award-badge">🎖️ 4η Θέση (Χήρες) | 🏆 1η Θέση (EarPhones)</div>
                     <div class="hidden-details">
                         <div class="team-members-list">
@@ -651,7 +695,7 @@
                         <br>
                         <p>Για τις «Χήρες», η πρόκληση ήταν μεγάλη. Ο Γιώργος, όντας πλέον μαθητής της Β' Λυκείου, έπρεπε να δώσει απόλυτη προτεραιότητα στην προετοιμασία για τις Πανελλήνιες εξετάσεις. Ως εκ τούτου, το βάρος έπεσε σχεδόν εξ ολοκλήρου στους ώμους του Θάνου, με τον Γιώργο να παρέχει στοχευμένη υποστήριξη στον μηχανολογικό σχεδιασμό. Την ημέρα του τελικού, ο Θάνος διαγωνίστηκε εντελώς μόνος του απέναντι σε πλήρεις ομάδες, επιδεικνύοντας τρομερή ψυχραιμία και κατακτώντας επάξια την 4η θέση πανελλαδικά!</p>
                         <br>
-                        <p>Την ίδια στιγμή, η έτερη ομάδα μας, οι «EarPhones», επιβεβαίωσε την εξαιρετική της φόρμα κατακτώντας την 1η θέση στην τελική κατάταξη της διοργάνωσης! Λίγο μετά από αυτή τη διπλή επιτυχία, έγινε και η εσωτερική "μεταγραφή" του Γιώργου στους EarPhones, όπου η εμπειρία του έπαιξε καθοριστικό ρόλο στην κατάκτηση της 1ης θέσης και στον Εθνικό Τελικό WRO που ακολούθησε.</p>
+                        <p>Την ίδια στιγμή, η έτερη ομάδα μας, οι «EarPhones», επιβεβαίωσε την εξαιρετική της φόρμα κατακτώντας την 1η θέση στην τελική κατάταξη της διοργάνωσης! Λίγο μετά από αυτή τη διπλή επιτυχία, έγινε και η εσωτερική "μεταγραφή" του Γιώργου στους EarPhones, όπου η εμπειρία του έπαιξε καθοριστικό ρόλο στην κατάκτηση της 1η θέσης και στον Εθνικό Τελικό WRO που ακολούθησε.</p>
                     </div>
                 </div>
             </div>
@@ -663,7 +707,11 @@
                     <i class="fa-solid fa-expand click-hint"></i>
                     <div class="timeline-date">9 Δεκεμβρίου 2023</div>
                     <h3 class="timeline-title">9ο Μαθητικό Φεστιβάλ Ρομποτικής (ΜΦΡ)</h3>
-                    <div class="team-alias">Σχολικό Project</div>
+                    
+                    <div class="tags-container">
+                        <div class="team-alias">Σχολικό Project</div>
+                    </div>
+                    
                     <div class="award-badge">🤖 Συμμετοχή & Έκθεση Project</div>
                     <div class="article-links">
                         <a href="https://gym-peir-uom.thess.sch.gr/draseis/mathitiko-festival-rompotikis/arxeia/13-9o-mfr" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-link"></i> Απολογισμός</a>
@@ -687,7 +735,12 @@
                     <i class="fa-solid fa-expand click-hint"></i>
                     <div class="timeline-date">1 Ιουλίου 2023</div>
                     <h3 class="timeline-title">Εθνικός Τελικός WRO 2023</h3>
-                    <div class="team-alias">Ομάδα: Θανάσιμες Πεθέρες</div>
+                    
+                    <div class="tags-container">
+                        <div class="team-alias">Ομάδα: Θανάσιμες Πεθέρες</div>
+                        <div class="competition-category">Κατηγορία: RoboMission Junior</div>
+                    </div>
+                    
                     <div class="award-badge">🏅 Συμμετοχή στους Τελικούς</div>
                     <div class="hidden-details">
                         <div class="team-members-list">
@@ -706,7 +759,12 @@
                     <i class="fa-solid fa-expand click-hint"></i>
                     <div class="timeline-date">26 Μαρτίου 2023</div>
                     <h3 class="timeline-title">Πανελλήνιος Διαγωνισμός STEM 2023</h3>
-                    <div class="team-alias">Ομάδα: 3 Θανάσιμες Πεθερές</div>
+                    
+                    <div class="tags-container">
+                        <div class="team-alias">Ομάδα: 3 Θανάσιμες Πεθερές</div>
+                        <div class="competition-category">Κατηγορία: Regular Προχωρημένων</div>
+                    </div>
+                    
                     <div class="award-badge">🛠️ Βραβείο Κατασκευής</div>
                     <div class="article-links">
                         <a href="https://stem.edu.gr/panellhnios-telikos-dyo-chiliades-eikosi-tria/" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-award"></i> Αποτελέσματα</a>
@@ -730,7 +788,11 @@
                     <i class="fa-solid fa-expand click-hint"></i>
                     <div class="timeline-date">10 Δεκεμβρίου 2022</div>
                     <h3 class="timeline-title">8ο Μαθητικό Φεστιβάλ Ρομποτικής (ΜΦΡ)</h3>
-                    <div class="team-alias">Σχολικό Project</div>
+                    
+                    <div class="tags-container">
+                        <div class="team-alias">Σχολικό Project</div>
+                    </div>
+                    
                     <div class="award-badge">🌱 1ο Βραβείο Προσφοράς στο Περιβάλλον</div>
                     <div class="article-links">
                         <a href="https://kmaked.pde.sch.gr/2022/12/28/8mfr_apologismos/" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-newspaper"></i> Απολογισμός</a>
@@ -754,7 +816,12 @@
                     <i class="fa-solid fa-expand click-hint"></i>
                     <div class="timeline-date">1 Οκτωβρίου 2022</div>
                     <h3 class="timeline-title">Εθνικός Τελικός WRO 2022</h3>
-                    <div class="team-alias">Ομάδα: Kraftwerk 2048</div>
+                    
+                    <div class="tags-container">
+                        <div class="team-alias">Ομάδα: Kraftwerk 2048</div>
+                        <div class="competition-category">Κατηγορία: RoboMission Junior</div>
+                    </div>
+                    
                     <div class="award-badge">⚙️ 2ο Βραβείο Μηχανικής</div>
                     <div class="article-links">
                         <a href="https://gym-peir-uom.thess.sch.gr/to-sxoleio-mas/diakriseis/olympiada-rompotikis" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-award"></i> Διακρίσεις</a>
@@ -789,29 +856,47 @@
         </div>
     </footer>
 
+    <!-- ΤΟ ΑΝΑΔΥΟΜΕΝΟ ΠΑΡΑΘΥΡΟ (MODAL) -->
     <div id="eventModal" class="modal-overlay" onclick="closeModal(event)">
         <div class="modal-box" onclick="event.stopPropagation()">
             <span class="close-modal" onclick="closeModal(event)">&times;</span>
             <div id="modalDate" class="modal-date"></div>
             <h2 id="modalTitle" class="modal-title"></h2>
-            <div id="modalAlias" class="team-alias"></div>
+            
+            <div id="modalTags" class="tags-container" style="margin-bottom: 1rem;">
+                <div id="modalAlias" class="team-alias"></div>
+                <div id="modalCategory" class="competition-category"></div>
+            </div>
+            
             <div id="modalBadge" class="award-badge" style="color: var(--accent-yellow);"></div>
             <hr style="border: none; border-top: 1px solid #2a2a2a; margin: 1rem 0 1.5rem 0;">
             <div id="modalBody" class="modal-body"></div>
         </div>
     </div>
 
+    <!-- JAVASCRIPT ΓΙΑ ΤΟ ΠΑΡΑΘΥΡΟ -->
     <script>
         function openModal(cardElement) {
             const date = cardElement.querySelector('.timeline-date').innerText;
             const title = cardElement.querySelector('.timeline-title').innerText;
+            
             const alias = cardElement.querySelector('.team-alias').innerText;
+            const categoryElem = cardElement.querySelector('.competition-category');
+            
             const badge = cardElement.querySelector('.award-badge').innerText;
             const detailsHTML = cardElement.querySelector('.hidden-details').innerHTML;
 
             document.getElementById('modalDate').innerText = date;
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalAlias').innerText = alias;
+            
+            if (categoryElem) {
+                document.getElementById('modalCategory').innerText = categoryElem.innerText;
+                document.getElementById('modalCategory').style.display = 'inline-block';
+            } else {
+                document.getElementById('modalCategory').style.display = 'none';
+            }
+            
             document.getElementById('modalBadge').innerText = badge;
             document.getElementById('modalBody').innerHTML = detailsHTML;
 
