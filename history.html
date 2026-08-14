@@ -123,11 +123,12 @@
             color: var(--text-muted);
         }
 
+        /* STATS GRID */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .stat-card {
@@ -136,6 +137,11 @@
             border-radius: 12px;
             border: 1px solid #2a2a2a;
             text-align: center;
+            transition: 0.3s;
+        }
+        .stat-card:hover {
+            border-color: var(--accent-yellow);
+            transform: translateY(-3px);
         }
 
         .stat-number {
@@ -149,6 +155,64 @@
             font-size: 0.9rem;
         }
 
+        /* CATEGORY FILTERS */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            color: var(--text-muted);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--accent-yellow);
+            color: #000;
+            border-color: var(--accent-yellow);
+        }
+
+        /* FLOATING CTA FOR PUERTO RICO */
+        .floating-cta {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--accent-yellow);
+            color: #000;
+            padding: 0.9rem 1.5rem;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 20px rgba(255, 199, 0, 0.4);
+            z-index: 1500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-cta:hover {
+            transform: scale(1.05);
+            background-color: #fff;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 199, 0, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 199, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 199, 0, 0); }
+        }
+
+        /* TIMELINE */
         .timeline {
             position: relative;
             margin: 0 auto;
@@ -171,6 +235,7 @@
             position: relative;
             width: 50%;
             padding: 0 2rem;
+            transition: all 0.4s ease;
         }
 
         .timeline-item:nth-child(odd) {
@@ -232,6 +297,7 @@
             color: var(--accent-yellow);
         }
 
+        /* MODAL */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -304,13 +370,8 @@
             font-weight: 600;
         }
 
-        .team-alias {
-            color: var(--accent-yellow);
-        }
-
-        .competition-category {
-            color: var(--accent-blue);
-        }
+        .team-alias { color: var(--accent-yellow); }
+        .competition-category { color: var(--accent-blue); }
 
         .award-badge {
             color: #fff;
@@ -320,7 +381,6 @@
         }
 
         .modal-body { color: var(--text-light); line-height: 1.7; font-size: 1rem; }
-        
         .hidden-details { display: none; }
 
         .team-members-list {
@@ -332,10 +392,7 @@
             border-left: 3px solid var(--accent-yellow);
         }
         
-        .team-members-list span {
-            color: var(--accent-yellow);
-            font-weight: bold;
-        }
+        .team-members-list span { color: var(--accent-yellow); font-weight: bold; }
 
         .timeline-date {
             color: var(--accent-green);
@@ -357,13 +414,8 @@
             margin-top: 0.8rem;
         }
 
-        .timeline-item:nth-child(odd) .article-links {
-            justify-content: flex-end;
-        }
-
-        .timeline-item:nth-child(even) .article-links {
-            justify-content: flex-start;
-        }
+        .timeline-item:nth-child(odd) .article-links { justify-content: flex-end; }
+        .timeline-item:nth-child(even) .article-links { justify-content: flex-start; }
 
         .link-btn {
             font-size: 0.8rem;
@@ -391,6 +443,18 @@
             display: flex;
             gap: 0.5rem;
             flex-wrap: wrap;
+        }
+
+        /* PRESS QUOTE STYLE */
+        .press-quote {
+            background: rgba(56, 189, 248, 0.05);
+            border-left: 3px solid var(--accent-blue);
+            padding: 1rem;
+            margin: 1.2rem 0;
+            font-style: italic;
+            color: #e2e8f0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
         }
 
         .btn-back {
@@ -425,9 +489,7 @@
             transition: 0.3s;
         }
 
-        .social-link:hover {
-            color: var(--accent-green);
-        }
+        .social-link:hover { color: var(--accent-green); }
 
         .modal-images {
             display: flex;
@@ -456,6 +518,11 @@
     </style>
 </head>
 <body>
+
+    <!-- FLOATING CTA FOR PUERTO RICO -->
+    <a href="index.html#sponsors" class="floating-cta">
+        <span>🇵🇷</span> Στηρίξτε μας στο Πουέρτο Ρίκο!
+    </a>
 
     <header>
         <nav>
@@ -509,10 +576,18 @@
             </div>
         </div>
 
+        <!-- CATEGORY FILTERS -->
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterTimeline('all', this)">✨ Όλες οι Συμμετοχές</button>
+            <button class="filter-btn" onclick="filterTimeline('wro', this)">🤖 WRO (World Robot Olympiad)</button>
+            <button class="filter-btn" onclick="filterTimeline('stem', this)">🏆 Πανελλήνιος STEM</button>
+            <button class="filter-btn" onclick="filterTimeline('festival', this)">🎓 Φεστιβάλ & Συνέδρια</button>
+        </div>
+
         <div class="timeline">
 
             <!-- 11. Εθνικός Τελικός WRO 2026 -->
-            <div class="timeline-item">
+            <div class="timeline-item" data-category="wro">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content" onclick="openModal(this)">
                     <i class="fa-solid fa-expand click-hint"></i>
@@ -532,7 +607,6 @@
                     </div>
                     
                     <div class="hidden-details">
-                        <!-- ΦΩΤΟΓΡΑΦΙΕΣ WRO 2026 -->
                         <div class="modal-images">
                             <img src="images/history/WRO26NATIONAL1.png" alt="Η ομάδα MonkeyBusiness στον Εθνικό Τελικό WRO 2026">
                             <img src="images/history/WRO26NATIONAL2.png" alt="Δοκιμές και προετοιμασία στην πίστα του Εθνικού Τελικού WRO 2026">
@@ -542,6 +616,11 @@
                             <p><span>Προπονητής:</span> Φοίβος-Παναγιώτης Φιλιππίδης</p>
                             <p><span>Μαθητές:</span> Γεώργιος Τριανταφυλλίδης, Αθανάσιος Τριανταφυλλίδης, Χρήστος Κατσιαμάνης</p>
                         </div>
+
+                        <div class="press-quote">
+                            «Με ιστορική διαφορά βαθμών και εξαιρετική απόδοση στο Afternoon Challenge, η ομάδα MonkeyBusiness κατέκτησε την κορυφή της Ελλάδος.»
+                        </div>
+
                         <p>Ο τελικός φιλοξενήθηκε στις εγκαταστάσεις της Εκπαιδευτικής Αναγέννησης και αποτέλεσε ίσως τη μεγαλύτερη δοκιμασία αντοχής για την ομάδα μας. Έχοντας στη διάθεσή μας μόλις 2 μήνες μετά τον Πανελλήνιο Διαγωνισμό STEM, κληθήκαμε να προετοιμαστούμε για μια εντελώς νέα πίστα. Η πίεση ήταν ασφυκτική: ο προπονητής και δύο μέλη βρίσκονταν στη δίνη της θερινής πανεπιστημιακής εξεταστικής, ενώ το τέταρτο μέλος έδινε Πανελλήνιες εξετάσεις!</p>
                         <br>
                         <p>Παρά την κούραση και τον ελάχιστο ελεύθερο χρόνο, η στρατηγική μας απέδωσε στο έπακρο. Το αποκορύφωμα ήρθε στο απρόβλεπτο <strong>Afternoon Challenge</strong>, όπου διαπρέψαμε: το ρομπότ μας συγκέντρωσε <strong>140 πόντους σε μόλις 68 δευτερόλεπτα</strong>, τη στιγμή που η δεύτερη καλύτερη επίδοση ήταν στους 55 πόντους! Αυτή η επιβλητική διαφορά σφράγισε την πρωτιά και μας έδωσε το χρυσό εισιτήριο για το Πουέρτο Ρίκο.</p>
@@ -552,7 +631,7 @@
             </div>
 
             <!-- 10. Πανελλήνιος Διαγωνισμός STEM 2026 -->
-            <div class="timeline-item">
+            <div class="timeline-item" data-category="stem">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content" onclick="openModal(this)">
                     <i class="fa-solid fa-expand click-hint"></i>
@@ -585,7 +664,7 @@
             </div>
 
             <!-- 09. Παγκόσμιος Τελικός WRO 2024 -->
-            <div class="timeline-item">
+            <div class="timeline-item" data-category="wro">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content" onclick="openModal(this)">
                     <i class="fa-solid fa-expand click-hint"></i>
@@ -606,7 +685,6 @@
                     </div>
                     
                     <div class="hidden-details">
-                        <!-- ΦΩΤΟΓΡΑΦΙΕΣ ΣΜΥΡΝΗΣ -->
                         <div class="modal-images">
                             <img src="images/history/WRO24FINAL2.png" alt="Η ομάδα επικεντρωμένη στην πίστα">
                             <img src="images/history/WRO24FINAL1.png" alt="Τεράστια ανακούφιση και ένταση στην ολοκλήρωση της πίστας">
@@ -616,6 +694,11 @@
                             <p><span>Προπονητής:</span> Φοίβος-Παναγιώτης Φιλιππίδης</p>
                             <p><span>Μαθητές:</span> Ανδρέας Μανωλόπουλος, Σπύρος Μπάμπας, Γεώργιος Τριανταφυλλίδης</p>
                         </div>
+
+                        <div class="press-quote">
+                            «Οι ελληνικές ομάδες διέπρεψαν στον Παγκόσμιο Τελικό WRO στη Σμύρνη, αποδεικνύοντας το υψηλότατο επίπεδο δεξιοτήτων στη ρομποτική.»
+                        </div>
+
                         <p>Το ταξίδι μας στον Παγκόσμιο Τελικό της Σμύρνης αποτέλεσε την πρώτη μας διεθνή συμμετοχή. Το θέμα της χρονιάς («Earth Allies») απαιτούσε ρομποτικές λύσεις για την ανοικοδόμηση πόλεων μετά από φυσικές καταστροφές, καλώντας μας να διαχειριστούμε μια αντικειμενικά πολύπλοκη και απαιτητική πίστα.</p>
                         <br>
                         <p>Στον τελικό βρεθήκαμε αντιμέτωποι με 103 αντίπαλες ομάδες από κάθε γωνιά του πλανήτη. Γνωρίζαμε καλά ότι πολλές από αυτές αποτελούσαν παραδοσιακές δυνάμεις της εκπαιδευτικής ρομποτικής, με συνεχόμενες παρουσίες και εδραιωμένη δυναμική σε παγκόσμιους τελικούς στο παρελθόν. Αντί, όμως, να υποχωρήσουμε μπροστά στα φαβορί, η πρόκληση μας πείσμωσε. Καλύψαμε τη διαφορά εμπειρίας με αυστηρή προσήλωση και μεθοδικότητα, κοιτώντας τις κορυφαίες ομάδες στα μάτια. Το αποτέλεσμα μας δικαίωσε απόλυτα, κατακτώντας την <strong>4η θέση στην Ευρώπη</strong> και την <strong>25η παγκοσμίως</strong>, επιβεβαιώνοντας πως ο σωστός στρατηγικός σχεδιασμός μπορεί να ανατρέψει κάθε προγνωστικό.</p>
@@ -624,7 +707,7 @@
             </div>
 
             <!-- 08. Εθνικός Τελικός WRO 2024 -->
-            <div class="timeline-item">
+            <div class="timeline-item" data-category="wro">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content" onclick="openModal(this)">
                     <i class="fa-solid fa-expand click-hint"></i>
@@ -656,7 +739,7 @@
             </div>
 
             <!-- 07. 16ο Μαθητικό Συνέδριο Πληροφορικής -->
-            <div class="timeline-item">
+            <div class="timeline-item" data-category="festival">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content" onclick="openModal(this)">
                     <i class="fa-solid fa-expand click-hint"></i>
@@ -687,7 +770,7 @@
             </div>
 
             <!-- 06. Πανελλήνιος STEM 2024 -->
-            <div class="timeline-item">
+            <div class="timeline-item" data-category="stem">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content" onclick="openModal(this)">
                     <i class="fa-solid fa-expand click-hint"></i>
@@ -710,13 +793,13 @@
                         <br>
                         <p>Για τις «Χήρες», η πρόκληση ήταν μεγάλη. Ο Γιώργος, όντας πλέον μαθητής της Β' Λυκείου, έπρεπε να δώσει απόλυτη προτεραιότητα στην προετοιμασία για τις Πανελλήνιες εξετάσεις. Ως εκ τούτου, το βάρος έπεσε σχεδόν εξ ολοκλήρου στους ώμους του Θάνου, με τον Γιώργο να παρέχει στοχευμένη υποστήριξη στον μηχανολογικό σχεδιασμό. Την ημέρα του τελικού, ο Θάνος διαγωνίστηκε εντελώς μόνος του απέναντι σε πλήρεις ομάδες, επιδεικνύοντας τρομερή ψυχραιμία και κατακτώντας επάξια την 4η θέση πανελλαδικά!</p>
                         <br>
-                        <p>Την ίδια στιγμή, η έτερη ομάδα μας, οι «EarPhones», επιβεβαίωσε την εξαιρετική της φόρμα κατακτώντας την 1η θέση στην τελική κατάταξη της διοργάνωσης! Λίγο μετά από αυτή τη διπλή επιτυχία, έγινε και η εσωτερική "μεταγραφή" του Γιώργου στους EarPhones, όπου η εμπειρία του έπαιξε καθοριστικό ρόλο στην κατάκτηση της 1η θέσης και στον Εθνικό Τελικό WRO που ακολούθησε.</p>
+                        <p>Την ίδια στιγμή, η έτερη ομάδα μας, οι «EarPhones», επιβεβαίωσε την εξαιρετική της φόρμα κατακτώντας την 1η θέση στην τελική κατάταξη της διοργάνωσης! Λίγο μετά από αυτή τη διπλή επιτυχία, έγινε και η εσωτερική "μεταγραφή" του Γιώργου στους EarPhones, όπου η εμπειρία του έπαιξε καθοριστικό ρόλο στην κατάκτηση της 1ης θέσης και στον Εθνικό Τελικό WRO που ακολούθησε.</p>
                     </div>
                 </div>
             </div>
 
             <!-- 05. 9ο ΜΦΡ -->
-            <div class="timeline-item">
+            <div class="timeline-item" data-category="festival">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content" onclick="openModal(this)">
                     <i class="fa-solid fa-expand click-hint"></i>
@@ -744,7 +827,7 @@
             </div>
 
             <!-- 04. Εθνικός Τελικός WRO 2023 -->
-            <div class="timeline-item">
+            <div class="timeline-item" data-category="wro">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content" onclick="openModal(this)">
                     <i class="fa-solid fa-expand click-hint"></i>
@@ -768,7 +851,7 @@
             </div>
 
             <!-- 03. Πανελλήνιος STEM 2023 -->
-            <div class="timeline-item">
+            <div class="timeline-item" data-category="stem">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content" onclick="openModal(this)">
                     <i class="fa-solid fa-expand click-hint"></i>
@@ -797,7 +880,7 @@
             </div>
 
             <!-- 02. 8ο ΜΦΡ -->
-            <div class="timeline-item">
+            <div class="timeline-item" data-category="festival">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content" onclick="openModal(this)">
                     <i class="fa-solid fa-expand click-hint"></i>
@@ -815,7 +898,7 @@
                     <div class="hidden-details">
                         <div class="team-members-list">
                             <p><span>Προπονητής:</span> Φοίβος-Παναγιώτης Φιλιππίδης</p>
-                            <p><span>Μαθητές:</span> Άντα Κατσάνου, Γεώργιος Τριανταφυλλίδης, Αθανάσιος Τριανταφυλλίδης</p>
+                            <p><span>Μαθητές:</span> Άντα Κατσάνου, Αθανάσιος Τριανταφυλλίδης</p>
                         </div>
                         <p>Η συμμετοχή μας στο 8ο Μαθητικό Φεστιβάλ Ρομποτικής ανέδειξε την ευαισθητοποίηση της ομάδας μας απέναντι σε σύγχρονα περιβαλλοντικά ζητήματα. Τα παιδιά δεν διαγωνίστηκαν με ένα αυτόνομο, απομονωμένο ρομπότ, αλλά ανέλαβαν να σχεδιάσουν και να παρουσιάσουν ένα κρίσιμο μέρος ενός μεγαλύτερου, συλλογικού project.</p>
                         <br>
@@ -825,7 +908,7 @@
             </div>
 
             <!-- 01. Εθνικός Τελικός WRO 2022 -->
-            <div class="timeline-item">
+            <div class="timeline-item" data-category="wro">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content" onclick="openModal(this)">
                     <i class="fa-solid fa-expand click-hint"></i>
@@ -842,7 +925,6 @@
                         <a href="https://gym-peir-uom.thess.sch.gr/to-sxoleio-mas/diakriseis/olympiada-rompotikis" target="_blank" class="link-btn" onclick="event.stopPropagation()"><i class="fa-solid fa-award"></i> Διακρίσεις</a>
                     </div>
                     <div class="hidden-details">
-                        <!-- ΦΩΤΟΓΡΑΦΙΕΣ WRO 2022 -->
                         <div class="modal-images">
                             <img src="images/history/WRO22NATIONAL1.png" alt="Τα πρώτα βήματα και η προετοιμασία στον Εθνικό Τελικό WRO 2022">
                             <img src="images/history/WRO22NATIONAL2.png" alt="Η ομάδα με το ρομπότ και τα υλικά τους στον Εθνικό Τελικό WRO 2022">
@@ -877,7 +959,7 @@
         </div>
     </footer>
 
-    <!-- ΤΟ ΑΝΑΔΥΟΜΕΝΟ ΠΑΡΑΘΥΡΟ (MODAL) -->
+    <!-- MODAL -->
     <div id="eventModal" class="modal-overlay" onclick="closeModal(event)">
         <div class="modal-box" onclick="event.stopPropagation()">
             <span class="close-modal" onclick="closeModal(event)">&times;</span>
@@ -893,24 +975,33 @@
             <hr style="border: none; border-top: 1px solid #2a2a2a; margin: 1rem 0 1.5rem 0;">
             <div id="modalBody" class="modal-body"></div>
             
-            <!-- CONTAINER ΓΙΑ ΤΑ LINKS ΜΕΣΑ ΣΤΟ MODAL -->
             <div id="modalLinks" class="modal-links-container" style="display: none;"></div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT ΓΙΑ ΤΟ ΠΑΡΑΘΥΡΟ -->
+    <!-- JAVASCRIPT -->
     <script>
+        function filterTimeline(category, btnElement) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
         function openModal(cardElement) {
             const date = cardElement.querySelector('.timeline-date').innerText;
             const title = cardElement.querySelector('.timeline-title').innerText;
-            
             const alias = cardElement.querySelector('.team-alias').innerText;
             const categoryElem = cardElement.querySelector('.competition-category');
-            
             const badge = cardElement.querySelector('.award-badge').innerText;
             const detailsHTML = cardElement.querySelector('.hidden-details').innerHTML;
             
-            // Ανίχνευση και μεταφορά των links μέσα στο modal
             const articleLinksElem = cardElement.querySelector('.article-links');
             const modalLinksContainer = document.getElementById('modalLinks');
 
