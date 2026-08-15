@@ -123,7 +123,7 @@
             display: block;
         }
 
-        /* HERO SECTION - ΠΙΟ ΦΩΤΕΙΝΟ ΟVERLAY */
+        /* HERO SECTION ΜΕ ΤΗ ΝΕΑ ΦΩΤΟΓΡΑΦΙΑ ΩΣ ΦΟΝΤΟ */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -131,18 +131,19 @@
             justify-content: center;
             text-align: center;
             padding: 8rem 2rem 4rem;
-            /* Το overlay έγινε πιο διάφανο (0.1 έως 0.5) για να είναι φωτεινή η εικόνα */
-            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('images/TeamPhoto1.png') center/cover no-repeat;
+            /* Προσθήκη της φωτογραφίας με ένα κομψό σκούρο overlay για να διαβάζονται τα γράμματα */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(18, 18, 18, 0.9)), url('images/TeamPhoto1.png') center/cover no-repeat;
         }
 
         .hero-content {
             max-width: 800px;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.9); /* Εντονη σκιά στα γράμματα για να ξεχωρίζουν */
+            /* Μια μικρή σκιά στα γράμματα για να ξεχωρίζουν ακόμα περισσότερο από τη φωτογραφία */
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
         }
 
         .badge {
-            background-color: rgba(16, 185, 129, 0.4);
-            color: #fff;
+            background-color: rgba(16, 185, 129, 0.3);
+            color: var(--accent-green);
             padding: 0.5rem 1rem;
             border-radius: 20px;
             font-size: 0.9rem;
@@ -151,7 +152,6 @@
             margin-bottom: 1.5rem;
             border: 1px solid var(--accent-green);
             backdrop-filter: blur(4px);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
 
         .hero h1 {
@@ -168,7 +168,13 @@
             font-size: 1.2rem;
             color: #F3F4F6;
             margin-bottom: 2rem;
-            font-weight: 500;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -178,11 +184,13 @@
             cursor: pointer;
             transition: 0.3s;
             display: inline-block;
+            text-shadow: none; /* Αφαιρούμε τη σκιά από το κείμενο των κουμπιών */
         }
 
         .btn-primary {
             background-color: var(--accent-yellow);
             color: #000;
+            box-shadow: 0 4px 15px rgba(255, 199, 0, 0.3);
         }
 
         .btn-primary:hover {
@@ -193,7 +201,8 @@
         .btn-secondary {
             border: 2px solid var(--accent-green);
             color: var(--accent-green);
-            background: transparent;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
         }
 
         .btn-secondary:hover {
@@ -371,7 +380,6 @@
                 <span class="logo-text">Monkey Business</span>
             </a>
             <ul class="nav-links">
-                <!-- ΤΟ ΝΕΟ DROPDOWN ΜΕΝΟΥ (Με link προς την αρχική) -->
                 <li class="dropdown">
                     <a href="index.html" style="color: var(--accent-yellow); display: flex; align-items: center; gap: 5px; cursor: pointer;">
                         Αρχική Σελίδα <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
@@ -404,7 +412,10 @@
             <span class="badge">🏆 1η Θέση - WRO RoboMission Senior</span>
             <h1>Monkey Business <span>Robotics</span></h1>
             <p>Ετοιμαζόμαστε για τον Παγκόσμιο Τελικό Ρομποτικής στο Πουέρτο Ρίκο (Δεκέμβριος 2026). Υποστηρίξτε το ταξίδι μας!</p>
-            <!-- Τα κουμπιά αφαιρέθηκαν από εδώ -->
+            <div class="cta-buttons">
+                <a href="#sponsors" class="btn btn-primary">Γίνετε Χορηγός</a>
+                <a href="#store" class="btn btn-secondary">Αγοράστε Οδηγίες Lego</a>
+            </div>
         </div>
     </section>
 
