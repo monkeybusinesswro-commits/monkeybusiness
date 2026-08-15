@@ -84,6 +84,45 @@
             transition: 0.3s;
         }
 
+        /* DROPDOWN MENU STYLES */
+        .dropdown {
+            position: relative;
+            padding: 10px 0; /* Γέφυρα για να μην κλείνει όταν κατεβάζεις το ποντίκι */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--card-bg);
+            min-width: 170px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.6);
+            z-index: 2000;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            top: 100%;
+            left: 0;
+            list-style: none;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-content li a {
+            color: var(--text-light);
+            padding: 0.7rem 1.2rem;
+            display: block;
+            white-space: nowrap;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: rgba(255, 199, 0, 0.1);
+            color: var(--accent-yellow);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -531,10 +570,18 @@
                 <span class="logo-text">Monkey Business</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html#about">Σχετικά</a></li>
-                <li><a href="index.html#team">Η Ομάδα</a></li>
-                <li><a href="index.html#store">Lego MOCs</a></li>
-                <li><a href="index.html#sponsors">Χορηγοί</a></li>
+                <!-- ΤΟ ΝΕΟ DROPDOWN ΜΕΝΟΥ (Με link προς την αρχική) -->
+                <li class="dropdown">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                        Αρχική Σελίδα <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+                    </a>
+                    <ul class="dropdown-content">
+                        <li><a href="index.html#about">Σχετικά</a></li>
+                        <li><a href="index.html#team">Η Ομάδα</a></li>
+                        <li><a href="index.html#store">Lego MOCs</a></li>
+                        <li><a href="index.html#sponsors">Χορηγοί</a></li>
+                    </ul>
+                </li>
                 <li><a href="history.html" style="color: var(--accent-yellow);">Ιστορικό</a></li>
                 <li style="display: flex; gap: 1rem; align-items: center; margin-left: 1rem;">
                     <a href="https://linktr.ee/monkeybusiness_wro" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;" title="Linktree">
@@ -958,9 +1005,9 @@
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">Email: monkeybusinesswro@gmail.com</p>
         
         <div style="margin-top: 1.2rem; display: flex; justify-content: center; gap: 1.5rem;">
-            <a href="https://linktr.ee/monkeybusiness_wro" target="_blank" class="social-link" title="Linktree"><i class="fa-solid fa-link"></i></a>
-            <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@MonkeyBusinessGr" target="_blank" class="social-link" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://linktr.ee/monkeybusiness_wro" target="_blank" rel="noopener noreferrer" class="social-link" title="Linktree"><i class="fa-solid fa-link"></i></a>
+            <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@MonkeyBusinessGr" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
     </footer>
 
