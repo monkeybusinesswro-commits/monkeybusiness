@@ -26,6 +26,7 @@
             background-color: var(--bg-color);
             color: var(--text-light);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         a {
@@ -33,6 +34,7 @@
             color: inherit;
         }
 
+        /* HEADER & NAVIGATION */
         header {
             background-color: rgba(18, 18, 18, 0.95);
             position: fixed;
@@ -84,7 +86,6 @@
             transition: 0.3s;
         }
 
-        /* DROPDOWN MENU STYLES */
         .dropdown {
             position: relative;
             padding: 10px 0;
@@ -139,7 +140,6 @@
             text-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
         }
 
-        /* ΝΕΟ BADGE (ΧΡΥΣΟ & ΜΑΥΡΟ - ΤΟΠΟΘΕΤΗΜΕΝΟ ΚΑΤΩ) */
         .badge {
             background-color: rgba(0, 0, 0, 0.6);
             color: var(--accent-yellow);
@@ -148,7 +148,7 @@
             font-size: 0.95rem;
             font-weight: bold;
             display: inline-block;
-            margin-top: 1.5rem; /* Μπήκε margin από πάνω για να έχει απόσταση από το κείμενο */
+            margin-top: 1.5rem;
             border: 1px solid var(--accent-yellow);
             backdrop-filter: blur(5px);
             text-shadow: 0 2px 4px rgba(0,0,0,0.8);
@@ -169,7 +169,7 @@
         .hero p {
             font-size: 1.2rem;
             color: #F3F4F6;
-            margin-bottom: 0; /* Το μηδενίσαμε για να μην έχει περιττό κενό με το badge */
+            margin-bottom: 0;
             font-weight: 500;
         }
 
@@ -196,14 +196,23 @@
             border-radius: 2px;
         }
 
+        /* ΣΧΕΤΙΚΑ ΜΕ ΕΜΑΣ */
         .about-container {
             background-color: var(--card-bg);
-            padding: 2.5rem;
+            padding: 3.5rem 2.5rem;
             border-radius: 12px;
             border: 1px solid #2a2a2a;
             text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .about-container strong {
+            color: var(--accent-yellow);
         }
 
+        /* Η ΟΜΑΔΑ (CLICKABLE CARDS) */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -213,15 +222,37 @@
         .card {
             background-color: var(--card-bg);
             border-radius: 12px;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             border: 1px solid #2a2a2a;
             transition: 0.3s;
             text-align: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '\f067'; /* Συνεπάγεται εικονίδιο 'συν' */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            opacity: 0.5;
+            transition: 0.3s;
         }
 
         .card:hover {
             border-color: var(--accent-yellow);
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 199, 0, 0.15);
+        }
+
+        .card:hover::before {
+            color: var(--accent-yellow);
+            opacity: 1;
         }
 
         .team-img {
@@ -232,35 +263,192 @@
             margin: 0 auto 1.5rem auto;
             display: block;
             border: 3px solid var(--accent-yellow);
+            background-color: #2a2a2a; /* Fallback αν αργήσει η εικόνα */
         }
 
         .card h3 {
             margin-bottom: 0.5rem;
         }
 
-        .sponsors-box {
-            background-color: var(--card-bg);
-            padding: 3rem;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid #2a2a2a;
+        /* MODAL ΓΙΑ ΤΗΝ ΟΜΑΔΑ */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            opacity: 0;
+            animation: fadeIn 0.3s forwards;
+            backdrop-filter: blur(5px);
         }
 
-        .sponsor-btn-container {
+        .modal-box {
+            background-color: var(--card-bg);
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            border: 1px solid var(--accent-yellow);
+            padding: 2.5rem;
+            position: relative;
+            transform: translateY(20px);
+            animation: slideUp 0.3s forwards;
+            text-align: center;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .close-modal:hover {
+            color: var(--accent-yellow);
+        }
+
+        .modal-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-yellow);
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+        }
+
+        .modal-role {
+            color: var(--accent-yellow);
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-bio {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .modal-interests {
+            text-align: left;
+            background: #2a2a2a;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .modal-interests h4 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .modal-interests p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        @keyframes fadeIn { to { opacity: 1; } }
+        @keyframes slideUp { to { transform: translateY(0); } }
+
+        /* ΥΠΟΣΤΗΡΙΞΗ & ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ */
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .support-card {
+            background-color: var(--card-bg);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            border: 1px solid #2a2a2a;
+            text-align: center;
             display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .support-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .support-card h3 i {
+            color: var(--accent-yellow);
+            margin-right: 10px;
+        }
+
+        .support-card p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .contact-section {
+            background-color: #1a1a1a;
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
             gap: 1.5rem;
-            justify-content: center;
-            margin-top: 2rem;
-            flex-wrap: wrap;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .input-group label {
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .input-group input, .input-group textarea {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            padding: 1rem;
+            border-radius: 8px;
+            color: #fff;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-yellow);
+            background-color: #333;
         }
 
         .btn {
-            padding: 0.8rem 2rem;
+            padding: 1rem 2rem;
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
             transition: 0.3s;
             display: inline-block;
+            border: none;
+            font-size: 1rem;
         }
 
         .btn-primary {
@@ -288,10 +476,9 @@
         footer {
             background-color: #0a0a0a;
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
             border-top: 1px solid #2a2a2a;
             color: var(--text-muted);
-            margin-top: 4rem;
         }
 
         .social-link {
@@ -304,7 +491,6 @@
             color: var(--accent-green);
         }
 
-        /* FLOATING CTA FOR PUERTO RICO */
         .floating-cta {
             position: fixed;
             bottom: 25px;
@@ -337,6 +523,7 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .nav-links { display: none; }
+            .support-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -353,7 +540,6 @@
                 <span class="logo-text">Monkey Business</span>
             </a>
             <ul class="nav-links">
-                <!-- DROPDOWN ΧΩΡΙΣ ΤΑ MOCs -->
                 <li class="dropdown">
                     <a href="index.html" style="color: var(--accent-yellow); display: flex; align-items: center; gap: 5px; cursor: pointer;">
                         Αρχική Σελίδα <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
@@ -361,10 +547,9 @@
                     <ul class="dropdown-content">
                         <li><a href="#about">Σχετικά</a></li>
                         <li><a href="#team">Η Ομάδα</a></li>
-                        <li><a href="#sponsors">Χορηγοί</a></li>
+                        <li><a href="#sponsors">Υποστήριξη</a></li>
                     </ul>
                 </li>
-                <!-- ΝΕΟ ΚΟΥΜΠΙ ΓΙΑ ΤΑ MOCS -->
                 <li><a href="mocs.html">Lego MOCs</a></li>
                 <li><a href="history.html">Ιστορικό</a></li>
                 <li style="display: flex; gap: 1rem; align-items: center; margin-left: 1rem;">
@@ -390,54 +575,103 @@
         </div>
     </section>
 
+    <!-- ΕΜΠΛΟΥΤΙΣΜΕΝΟ ΣΧΕΤΙΚΑ ΜΕ ΕΜΑΣ -->
     <section id="about">
         <h2 class="section-title">Σχετικά με Εμάς</h2>
         <div class="about-container">
-            <p>Είμαστε η ομάδα ρομποτικής <strong>Monkey Business</strong>. Εκπροσωπούμε την Ελλάδα στην κατηγορία RoboMission Senior της WRO. Στόχος μας είναι η κορυφή στον Παγκόσμιο Τελικό στο Πουέρτο Ρίκο!</p>
+            <p>
+                Η <strong>Monkey Business</strong> δεν είναι απλώς μια ομάδα ρομποτικής. Είμαστε μια παρέα φοιτητών από τη Θεσσαλονίκη που μοιράζεται ένα κοινό, άσβεστο πάθος: την καινοτομία, τη μηχανική και την επίλυση πολύπλοκων προβλημάτων. Μέσα από χρόνια διαρκούς πειραματισμού, αμέτρητων ξενυχτιών πάνω από κώδικες, αλλά και σπουδαίων επιτυχιών, έχουμε καταφέρει να στεφθούμε <strong>δύο φορές Πρωταθλητές Ελλάδος</strong>.
+            </p>
+            <br>
+            <p>
+                Σήμερα, εκπροσωπούμε με υπερηφάνεια τη χώρα μας στην πιο απαιτητική κατηγορία του World Robot Olympiad (RoboMission Senior). Το βλέμμα μας είναι σταθερά προσηλωμένο στον επόμενο μεγάλο μας στόχο: να σταθούμε στην κορυφή του <strong>Παγκόσμιου Τελικού στο Πουέρτο Ρίκο</strong>! Παράλληλα με τον πρωταθλητισμό, πιστεύουμε ακράδαντα στη δύναμη του STEM και επιδιώκουμε μέσα από την πορεία μας να εμπνεύσουμε τη νέα γενιά να ανακαλύψει τη μαγεία της τεχνολογίας.
+            </p>
         </div>
     </section>
 
+    <!-- Η ΟΜΑΔΑ ΜΕ CLICKABLE ΚΑΡΤΕΣ -->
     <section id="team">
         <h2 class="section-title">Η Ομάδα μας</h2>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem;">Πατήστε πάνω σε κάθε μέλος για να δείτε το αναλυτικό του προφίλ.</p>
+        
         <div class="grid">
-            <div class="card">
+            <div class="card" onclick="openMember('foivos')">
                 <img src="images/Φοίβος.png" alt="Φοίβος" class="team-img">
                 <h3>Φοίβος-Παναγιώτης Φιλιππίδης</h3>
                 <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Προπονητής / Coach</p>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Φοιτητής Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών ΑΠΘ. Ένας από τους πιο ενεργούς προπονητές στη Βόρεια Ελλάδα, με καθοδήγηση 50+ ομάδων και παγκόσμιες διακρίσεις.</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="openMember('giorgos')">
                 <img src="images/Γιώργος.png" alt="Γιώργος" class="team-img">
                 <h3>Γεώργιος Τριανταφυλλίδης</h3>
                 <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Κατασκευαστής / Hardware</p>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Φοιτητής Μηχανολόγων Μηχανικών ΑΠΘ. Γνωστός για τα "out-of-the-box" σχέδιά του που δοκιμάζουν τα όρια των δυνατοτήτων των κατασκευών Lego.</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="openMember('thanos')">
                 <img src="images/Θάνος.png" alt="Θάνος" class="team-img">
                 <h3>Αθανάσιος Τριανταφυλλίδης</h3>
                 <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Προγραμματιστής / Software</p>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Φοιτητής Εφαρμοσμένης Πληροφορικής ΠΑΜΑΚ. Σχεδίασε έναν πρωτότυπο αλγόριθμο μαθηματικής βελτιστοποίησης που ξεκλείδωσε τον φετινό διαγωνισμό.</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="openMember('christos')">
                 <img src="images/Χρήστος.png" alt="Χρήστος" class="team-img">
                 <h3>Χρήστος Κατσιαμάνης</h3>
                 <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Σύνδεση Hardware & Software</p>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Φοιτητής Ιατρικής ΑΠΘ. Λειτουργεί ως ο συνδετικός κρίκος κώδικα και κατασκευής, διασφαλίζοντας την απόλυτη ισορροπία και σταθερότητα του ρομπότ.</p>
             </div>
         </div>
     </section>
 
+    <!-- ΝΕΑ ΕΝΟΤΗΤΑ ΥΠΟΣΤΗΡΙΞΗΣ & ΕΠΙΚΟΙΝΩΝΙΑΣ -->
     <section id="sponsors">
-        <h2 class="section-title">Υποστήριξη & Χορηγίες</h2>
-        <div class="sponsors-box">
-            <h3>Γίνετε συνεργάτης στο ταξίδι μας</h3>
-            <p style="color: var(--text-muted); margin-top: 1rem;">
-                Κατεβάστε το ενημερωτικό μας υλικό για να δείτε τα ανταποδοτικά οφέλη χορηγίας.
-            </p>
-            <div class="sponsor-btn-container">
-                <a href="https://drive.google.com/file/d/1QmoXx-4uDo63x6xJRmePUCUA-Gggmwdn/preview" target="_blank" rel="noopener noreferrer" class="btn btn-primary">📄 Ενημερωτικό Φυλλάδιο (PDF)</a>
-                <a href="https://drive.google.com/file/d/1MJS3PRTvV_GLZcWqLnWKzUhVMBp23Dnr/preview" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">📊 Αναλυτική Παρουσίαση (PDF)</a>
+        <h2 class="section-title">Στηρίξτε την Προσπάθεια</h2>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; max-width: 800px; margin-inline: auto;">
+            Το ταξίδι για το Πουέρτο Ρίκο απαιτεί πόρους. Μπορείτε να γίνετε κομμάτι της προσπάθειάς μας, είτε στηρίζοντάς μας ως επίσημοι χορηγοί, είτε αποκτώντας το αποκλειστικό μας εκπαιδευτικό υλικό!
+        </p>
+
+        <div class="support-grid">
+            <!-- ΕΠΙΛΟΓΗ 1: ΧΟΡΗΓΙΑ -->
+            <div class="support-card">
+                <div>
+                    <h3><i class="fa-solid fa-handshake"></i> Εταιρική Χορηγία</h3>
+                    <p>Συνδέστε το brand σας με την καινοτομία και τη νεανική επιχειρηματικότητα. Δείτε τα ανταποδοτικά οφέλη χορηγίας για την εκπροσώπηση της Ελλάδας στον Παγκόσμιο Τελικό.</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <a href="https://drive.google.com/file/d/1QmoXx-4uDo63x6xJRmePUCUA-Gggmwdn/preview" target="_blank" class="btn btn-primary">Φυλλάδιο (PDF)</a>
+                    <a href="https://drive.google.com/file/d/1MJS3PRTvV_GLZcWqLnWKzUhVMBp23Dnr/preview" target="_blank" class="btn btn-secondary">Παρουσίαση (PDF)</a>
+                </div>
             </div>
+
+            <!-- ΕΠΙΛΟΓΗ 2: LEGO MOCs -->
+            <div class="support-card" style="border-color: var(--accent-yellow);">
+                <div>
+                    <h3><i class="fa-solid fa-cubes"></i> Αγορά Lego MOCs</h3>
+                    <p>Ενισχύστε μας άμεσα και έμπρακτα, αποκτώντας τις αναλυτικές οδηγίες κατασκευής (Building Instructions) από τους πολυβραβευμένους, custom μηχανισμούς της ομάδας μας.</p>
+                </div>
+                <a href="mocs.html" class="btn btn-primary">Εξερευνήστε τα MOCs</a>
+            </div>
+        </div>
+
+        <!-- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ -->
+        <div class="contact-section">
+            <h3 style="text-align: center; color: #fff; margin-bottom: 2rem; font-size: 1.8rem;">Επικοινωνήστε Μαζί μας</h3>
+            <form class="contact-form" action="mailto:monkeybusinesswro@gmail.com" method="post" enctype="text/plain">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div class="input-group">
+                        <label for="name">Ονοματεπώνυμο / Εταιρεία</label>
+                        <input type="text" id="name" name="Name" required placeholder="π.χ. Γιάννης Παπαδόπουλος">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email Επικοινωνίας</label>
+                        <input type="email" id="email" name="Email" required placeholder="π.χ. example@domain.com">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="subject">Θέμα</label>
+                    <input type="text" id="subject" name="Subject" required placeholder="π.χ. Ενδιαφέρον για Χορηγία">
+                </div>
+                <div class="input-group">
+                    <label for="message">Μήνυμα</label>
+                    <textarea id="message" name="Message" rows="5" required placeholder="Πώς μπορούμε να συνεργαστούμε;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Αποστολή Μηνύματος</button>
+            </form>
         </div>
     </section>
 
@@ -457,6 +691,72 @@
             </a>
         </div>
     </footer>
+
+    <!-- MODAL ΓΙΑ ΤΑ ΜΕΛΗ ΤΗΣ ΟΜΑΔΑΣ -->
+    <div id="memberModal" class="modal-overlay" onclick="closeMember()">
+        <div class="modal-box" onclick="event.stopPropagation()">
+            <span class="close-modal" onclick="closeMember()">&times;</span>
+            <img id="m-img" src="" alt="Team Member" class="modal-img">
+            <h2 id="m-name" style="color: #fff; margin-bottom: 0.5rem;"></h2>
+            <div id="m-role" class="modal-role"></div>
+            
+            <p id="m-bio" class="modal-bio"></p>
+            
+            <div class="modal-interests">
+                <h4><i class="fa-solid fa-star" style="color: var(--accent-yellow); margin-right: 8px;"></i> Ενδιαφέροντα & Skills</h4>
+                <p id="m-interests"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT ΓΙΑ ΤΑ ΒΙΟΓΡΑΦΙΚΑ -->
+    <script>
+        const teamData = {
+            'foivos': {
+                name: "Φοίβος-Παναγιώτης Φιλιππίδης",
+                role: "Προπονητής / Coach",
+                img: "images/Φοίβος.png",
+                bio: "Ο Φοίβος είναι φοιτητής Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών στο Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης (ΑΠΘ). Αποτελεί την κατευθυντήρια δύναμη της ομάδας, έχοντας αναλάβει τον ρόλο του προπονητή και μέντορα. Διακρίνεται για τον άψογο στρατηγικό σχεδιασμό, την ικανότητα διαχείρισης πίεσης κατά τη διάρκεια των διαγωνισμών, και το όραμά του να ωθήσει τους μαθητές του να ξεπεράσουν τα όριά τους.",
+                interests: "Όταν δεν σχεδιάζει την επόμενη στρατηγική της WRO, ασχολείται ενεργά με το αγωνιστικό σκάκι και τη συμμετοχή σε μαθηματικούς διαγωνισμούς. Επίσης, έχει τεράστιο πάθος με το aquascaping (στήσιμο freshwater ενυδρείων) και το web development."
+            },
+            'giorgos': {
+                name: "Γεώργιος Τριανταφυλλίδης",
+                role: "Κατασκευαστής / Hardware",
+                img: "images/Γιώργος.png",
+                bio: "Ο Γιώργος είναι φοιτητής Μηχανολόγων Μηχανικών στο ΑΠΘ. Είναι ο άνθρωπος πίσω από τον φυσικό σχεδιασμό του ρομπότ. Με έντονη αντίληψη του χώρου και της φυσικής, φημίζεται για τα 'out-of-the-box' σχέδιά του, τα οποία καταφέρνουν να λύνουν πολύπλοκα μηχανικά προβλήματα χρησιμοποιώντας αποκλειστικά εξαρτήματα Lego, με τρόπους που εντυπωσιάζουν σταθερά τους κριτές.",
+                interests: "CAD Design (Σχεδιασμός σε υπολογιστή), 3D Printing, Μηχανική ακριβείας, και ανάλυση ροϊκών συστημάτων."
+            },
+            'thanos': {
+                name: "Αθανάσιος Τριανταφυλλίδης",
+                role: "Προγραμματιστής / Software",
+                img: "images/Θάνος.png",
+                bio: "Ο Θάνος είναι φοιτητής Εφαρμοσμένης Πληροφορικής στο Πανεπιστήμιο Μακεδονίας (ΠΑΜΑΚ). Αποτελεί τον εγκέφαλο πίσω από τον κώδικα του ρομπότ. Η ικανότητά του να μεταφράζει τις απαιτήσεις της πίστας σε άψογους, καθαρούς αλγορίθμους μαθηματικής βελτιστοποίησης είναι αυτό που έδωσε στην ομάδα την πρωτιά, πετυχαίνοντας χρόνους ρεκόρ.",
+                interests: "Ανάπτυξη Τεχνητής Νοημοσύνης (ΑΙ), Python, Αλγοριθμική επίλυση προβλημάτων, και ανάλυση δεδομένων."
+            },
+            'christos': {
+                name: "Χρήστος Κατσιαμάνης",
+                role: "Σύνδεση Hardware & Software",
+                img: "images/Χρήστος.png",
+                bio: "Ο Χρήστος είναι φοιτητής Ιατρικής στο ΑΠΘ, αποδεικνύοντας ότι η ρομποτική δεν γνωρίζει επιστημονικά όρια! Λειτουργεί ως ο κρίσιμος συνδετικός κρίκος ανάμεσα στο μηχανολογικό κομμάτι και τον κώδικα. Φροντίζει για το 'fine-tuning', διασφαλίζοντας την απόλυτη ισορροπία, την καλιμπράριση των αισθητήρων και τη σταθερότητα του ρομπότ σε συνθήκες αγώνα.",
+                interests: "Βιοϊατρική τεχνολογία, Neuroscience, Data analysis σε αισθητήρες ακριβείας, και διαχείριση κρίσεων."
+            }
+        };
+
+        function openMember(id) {
+            const data = teamData[id];
+            document.getElementById('m-img').src = data.img;
+            document.getElementById('m-name').innerText = data.name;
+            document.getElementById('m-role').innerText = data.role;
+            document.getElementById('m-bio').innerText = data.bio;
+            document.getElementById('m-interests').innerText = data.interests;
+            
+            document.getElementById('memberModal').style.display = 'flex';
+        }
+
+        function closeMember() {
+            document.getElementById('memberModal').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
