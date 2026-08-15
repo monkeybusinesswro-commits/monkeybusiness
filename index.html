@@ -362,7 +362,7 @@
         @keyframes fadeIn { to { opacity: 1; } }
         @keyframes slideUp { to { transform: translateY(0); } }
 
-        /* ΥΠΟΣΤΗΡΙΞΗ & ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ */
+        /* ΥΠΟΣΤΗΡΙΞΗ & ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ (ΜΕ ΤΟ ΝΕΟ HOVER EFFECT) */
         .support-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -379,6 +379,14 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: all 0.3s ease; /* Ομαλή κίνηση */
+        }
+
+        /* ΕΦΕ ΟΤΑΝ ΠΕΡΝΑΕΙ ΤΟ ΠΟΝΤΙΚΙ (ΓΙΝΟΝΤΑΙ ΜΕΓΑΛΥΤΕΡΕΣ ΚΑΙ ΠΙΟ ΕΝΤΟΝΕΣ) */
+        .support-card:hover {
+            border-color: var(--accent-yellow);
+            transform: translateY(-8px) scale(1.02); /* Μεγαλώνει ελαφρά και ανεβαίνει */
+            box-shadow: 0 10px 30px rgba(255, 199, 0, 0.2); /* Χρυσή σκιά */
         }
 
         .support-card h3 {
@@ -473,7 +481,6 @@
             transform: translateY(-2px);
         }
 
-        /* Status message styling */
         #form-result {
             margin-top: 1rem;
             text-align: center;
@@ -626,7 +633,7 @@
         </div>
     </section>
 
-    <!-- ΝΕΑ ΕΝΟΤΗΤΑ ΥΠΟΣΤΗΡΙΞΗΣ & ΕΠΙΚΟΙΝΩΝΙΑΣ -->
+    <!-- ΕΝΟΤΗΤΑ ΥΠΟΣΤΗΡΙΞΗΣ & ΕΠΙΚΟΙΝΩΝΙΑΣ -->
     <section id="sponsors">
         <h2 class="section-title">Στηρίξτε την Προσπάθεια</h2>
         <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; max-width: 800px; margin-inline: auto;">
@@ -656,18 +663,13 @@
             </div>
         </div>
 
-        <!-- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ΜΕ AJAX (ΧΩΡΙΣ ΚΑΜΙΑ ΠΡΟΕΙΔΟΠΟΙΗΣΗ BROWSER) -->
+        <!-- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ΜΕ AJAX -->
         <div class="contact-section">
             <h3 style="text-align: center; color: #fff; margin-bottom: 2rem; font-size: 1.8rem;">Επικοινωνήστε Μαζί μας</h3>
             <form class="contact-form" id="contact-form">
                 
-                <!-- Web3Forms Access Key -->
                 <input type="hidden" name="access_key" value="c22e2af7-d409-40f2-8daf-07d9a73021a7">
-                
-                <!-- Θέμα email -->
                 <input type="hidden" name="subject" value="Νέο Μήνυμα από Monkey Business Website!">
-
-                <!-- Honeypot -->
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
@@ -728,9 +730,8 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT ΓΙΑ ΒΙΟΓΡΑΦΙΚΑ ΚΑΙ AJAX SUBMISSION -->
+    <!-- JAVASCRIPT -->
     <script>
-        // AJAX Form Submission (Χωρίς προειδοποιήσεις browser)
         const form = document.getElementById('contact-form');
         const result = document.getElementById('form-result');
         const submitBtn = document.getElementById('submit-btn');
