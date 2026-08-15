@@ -139,7 +139,7 @@
             text-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
         }
 
-        /* ΝΕΟ BADGE (ΧΡΥΣΟ & ΜΑΥΡΟ) */
+        /* ΝΕΟ BADGE (ΧΡΥΣΟ & ΜΑΥΡΟ - ΤΟΠΟΘΕΤΗΜΕΝΟ ΚΑΤΩ) */
         .badge {
             background-color: rgba(0, 0, 0, 0.6);
             color: var(--accent-yellow);
@@ -148,7 +148,7 @@
             font-size: 0.95rem;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 1.5rem;
+            margin-top: 1.5rem; /* Μπήκε margin από πάνω για να έχει απόσταση από το κείμενο */
             border: 1px solid var(--accent-yellow);
             backdrop-filter: blur(5px);
             text-shadow: 0 2px 4px rgba(0,0,0,0.8);
@@ -169,7 +169,7 @@
         .hero p {
             font-size: 1.2rem;
             color: #F3F4F6;
-            margin-bottom: 2rem;
+            margin-bottom: 0; /* Το μηδενίσαμε για να μην έχει περιττό κενό με το badge */
             font-weight: 500;
         }
 
@@ -353,7 +353,7 @@
                 <span class="logo-text">Monkey Business</span>
             </a>
             <ul class="nav-links">
-                <!-- DROPDOWN ΧΩΡΙΣ ΤΑ MOCs ΠΛΕΟΝ -->
+                <!-- DROPDOWN ΧΩΡΙΣ ΤΑ MOCs -->
                 <li class="dropdown">
                     <a href="index.html" style="color: var(--accent-yellow); display: flex; align-items: center; gap: 5px; cursor: pointer;">
                         Αρχική Σελίδα <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
@@ -384,9 +384,9 @@
 
     <section class="hero">
         <div class="hero-content">
-            <span class="badge">🏆 1η Θέση - WRO RoboMission Senior</span>
             <h1>Monkey Business <span>Robotics</span></h1>
             <p>Ετοιμαζόμαστε για τον Παγκόσμιο Τελικό Ρομποτικής στο Πουέρτο Ρίκο (Δεκέμβριος 2026). Υποστηρίξτε το ταξίδι μας!</p>
+            <span class="badge">🏆 1η Θέση - WRO RoboMission Senior</span>
         </div>
     </section>
 
