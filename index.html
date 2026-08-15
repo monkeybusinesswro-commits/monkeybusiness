@@ -473,6 +473,14 @@
             transform: translateY(-2px);
         }
 
+        /* Status message styling */
+        #form-result {
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+
         footer {
             background-color: #0a0a0a;
             text-align: center;
@@ -584,7 +592,7 @@
             </p>
             <br>
             <p>
-                Σήμερα, εκπροσωπούμε με υπερηφάνεια τη χώρα μας στην πιο απαιτητική κατηγορία του World Robot Olympiad (RoboMission Senior). Το βλέμμα μας είναι σταθερά προσηλωμένο στον επόμενο μεγάλο μας στόχο: να σταθούμε στην κορυφή του <strong>Παγκόσμιου Τελικού στο Πουέρτο Ρίκο</strong>! Παράλληλα με τον πρωταθλητισμό, πιστεύουμε ακράδαντα στη δύναμη του STEM και επιδιώκουμε μέσα από την πορεία μας να εμπνεύσουμε τη νέα γενιά να ανακαλύψει τη μαγεία της τεχνολογίας.
+                Σήμερα, εκπροσωπούμε με υπερηφάνεια τη χώρα μας στην πιο απαιτητική κατηγορία του World Robot Olympiad (RoboMission Senior). Το βλέμμα μας είναι σταθερά προσηλωμένο στον επόμενο μεγάλο μας στόχο: να σταθούμε στην κορυφή του <strong>Παγκόσμιου Τελικού στο Πουέρτο Ρίκο</strong>! Παράλληλα με τον πρωταθλητισμό, πιστεύουμε ακράδαντα τη δύναμη του STEM και επιδιώκουμε μέσα από την πορεία μας να εμπνεύσουμε τη νέα γενιά να ανακαλύψει τη μαγεία της τεχνολογίας.
             </p>
         </div>
     </section>
@@ -648,15 +656,18 @@
             </div>
         </div>
 
-        <!-- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ΜΕ HTTPS SECURE WEB3FORMS -->
+        <!-- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ΜΕ AJAX (ΧΩΡΙΣ ΚΑΜΙΑ ΠΡΟΕΙΔΟΠΟΙΗΣΗ BROWSER) -->
         <div class="contact-section">
             <h3 style="text-align: center; color: #fff; margin-bottom: 2rem; font-size: 1.8rem;">Επικοινωνήστε Μαζί μας</h3>
-            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <form class="contact-form" id="contact-form">
                 
                 <!-- Web3Forms Access Key -->
                 <input type="hidden" name="access_key" value="c22e2af7-d409-40f2-8daf-07d9a73021a7">
                 
-                <!-- Honeypot: Κρυφό πεδίο για προστασία από spam bots -->
+                <!-- Θέμα email -->
+                <input type="hidden" name="subject" value="Νέο Μήνυμα από Monkey Business Website!">
+
+                <!-- Honeypot -->
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
@@ -670,14 +681,15 @@
                     </div>
                 </div>
                 <div class="input-group">
-                    <label for="subject">Θέμα</label>
-                    <input type="text" id="subject" name="Subject" required placeholder="π.χ. Ενδιαφέρον για Χορηγία">
+                    <label for="subject_input">Θέμα</label>
+                    <input type="text" id="subject_input" name="User_Subject" required placeholder="π.χ. Ενδιαφέρον για Χορηγία">
                 </div>
                 <div class="input-group">
                     <label for="message">Μήνυμα</label>
                     <textarea id="message" name="Message" rows="5" required placeholder="Πώς μπορούμε να συνεργαστούμε;"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Αποστολή Μηνύματος</button>
+                <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%; margin-top: 1rem;">Αποστολή Μηνύματος</button>
+                <div id="form-result"></div>
             </form>
         </div>
     </section>
@@ -716,8 +728,55 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT ΓΙΑ ΤΑ ΒΙΟΓΡΑΦΙΚΑ -->
+    <!-- JAVASCRIPT ΓΙΑ ΒΙΟΓΡΑΦΙΚΑ ΚΑΙ AJAX SUBMISSION -->
     <script>
+        // AJAX Form Submission (Χωρίς προειδοποιήσεις browser)
+        const form = document.getElementById('contact-form');
+        const result = document.getElementById('form-result');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Αποστολή...";
+            result.style.display = "block";
+            result.style.color = "var(--accent-yellow)";
+            result.innerText = "Παρακαλώ περιμένετε...";
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let jsonResponse = await response.json();
+                if (response.status == 200) {
+                    result.style.color = "var(--accent-green)";
+                    result.innerText = "Το μήνυμά σας στάλθηκε με επιτυχία! Σας ευχαριστούμε.";
+                    form.reset();
+                } else {
+                    result.style.color = "#ff4d4d";
+                    result.innerText = jsonResponse.message || "Κάτι πήγε στραβά, προσπαθήστε ξανά.";
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                result.style.color = "#ff4d4d";
+                result.innerText = "Σφάλμα σύνδεσης. Ελέγξτε το internet σας.";
+            })
+            .then(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Αποστολή Μηνύματος";
+            });
+        });
+
         const teamData = {
             'foivos': {
                 name: "Φοίβος-Παναγιώτης Φιλιππίδης",
