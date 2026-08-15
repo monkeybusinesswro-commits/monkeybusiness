@@ -123,7 +123,7 @@
             display: block;
         }
 
-        /* HERO SECTION ΜΕ ΤΗ ΝΕΑ ΦΩΤΟΓΡΑΦΙΑ ΩΣ ΦΟΝΤΟ */
+        /* HERO SECTION */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -131,27 +131,29 @@
             justify-content: center;
             text-align: center;
             padding: 8rem 2rem 4rem;
-            /* Προσθήκη της φωτογραφίας με ένα κομψό σκούρο overlay για να διαβάζονται τα γράμματα */
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(18, 18, 18, 0.9)), url('images/TeamPhoto1.png') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('images/TeamPhoto1.png') center/cover no-repeat;
         }
 
         .hero-content {
             max-width: 800px;
-            /* Μια μικρή σκιά στα γράμματα για να ξεχωρίζουν ακόμα περισσότερο από τη φωτογραφία */
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
         }
 
+        /* ΝΕΟ BADGE (ΧΡΥΣΟ & ΜΑΥΡΟ) */
         .badge {
-            background-color: rgba(16, 185, 129, 0.3);
-            color: var(--accent-green);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: var(--accent-yellow);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: bold;
             display: inline-block;
             margin-bottom: 1.5rem;
-            border: 1px solid var(--accent-green);
-            backdrop-filter: blur(4px);
+            border: 1px solid var(--accent-yellow);
+            backdrop-filter: blur(5px);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            box-shadow: 0 4px 15px rgba(255, 199, 0, 0.2);
+            letter-spacing: 0.5px;
         }
 
         .hero h1 {
@@ -168,47 +170,7 @@
             font-size: 1.2rem;
             color: #F3F4F6;
             margin-bottom: 2rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-            display: inline-block;
-            text-shadow: none; /* Αφαιρούμε τη σκιά από το κείμενο των κουμπιών */
-        }
-
-        .btn-primary {
-            background-color: var(--accent-yellow);
-            color: #000;
-            box-shadow: 0 4px 15px rgba(255, 199, 0, 0.3);
-        }
-
-        .btn-primary:hover {
-            background-color: #e6b300;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            border: 2px solid var(--accent-green);
-            color: var(--accent-green);
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--accent-green);
-            color: #000;
-            transform: translateY(-2px);
+            font-weight: 500;
         }
 
         section {
@@ -272,27 +234,8 @@
             border: 3px solid var(--accent-yellow);
         }
 
-        .card-img-placeholder {
-            width: 100%;
-            height: 180px;
-            background-color: #2a2a2a;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
         .card h3 {
             margin-bottom: 0.5rem;
-        }
-
-        .price {
-            color: var(--accent-yellow);
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin: 1rem 0;
         }
 
         .sponsors-box {
@@ -309,6 +252,37 @@
             justify-content: center;
             margin-top: 2rem;
             flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-yellow);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background-color: #e6b300;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--accent-green);
+            color: var(--accent-green);
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-green);
+            color: #000;
+            transform: translateY(-2px);
         }
 
         footer {
@@ -368,7 +342,6 @@
 </head>
 <body>
 
-    <!-- FLOATING CTA FOR PUERTO RICO -->
     <a href="#sponsors" class="floating-cta">
         <span>🇵🇷</span> Στηρίξτε μας στο Πουέρτο Ρίκο!
     </a>
@@ -380,6 +353,7 @@
                 <span class="logo-text">Monkey Business</span>
             </a>
             <ul class="nav-links">
+                <!-- DROPDOWN ΧΩΡΙΣ ΤΑ MOCs ΠΛΕΟΝ -->
                 <li class="dropdown">
                     <a href="index.html" style="color: var(--accent-yellow); display: flex; align-items: center; gap: 5px; cursor: pointer;">
                         Αρχική Σελίδα <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
@@ -387,10 +361,11 @@
                     <ul class="dropdown-content">
                         <li><a href="#about">Σχετικά</a></li>
                         <li><a href="#team">Η Ομάδα</a></li>
-                        <li><a href="#store">Lego MOCs</a></li>
                         <li><a href="#sponsors">Χορηγοί</a></li>
                     </ul>
                 </li>
+                <!-- ΝΕΟ ΚΟΥΜΠΙ ΓΙΑ ΤΑ MOCS -->
+                <li><a href="mocs.html">Lego MOCs</a></li>
                 <li><a href="history.html">Ιστορικό</a></li>
                 <li style="display: flex; gap: 1rem; align-items: center; margin-left: 1rem;">
                     <a href="https://linktr.ee/monkeybusiness_wro" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;" title="Linktree">
@@ -412,10 +387,6 @@
             <span class="badge">🏆 1η Θέση - WRO RoboMission Senior</span>
             <h1>Monkey Business <span>Robotics</span></h1>
             <p>Ετοιμαζόμαστε για τον Παγκόσμιο Τελικό Ρομποτικής στο Πουέρτο Ρίκο (Δεκέμβριος 2026). Υποστηρίξτε το ταξίδι μας!</p>
-            <div class="cta-buttons">
-                <a href="#sponsors" class="btn btn-primary">Γίνετε Χορηγός</a>
-                <a href="#store" class="btn btn-secondary">Αγοράστε Οδηγίες Lego</a>
-            </div>
         </div>
     </section>
 
@@ -452,39 +423,6 @@
                 <h3>Χρήστος Κατσιαμάνης</h3>
                 <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Σύνδεση Hardware & Software</p>
                 <p style="color: var(--text-muted); font-size: 0.9rem;">Φοιτητής Ιατρικής ΑΠΘ. Λειτουργεί ως ο συνδετικός κρίκος κώδικα και κατασκευής, διασφαλίζοντας την απόλυτη ισορροπία και σταθερότητα του ρομπότ.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="store">
-        <h2 class="section-title">Lego MOC Store</h2>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
-            Αγοράζοντας τις οδηγίες για τις Lego κατασκευές μας, ενισχύετε άμεσα την προσπάθειά μας για το Πουέρτο Ρίκο!
-        </p>
-        
-        <div class="grid">
-            <div class="card">
-                <div class="card-img-placeholder">Εικόνα MOC #1</div>
-                <h3>Robotics Gripper Mechanism</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">BUILDING INSTRUCTIONS</p>
-                <div class="price">€5.00</div>
-                <a href="#" class="btn btn-primary" style="display: block;">Σύντομα Διαθέσιμο</a>
-            </div>
-
-            <div class="card">
-                <div class="card-img-placeholder">Εικόνα MOC #2</div>
-                <h3>Self-Balancing Chassis</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">BUILDING INSTRUCTIONS</p>
-                <div class="price">€7.00</div>
-                <a href="#" class="btn btn-primary" style="display: block;">Σύντομα Διαθέσιμο</a>
-            </div>
-
-            <div class="card">
-                <div class="card-img-placeholder">Εικόνα MOC #3</div>
-                <h3>Custom LEGO Sorting Arm</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">BUILDING INSTRUCTIONS</p>
-                <div class="price">€10.00</div>
-                <a href="#" class="btn btn-primary" style="display: block;">Σύντομα Διαθέσιμο</a>
             </div>
         </div>
     </section>
