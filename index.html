@@ -87,7 +87,7 @@
         /* DROPDOWN MENU STYLES */
         .dropdown {
             position: relative;
-            padding: 10px 0; /* Γέφυρα για να μην κλείνει όταν κατεβάζεις το ποντίκι */
+            padding: 10px 0;
         }
 
         .dropdown-content {
@@ -123,6 +123,7 @@
             display: block;
         }
 
+        /* HERO SECTION ΜΕ ΤΗ ΝΕΑ ΦΩΤΟΓΡΑΦΙΑ ΩΣ ΦΟΝΤΟ */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -130,15 +131,18 @@
             justify-content: center;
             text-align: center;
             padding: 8rem 2rem 4rem;
-            background: radial-gradient(circle at center, #2a2a2a 0%, var(--bg-color) 70%);
+            /* Προσθήκη της φωτογραφίας με ένα κομψό σκούρο overlay για να διαβάζονται τα γράμματα */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(18, 18, 18, 0.9)), url('images/TeamPhoto1.png') center/cover no-repeat;
         }
 
         .hero-content {
             max-width: 800px;
+            /* Μια μικρή σκιά στα γράμματα για να ξεχωρίζουν ακόμα περισσότερο από τη φωτογραφία */
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
         }
 
         .badge {
-            background-color: rgba(16, 185, 129, 0.2);
+            background-color: rgba(16, 185, 129, 0.3);
             color: var(--accent-green);
             padding: 0.5rem 1rem;
             border-radius: 20px;
@@ -147,6 +151,7 @@
             display: inline-block;
             margin-bottom: 1.5rem;
             border: 1px solid var(--accent-green);
+            backdrop-filter: blur(4px);
         }
 
         .hero h1 {
@@ -161,7 +166,7 @@
 
         .hero p {
             font-size: 1.2rem;
-            color: var(--text-muted);
+            color: #F3F4F6;
             margin-bottom: 2rem;
         }
 
@@ -179,11 +184,13 @@
             cursor: pointer;
             transition: 0.3s;
             display: inline-block;
+            text-shadow: none; /* Αφαιρούμε τη σκιά από το κείμενο των κουμπιών */
         }
 
         .btn-primary {
             background-color: var(--accent-yellow);
             color: #000;
+            box-shadow: 0 4px 15px rgba(255, 199, 0, 0.3);
         }
 
         .btn-primary:hover {
@@ -194,7 +201,8 @@
         .btn-secondary {
             border: 2px solid var(--accent-green);
             color: var(--accent-green);
-            background: transparent;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
         }
 
         .btn-secondary:hover {
@@ -372,7 +380,6 @@
                 <span class="logo-text">Monkey Business</span>
             </a>
             <ul class="nav-links">
-                <!-- ΤΟ ΝΕΟ DROPDOWN ΜΕΝΟΥ (Με link προς την αρχική) -->
                 <li class="dropdown">
                     <a href="index.html" style="color: var(--accent-yellow); display: flex; align-items: center; gap: 5px; cursor: pointer;">
                         Αρχική Σελίδα <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
@@ -421,12 +428,6 @@
 
     <section id="team">
         <h2 class="section-title">Η Ομάδα μας</h2>
-        
-        <!-- Η ΝΕΑ ΦΩΤΟΓΡΑΦΙΑ ΣΟΥ ΕΔΩ (ΜΕ ΤΟ ΣΩΣΤΟ ΟΝΟΜΑ TeamPhoto1.png) -->
-        <div style="text-align: center; margin-bottom: 3rem;">
-            <img src="images/TeamPhoto1.png" alt="Η ομάδα Monkey Business στον Λευκό Πύργο" style="max-width: 100%; border-radius: 12px; border: 2px solid var(--accent-yellow); box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
-        </div>
-
         <div class="grid">
             <div class="card">
                 <img src="images/Φοίβος.png" alt="Φοίβος" class="team-img">
