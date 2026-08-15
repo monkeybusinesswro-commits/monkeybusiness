@@ -6,48 +6,290 @@
     <title>Monkey Business Robotics | WRO 2026</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        :root { --bg-color: #121212; --card-bg: #1e1e1e; --accent-yellow: #FFC700; --accent-green: #10B981; --text-light: #F3F4F6; --text-muted: #9CA3AF; }
-        body { background-color: var(--bg-color); color: var(--text-light); line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-        /* HEADER */
-        header { background-color: rgba(18, 18, 18, 0.95); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid #2a2a2a; }
-        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; }
-        .logo-container { display: flex; align-items: center; gap: 10px; }
-        .site-logo { height: 40px; width: auto; }
-        .logo-text { font-size: 1.4rem; font-weight: bold; color: var(--accent-yellow); text-transform: uppercase; }
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --accent-yellow: #FFC700;
+            --accent-green: #10B981;
+            --text-light: #F3F4F6;
+            --text-muted: #9CA3AF;
+        }
 
-        /* NAVIGATION & DROPDOWN */
-        .nav-links { display: flex; list-style: none; gap: 1.5rem; align-items: center; }
-        .dropdown { position: relative; padding: 10px 0; }
-        .dropdown-content { display: none; position: absolute; background-color: var(--card-bg); min-width: 170px; box-shadow: 0px 8px 20px rgba(0,0,0,0.6); z-index: 2000; border-radius: 8px; border: 1px solid #2a2a2a; top: 100%; left: 0; list-style: none; padding: 0.5rem 0; margin-top: 5px; }
-        .dropdown-content li a { color: var(--text-light); padding: 0.7rem 1.2rem; display: block; font-size: 0.95rem; }
-        .dropdown-content li a:hover { background-color: rgba(255, 199, 0, 0.1); color: var(--accent-yellow); }
-        .dropdown:hover .dropdown-content { display: block; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
 
-        /* HERO & CTA */
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; background: radial-gradient(circle at center, #2a2a2a 0%, var(--bg-color) 70%); }
-        .btn { padding: 0.8rem 2rem; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; display: inline-block; }
-        .btn-primary { background-color: var(--accent-yellow); color: #000; }
-        .btn-primary:hover { background-color: #fff; transform: translateY(-2px); }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .site-logo {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
         
-        .floating-cta { position: fixed; bottom: 25px; right: 25px; background-color: var(--accent-yellow); color: #000; padding: 0.9rem 1.5rem; border-radius: 30px; font-weight: bold; box-shadow: 0 4px 20px rgba(255, 199, 0, 0.4); z-index: 1500; display: flex; align-items: center; gap: 8px; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 199, 0, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(255, 199, 0, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 199, 0, 0); } }
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--accent-yellow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-        /* SECTIONS */
-        section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: #fff; }
-        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--accent-yellow); margin: 0.5rem auto 0; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .card { background-color: var(--card-bg); border-radius: 12px; padding: 2rem 1.5rem; border: 1px solid #2a2a2a; transition: 0.3s; text-align: center; }
-        .team-img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem auto; border: 3px solid var(--accent-yellow); }
-        .price { color: var(--accent-yellow); font-weight: bold; font-size: 1.2rem; margin: 1rem 0; }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-yellow);
+            transition: 0.3s;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: radial-gradient(circle at center, #2a2a2a 0%, var(--bg-color) 70%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .badge {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: var(--accent-green);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--accent-green);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .hero h1 span {
+            color: var(--accent-yellow);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-yellow);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background-color: #e6b300;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--accent-green);
+            color: var(--accent-green);
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-green);
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-yellow);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .about-container {
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid #2a2a2a;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            border: 1px solid #2a2a2a;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            border-color: var(--accent-yellow);
+            transform: translateY(-5px);
+        }
+
+        .team-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem auto;
+            display: block;
+            border: 3px solid var(--accent-yellow);
+        }
+
+        .card-img-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            color: var(--accent-yellow);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .sponsors-box {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #2a2a2a;
+        }
+
+        .sponsor-btn-container {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            background-color: #0a0a0a;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #2a2a2a;
+            color: var(--text-muted);
+            margin-top: 4rem;
+        }
+
+        .social-link {
+            color: var(--accent-yellow);
+            font-size: 1.8rem;
+            transition: 0.3s;
+        }
+
+        .social-link:hover {
+            color: var(--accent-green);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
-
-    <a href="#sponsors" class="floating-cta"><span>🇵🇷</span> Στηρίξτε μας στο Πουέρτο Ρίκο!</a>
 
     <header>
         <nav>
@@ -56,66 +298,138 @@
                 <span class="logo-text">Monkey Business</span>
             </a>
             <ul class="nav-links">
-                <li class="dropdown">
-                    <a href="index.html" style="color: var(--accent-yellow);">Αρχική Σελίδα <i class="fa-solid fa-chevron-down"></i></a>
-                    <ul class="dropdown-content">
-                        <li><a href="#about">Σχετικά</a></li>
-                        <li><a href="#team">Η Ομάδα</a></li>
-                        <li><a href="#store">Lego MOCs</a></li>
-                        <li><a href="#sponsors">Χορηγοί</a></li>
-                    </ul>
-                </li>
+                <li><a href="#about">Σχετικά</a></li>
+                <li><a href="#team">Η Ομάδα</a></li>
+                <li><a href="#store">Lego MOCs</a></li>
+                <li><a href="#sponsors">Χορηγοί</a></li>
                 <li><a href="history.html">Ιστορικό</a></li>
+                <li style="display: flex; gap: 1rem; align-items: center; margin-left: 1rem;">
+                    <a href="https://linktr.ee/monkeybusiness_wro" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;" title="Linktree">
+                        <i class="fa-solid fa-link"></i>
+                    </a>
+                    <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@MonkeyBusinessGr" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;" title="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
+            <span class="badge">🏆 1η Θέση - WRO RoboMission Senior</span>
             <h1>Monkey Business <span>Robotics</span></h1>
-            <p>2x Πρωταθλητές Ελλάδος. Επόμενος σταθμός: Ο Παγκόσμιος Τελικός WRO στο Πουέρτο Ρίκο.</p>
-            <a href="#sponsors" class="btn btn-primary">Γίνετε Χορηγός</a>
+            <p>Ετοιμαζόμαστε για τον Παγκόσμιο Τελικό Ρομποτικής στο Πουέρτο Ρίκο (Δεκέμβριος 2026). Υποστηρίξτε το ταξίδι μας!</p>
+            <div class="cta-buttons">
+                <a href="#sponsors" class="btn btn-primary">Γίνετε Χορηγός</a>
+                <a href="#store" class="btn btn-secondary">Αγοράστε Οδηγίες Lego</a>
+            </div>
         </div>
     </section>
 
     <section id="about">
         <h2 class="section-title">Σχετικά με Εμάς</h2>
-        <div style="background:var(--card-bg); padding:2rem; border-radius:12px; text-align:center;">
-            <p>Είμαστε η ομάδα ρομποτικής Monkey Business. Εκπροσωπούμε την Ελλάδα στην κατηγορία RoboMission Senior της WRO.</p>
+        <div class="about-container">
+            <p>Είμαστε η ομάδα ρομποτικής <strong>Monkey Business</strong>. Εκπροσωπούμε την Ελλάδα στην κατηγορία RoboMission Senior της WRO. Στόχος μας είναι η κορυφή στον Παγκόσμιο Τελικό στο Πουέρτο Ρίκο!</p>
         </div>
     </section>
 
     <section id="team">
         <h2 class="section-title">Η Ομάδα μας</h2>
         <div class="grid">
-            <!-- Η ΝΕΑ ΦΩΤΟΓΡΑΦΙΑ ΣΟΥ -->
-            <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 2rem;">
-                <img src="images/team-white-tower.jpg" alt="Η ομάδα στον Λευκό Πύργο" style="max-width: 100%; border-radius: 12px; border: 2px solid var(--accent-yellow);">
+            <div class="card">
+                <img src="images/Φοίβος.png" alt="Φοίβος" class="team-img">
+                <h3>Φοίβος-Παναγιώτης Φιλιππίδης</h3>
+                <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Προπονητής / Coach</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Φοιτητής Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών ΑΠΘ. Ένας από τους πιο ενεργούς προπονητές στη Βόρεια Ελλάδα, με καθοδήγηση 50+ ομάδων και παγκόσμιες διακρίσεις.</p>
             </div>
-            <!-- ΚΑΡΤΕΣ ΟΜΑΔΑΣ -->
-            <div class="card"><img src="images/Φοίβος.png" class="team-img"><h3>Φοίβος-Παναγιώτης Φιλιππίδης</h3><p>Προπονητής</p></div>
-            <div class="card"><img src="images/Γιώργος.png" class="team-img"><h3>Γεώργιος Τριανταφυλλίδης</h3><p>Hardware</p></div>
-            <div class="card"><img src="images/Θάνος.png" class="team-img"><h3>Αθανάσιος Τριανταφυλλίδης</h3><p>Software</p></div>
-            <div class="card"><img src="images/Χρήστος.png" class="team-img"><h3>Χρήστος Κατσιαμάνης</h3><p>Hardware/Software</p></div>
+            <div class="card">
+                <img src="images/Γιώργος.png" alt="Γιώργος" class="team-img">
+                <h3>Γεώργιος Τριανταφυλλίδης</h3>
+                <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Κατασκευαστής / Hardware</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Φοιτητής Μηχανολόγων Μηχανικών ΑΠΘ. Γνωστός για τα "out-of-the-box" σχέδιά του που δοκιμάζουν τα όρια των δυνατοτήτων των κατασκευών Lego.</p>
+            </div>
+            <div class="card">
+                <img src="images/Θάνος.png" alt="Θάνος" class="team-img">
+                <h3>Αθανάσιος Τριανταφυλλίδης</h3>
+                <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Προγραμματιστής / Software</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Φοιτητής Εφαρμοσμένης Πληροφορικής ΠΑΜΑΚ. Σχεδίασε έναν πρωτότυπο αλγόριθμο μαθηματικής βελτιστοποίησης που ξεκλείδωσε τον φετινό διαγωνισμό.</p>
+            </div>
+            <div class="card">
+                <img src="images/Χρήστος.png" alt="Χρήστος" class="team-img">
+                <h3>Χρήστος Κατσιαμάνης</h3>
+                <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Σύνδεση Hardware & Software</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Φοιτητής Ιατρικής ΑΠΘ. Λειτουργεί ως ο συνδετικός κρίκος κώδικα και κατασκευής, διασφαλίζοντας την απόλυτη ισορροπία και σταθερότητα του ρομπότ.</p>
+            </div>
         </div>
     </section>
 
     <section id="store">
         <h2 class="section-title">Lego MOC Store</h2>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
+            Αγοράζοντας τις οδηγίες για τις Lego κατασκευές μας, ενισχύετε άμεσα την προσπάθειά μας για το Πουέρτο Ρίκο!
+        </p>
+        
         <div class="grid">
-            <div class="card"><h3>Robotics Gripper</h3><div class="price">€5.00</div></div>
-            <div class="card"><h3>Self-Balancing Chassis</h3><div class="price">€7.00</div></div>
-            <div class="card"><h3>Custom Sorting Arm</h3><div class="price">€10.00</div></div>
+            <div class="card">
+                <div class="card-img-placeholder">Εικόνα MOC #1</div>
+                <h3>Robotics Gripper Mechanism</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">BUILDING INSTRUCTIONS</p>
+                <div class="price">€5.00</div>
+                <a href="#" class="btn btn-primary" style="display: block;">Σύντομα Διαθέσιμο</a>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">Εικόνα MOC #2</div>
+                <h3>Self-Balancing Chassis</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">BUILDING INSTRUCTIONS</p>
+                <div class="price">€7.00</div>
+                <a href="#" class="btn btn-primary" style="display: block;">Σύντομα Διαθέσιμο</a>
+            </div>
+
+            <div class="card">
+                <div class="card-img-placeholder">Εικόνα MOC #3</div>
+                <h3>Custom LEGO Sorting Arm</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">BUILDING INSTRUCTIONS</p>
+                <div class="price">€10.00</div>
+                <a href="#" class="btn btn-primary" style="display: block;">Σύντομα Διαθέσιμο</a>
+            </div>
         </div>
     </section>
 
     <section id="sponsors">
         <h2 class="section-title">Υποστήριξη & Χορηγίες</h2>
-        <div style="background:var(--card-bg); padding:3rem; text-align:center; border-radius:12px;">
-            <h3>Επόμενος Σταθμός: Πουέρτο Ρίκο 2026</h3>
-            <p>Αναζητούμε χορηγούς για να εκπροσωπήσουμε την Ελλάδα παγκοσμίως.</p>
+        <div class="sponsors-box">
+            <h3>Γίνετε συνεργάτης στο ταξίδι μας</h3>
+            <p style="color: var(--text-muted); margin-top: 1rem;">
+                Κατεβάστε το ενημερωτικό μας υλικό για να δείτε τα ανταποδοτικά οφέλη χορηγίας.
+            </p>
+            <div class="sponsor-btn-container">
+                <a href="https://drive.google.com/file/d/1QmoXx-4uDo63x6xJRmePUCUA-Gggmwdn/preview" target="_blank" rel="noopener noreferrer" class="btn btn-primary">📄 Ενημερωτικό Φυλλάδιο (PDF)</a>
+                <a href="https://drive.google.com/file/d/1MJS3PRTvV_GLZcWqLnWKzUhVMBp23Dnr/preview" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">📊 Αναλυτική Παρουσίαση (PDF)</a>
+            </div>
         </div>
     </section>
+
+    <footer id="contact">
+        <p>Monkey Business Robotics Team © 2026</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Email: monkeybusinesswro@gmail.com</p>
+        
+        <div style="margin-top: 1.2rem; display: flex; justify-content: center; gap: 1.5rem;">
+            <a href="https://linktr.ee/monkeybusiness_wro" target="_blank" rel="noopener noreferrer" class="social-link" title="Linktree">
+                <i class="fa-solid fa-link"></i>
+            </a>
+            <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@MonkeyBusinessGr" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+    </footer>
 
 </body>
 </html>
