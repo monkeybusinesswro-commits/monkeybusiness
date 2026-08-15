@@ -232,7 +232,7 @@
         }
 
         .card::before {
-            content: '\f067'; /* Συνεπάγεται εικονίδιο 'συν' */
+            content: '\f067';
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
             position: absolute;
@@ -263,7 +263,7 @@
             margin: 0 auto 1.5rem auto;
             display: block;
             border: 3px solid var(--accent-yellow);
-            background-color: #2a2a2a; /* Fallback αν αργήσει η εικόνα */
+            background-color: #2a2a2a;
         }
 
         .card h3 {
@@ -648,10 +648,17 @@
             </div>
         </div>
 
-        <!-- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ -->
+        <!-- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ΜΕ WEB3FORMS -->
         <div class="contact-section">
             <h3 style="text-align: center; color: #fff; margin-bottom: 2rem; font-size: 1.8rem;">Επικοινωνήστε Μαζί μας</h3>
-            <form class="contact-form" action="mailto:monkeybusinesswro@gmail.com" method="post" enctype="text/plain">
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                
+                <!-- Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="c22e2af7-d409-40f2-8daf-07d9a73021a7">
+                
+                <!-- Honeypot: Κρυφό πεδίο για προστασία από spam bots -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
                     <div class="input-group">
                         <label for="name">Ονοματεπώνυμο / Εταιρεία</label>
