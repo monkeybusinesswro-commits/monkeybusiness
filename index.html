@@ -322,6 +322,36 @@
             color: var(--accent-green);
         }
 
+        /* FLOATING CTA FOR PUERTO RICO */
+        .floating-cta {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--accent-yellow);
+            color: #000;
+            padding: 0.9rem 1.5rem;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 20px rgba(255, 199, 0, 0.4);
+            z-index: 1500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-cta:hover {
+            transform: scale(1.05);
+            background-color: #fff;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 199, 0, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 199, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 199, 0, 0); }
+        }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .nav-links { display: none; }
@@ -330,6 +360,11 @@
 </head>
 <body>
 
+    <!-- FLOATING CTA FOR PUERTO RICO -->
+    <a href="#sponsors" class="floating-cta">
+        <span>🇵🇷</span> Στηρίξτε μας στο Πουέρτο Ρίκο!
+    </a>
+
     <header>
         <nav>
             <a href="index.html" class="logo-container">
@@ -337,7 +372,7 @@
                 <span class="logo-text">Monkey Business</span>
             </a>
             <ul class="nav-links">
-                <!-- ΤΟ ΝΕΟ DROPDOWN ΜΕΝΟΥ -->
+                <!-- ΤΟ ΝΕΟ DROPDOWN ΜΕΝΟΥ (Με link προς την αρχική) -->
                 <li class="dropdown">
                     <a href="index.html" style="color: var(--accent-yellow); display: flex; align-items: center; gap: 5px; cursor: pointer;">
                         Αρχική Σελίδα <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
@@ -387,9 +422,9 @@
     <section id="team">
         <h2 class="section-title">Η Ομάδα μας</h2>
         
-        <!-- Η ΝΕΑ ΦΩΤΟΓΡΑΦΙΑ ΣΟΥ ΕΔΩ -->
+        <!-- Η ΝΕΑ ΦΩΤΟΓΡΑΦΙΑ ΣΟΥ ΕΔΩ (ΜΕ ΤΟ ΣΩΣΤΟ ΟΝΟΜΑ TeamPhoto1.png) -->
         <div style="text-align: center; margin-bottom: 3rem;">
-            <img src="images/team-white-tower.jpg" alt="Η ομάδα Monkey Business στον Λευκό Πύργο" style="max-width: 100%; border-radius: 12px; border: 2px solid var(--accent-yellow); box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+            <img src="images/TeamPhoto1.png" alt="Η ομάδα Monkey Business στον Λευκό Πύργο" style="max-width: 100%; border-radius: 12px; border: 2px solid var(--accent-yellow); box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
         </div>
 
         <div class="grid">
