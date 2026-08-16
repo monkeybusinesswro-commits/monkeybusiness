@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        :root { --bg-color: #121212; --card-bg: #1e1e1e; --accent-yellow: #FFC700; --accent-green: #10B981; --text-light: #F3F4F6; --text-muted: #9CA3AF; --patreon-red: #FF424D; }
+        :root { --bg-color: #121212; --card-bg: #1e1e1e; --accent-yellow: #FFC700; --accent-green: #10B981; --text-light: #F3F4F6; --text-muted: #9CA3AF; }
         body { background-color: var(--bg-color); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
 
@@ -35,7 +35,8 @@
         /* STORE SECTION */
         section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
         
-        .disclaimer-box { background-color: rgba(255, 66, 77, 0.05); border: 1px solid rgba(255, 66, 77, 0.3); border-left: 4px solid var(--patreon-red); padding: 1.5rem; border-radius: 8px; margin-bottom: 4rem; text-align: center; font-size: 1rem; color: var(--text-light); }
+        /* UPDATED DISCLAIMER (Κίτρινο αντί για Κόκκινο) */
+        .disclaimer-box { background-color: rgba(255, 199, 0, 0.05); border: 1px solid rgba(255, 199, 0, 0.3); border-left: 4px solid var(--accent-yellow); padding: 1.5rem; border-radius: 8px; margin-bottom: 4rem; text-align: center; font-size: 1rem; color: var(--text-light); }
         .disclaimer-box strong { color: var(--accent-yellow); }
 
         .store-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
@@ -53,12 +54,13 @@
         .moc-price { font-size: 1.5rem; font-weight: 900; color: var(--accent-green); margin-bottom: 1rem; }
         .moc-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.5; }
         
-        /* BUTTONS */
+        /* BUTTONS (Κίτρινο & Πράσινο Theme) */
         .free-btn { background-color: var(--accent-green); color: #000; padding: 0.9rem; text-align: center; border-radius: 8px; font-weight: bold; transition: 0.3s; display: flex; justify-content: center; align-items: center; gap: 8px; }
         .free-btn:hover { background-color: #0ea371; transform: translateY(-2px); }
         
-        .patreon-btn { background-color: var(--patreon-red); color: #fff; padding: 0.9rem; text-align: center; border-radius: 8px; font-weight: bold; transition: 0.3s; display: flex; justify-content: center; align-items: center; gap: 8px; }
-        .patreon-btn:hover { background-color: #e0323c; transform: translateY(-2px); }
+        /* Άλλαξα το patreon-btn σε κίτρινο primary button */
+        .patreon-btn { background-color: var(--accent-yellow); color: #000; padding: 0.9rem; text-align: center; border-radius: 8px; font-weight: bold; transition: 0.3s; display: flex; justify-content: center; align-items: center; gap: 8px; }
+        .patreon-btn:hover { background-color: #e6b300; transform: translateY(-2px); }
 
         /* FLOATING CTA */
         .floating-cta { position: fixed; bottom: 25px; right: 25px; background-color: var(--accent-yellow); color: #000; padding: 0.9rem 1.5rem; border-radius: 30px; font-weight: bold; z-index: 1500; display: flex; align-items: center; gap: 8px; transition: 0.3s; box-shadow: 0 4px 20px rgba(255, 199, 0, 0.4); animation: pulse 2s infinite; }
@@ -116,8 +118,8 @@
 
     <section>
         <div class="disclaimer-box">
-            <i class="fa-brands fa-patreon" style="font-size: 1.5rem; color: var(--patreon-red); margin-bottom: 10px; display: block;"></i>
-            Αποκτώντας τις επί πληρωμή οδηγίες μας μέσω του Patreon, <strong>χρηματοδοτείτε άμεσα</strong> τη συμμετοχή της Εθνικής Ομάδας στον Παγκόσμιο Τελικό WRO 2026 στο Πουέρτο Ρίκο. Σας ευχαριστούμε για την πολύτιμη υποστήριξη!
+            <i class="fa-solid fa-medal" style="font-size: 1.5rem; color: var(--accent-yellow); margin-bottom: 10px; display: block;"></i>
+            Αποκτώντας τις επί πληρωμή οδηγίες μας, <strong>χρηματοδοτείτε άμεσα</strong> τη συμμετοχή της Εθνικής Ομάδας στον Παγκόσμιο Τελικό WRO 2026 στο Πουέρτο Ρίκο. Σας ευχαριστούμε για την πολύτιμη υποστήριξη!
         </div>
 
         <div class="store-grid">
@@ -133,36 +135,32 @@
                     <p class="moc-desc">
                         Μια εξαιρετικά σταθερή βάση οδήγησης με ενσωματωμένο μηχανισμό ανύψωσης και αρπαγής. Ιδανικό σημείο εκκίνησης για να αντιληφθείτε τη σχεδιαστική φιλοσοφία της Monkey Business. Κατεβάστε το δωρεάν!
                     </p>
-                    <!-- Βάλε το link για το δωρεάν PDF στο href -->
                     <a href="#" class="free-btn">
                         <i class="fa-solid fa-download"></i> Δωρεάν Λήψη
                     </a>
                 </div>
             </div>
 
-            <!-- MOC 2: ΠΑΡΑΔΕΙΓΜΑ ΕΠΙ ΠΛΗΡΩΜΗ PATREON -->
+            <!-- MOC 2: ΕΠΙ ΠΛΗΡΩΜΗ (ΟΝΟΜΑ ΠΟΥ ΖΗΤΗΣΕΣ) -->
             <div class="moc-card">
                 <div class="moc-image-container">
-                    <!-- Βάλε την εικόνα του MOC 2 εδώ (π.χ. images/mocs/example2.png) -->
-                    <img src="https://via.placeholder.com/400x300/ffffff/cccccc?text=MOC+2+Image" alt="Advanced Sorting Arm" class="moc-image">
+                    <img src="https://via.placeholder.com/400x300/ffffff/cccccc?text=MOC+2+Image" alt="RoboMission Senior Robot Design" class="moc-image">
                 </div>
                 <div class="moc-content">
-                    <h3 class="moc-title">Advanced Sorting Arm (Παράδειγμα)</h3>
+                    <h3 class="moc-title">RoboMission Senior Robot Design</h3>
                     <div class="moc-price">10.00 €</div>
                     <p class="moc-desc">
-                        Σύνθετος μηχανισμός διαλογής αντικειμένων, ειδικά βελτιστοποιημένος για ελαχιστοποίηση τριβών και μέγιστη ακρίβεια σε συνθήκες RoboMission Senior.
+                        Ολοκληρωμένος και βελτιστοποιημένος σχεδιασμός, ικανός να αντεπεξέλθει στις πιο απαιτητικές συνθήκες της κατηγορίας RoboMission Senior με μέγιστη ακρίβεια.
                     </p>
-                    <!-- Βάλε το Link του Patreon Shop εδώ -->
                     <a href="#" target="_blank" rel="noopener noreferrer" class="patreon-btn">
-                        <i class="fa-brands fa-patreon"></i> Απόκτηση στο Patreon
+                        Απόκτηση Οδηγιών <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- MOC 3: ΠΑΡΑΔΕΙΓΜΑ ΕΠΙ ΠΛΗΡΩΜΗ PATREON -->
+            <!-- MOC 3: ΕΠΙ ΠΛΗΡΩΜΗ (ΠΑΡΑΔΕΙΓΜΑ) -->
             <div class="moc-card">
                 <div class="moc-image-container">
-                    <!-- Βάλε την εικόνα του MOC 3 εδώ (π.χ. images/mocs/example3.png) -->
                     <img src="https://via.placeholder.com/400x300/ffffff/cccccc?text=MOC+3+Image" alt="Self-Balancing Chassis" class="moc-image">
                 </div>
                 <div class="moc-content">
@@ -171,9 +169,8 @@
                     <p class="moc-desc">
                         Η απόλυτη λύση για πλοήγηση σε ανώμαλα εδάφη. Ο σχεδιασμός επιτρέπει την τέλεια κατανομή βάρους και απόλυτο έλεγχο στους άξονες του ρομπότ.
                     </p>
-                    <!-- Βάλε το Link του Patreon Shop εδώ -->
                     <a href="#" target="_blank" rel="noopener noreferrer" class="patreon-btn">
-                        <i class="fa-brands fa-patreon"></i> Απόκτηση στο Patreon
+                        Απόκτηση Οδηγιών <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
