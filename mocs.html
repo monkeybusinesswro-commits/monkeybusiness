@@ -52,15 +52,18 @@
         .moc-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
         .moc-title { font-size: 1.3rem; color: #fff; margin-bottom: 0.5rem; font-weight: bold; }
         .moc-price { font-size: 1.5rem; font-weight: 900; color: var(--accent-green); margin-bottom: 1rem; }
+        .moc-price.coming-soon { color: var(--text-muted); font-size: 1.2rem; }
         .moc-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.5; }
         
-        /* BUTTONS (Κίτρινο & Πράσινο Theme) */
+        /* BUTTONS */
         .free-btn { background-color: var(--accent-green); color: #000; padding: 0.9rem; text-align: center; border-radius: 8px; font-weight: bold; transition: 0.3s; display: flex; justify-content: center; align-items: center; gap: 8px; }
         .free-btn:hover { background-color: #0ea371; transform: translateY(-2px); }
         
-        /* Άλλαξα το patreon-btn σε κίτρινο primary button */
         .patreon-btn { background-color: var(--accent-yellow); color: #000; padding: 0.9rem; text-align: center; border-radius: 8px; font-weight: bold; transition: 0.3s; display: flex; justify-content: center; align-items: center; gap: 8px; }
         .patreon-btn:hover { background-color: #e6b300; transform: translateY(-2px); }
+        
+        /* Κουμπί για τα ανενεργά (Coming Soon) MOCs */
+        .disabled-btn { background-color: #333; color: #777; padding: 0.9rem; text-align: center; border-radius: 8px; font-weight: bold; display: flex; justify-content: center; align-items: center; gap: 8px; cursor: not-allowed; }
 
         /* FLOATING CTA */
         .floating-cta { position: fixed; bottom: 25px; right: 25px; background-color: var(--accent-yellow); color: #000; padding: 0.9rem 1.5rem; border-radius: 30px; font-weight: bold; z-index: 1500; display: flex; align-items: center; gap: 8px; transition: 0.3s; box-shadow: 0 4px 20px rgba(255, 199, 0, 0.4); animation: pulse 2s infinite; }
@@ -141,36 +144,36 @@
                 </div>
             </div>
 
-            <!-- MOC 2: ΕΠΙ ΠΛΗΡΩΜΗ (ΟΝΟΜΑ ΠΟΥ ΖΗΤΗΣΕΣ) -->
+            <!-- MOC 2: ΣΥΝΤΟΜΑ ΔΙΑΘΕΣΙΜΟ -->
             <div class="moc-card">
                 <div class="moc-image-container">
                     <img src="https://via.placeholder.com/400x300/ffffff/cccccc?text=MOC+2+Image" alt="RoboMission Senior Robot Design" class="moc-image">
                 </div>
                 <div class="moc-content">
                     <h3 class="moc-title">RoboMission Senior Robot Design</h3>
-                    <div class="moc-price">10.00 €</div>
+                    <div class="moc-price coming-soon">Τιμή υπό διαμόρφωση</div>
                     <p class="moc-desc">
-                        Ολοκληρωμένος και βελτιστοποιημένος σχεδιασμός, ικανός να αντεπεξέλθει στις πιο απαιτητικές συνθήκες της κατηγορίας RoboMission Senior με μέγιστη ακρίβεια.
+                        Ολοκληρωμένος και βελτιστοποιημένος σχεδιασμός, ικανός να αντεπεξέλθει στις πιο απαιτητικές συνθήκες της κατηγορίας RoboMission Senior. Το σχέδιο βρίσκεται σε τελική φάση δοκιμών και βελτιώσεων. 
                     </p>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="patreon-btn">
-                        Απόκτηση Οδηγιών <i class="fa-solid fa-arrow-right"></i>
+                    <a href="#" class="disabled-btn" onclick="event.preventDefault();">
+                        <i class="fa-solid fa-clock"></i> Σύντομα Διαθέσιμο
                     </a>
                 </div>
             </div>
 
-            <!-- MOC 3: ΕΠΙ ΠΛΗΡΩΜΗ (ΠΑΡΑΔΕΙΓΜΑ) -->
+            <!-- MOC 3: ΣΥΝΤΟΜΑ ΔΙΑΘΕΣΙΜΟ -->
             <div class="moc-card">
                 <div class="moc-image-container">
                     <img src="https://via.placeholder.com/400x300/ffffff/cccccc?text=MOC+3+Image" alt="Self-Balancing Chassis" class="moc-image">
                 </div>
                 <div class="moc-content">
                     <h3 class="moc-title">Self-Balancing Chassis (Παράδειγμα)</h3>
-                    <div class="moc-price">15.00 €</div>
+                    <div class="moc-price coming-soon">Τιμή υπό διαμόρφωση</div>
                     <p class="moc-desc">
-                        Η απόλυτη λύση για πλοήγηση σε ανώμαλα εδάφη. Ο σχεδιασμός επιτρέπει την τέλεια κατανομή βάρους και απόλυτο έλεγχο στους άξονες του ρομπότ.
+                        Η απόλυτη λύση για πλοήγηση σε ανώμαλα εδάφη. Οι οδηγίες κατασκευής δημιουργούνται αυτή τη στιγμή και θα είναι σύντομα διαθέσιμες για το κοινό.
                     </p>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="patreon-btn">
-                        Απόκτηση Οδηγιών <i class="fa-solid fa-arrow-right"></i>
+                    <a href="#" class="disabled-btn" onclick="event.preventDefault();">
+                        <i class="fa-solid fa-clock"></i> Σύντομα Διαθέσιμο
                     </a>
                 </div>
             </div>
