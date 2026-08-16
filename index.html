@@ -1,559 +1,90 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TH73SJJYVT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TH73SJJYVT');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monkey Business Robotics | WRO 2026</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        :root { --bg-color: #121212; --card-bg: #1e1e1e; --accent-yellow: #FFC700; --accent-green: #10B981; --text-light: #F3F4F6; --text-muted: #9CA3AF; }
+        body { background-color: var(--bg-color); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
 
-        :root {
-            --bg-color: #121212;
-            --card-bg: #1e1e1e;
-            --accent-yellow: #FFC700;
-            --accent-green: #10B981;
-            --text-light: #F3F4F6;
-            --text-muted: #9CA3AF;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* HEADER & NAVIGATION */
-        header {
-            background-color: rgba(18, 18, 18, 0.95);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid #2a2a2a;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 2rem;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .site-logo {
-            height: 40px;
-            width: auto;
-            display: block;
-        }
+        header { background-color: rgba(18, 18, 18, 0.95); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid #2a2a2a; }
+        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; }
+        .logo-container { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .site-logo { height: 40px; width: auto; display: block; }
+        .logo-text { font-size: 1.4rem; font-weight: bold; color: var(--accent-yellow); text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links { display: flex; list-style: none; gap: 1.5rem; align-items: center; }
         
-        .logo-text {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--accent-yellow);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .dropdown { position: relative; padding: 10px 0; }
+        .dropdown-content { display: none; position: absolute; background-color: var(--card-bg); min-width: 170px; box-shadow: 0px 8px 20px rgba(0,0,0,0.6); z-index: 2000; border-radius: 8px; border: 1px solid #2a2a2a; top: 100%; left: 0; list-style: none; padding: 0.5rem 0; }
+        .dropdown-content li a { color: var(--text-light); padding: 0.7rem 1.2rem; display: block; white-space: nowrap; font-size: 0.95rem; transition: 0.2s; }
+        .dropdown-content li a:hover { background-color: rgba(255, 199, 0, 0.1); color: var(--accent-yellow); }
+        .dropdown:hover .dropdown-content { display: block; }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-            align-items: center;
-        }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('images/TeamPhoto1.png') center/cover no-repeat; }
+        .hero-content { max-width: 800px; text-shadow: 0 4px 10px rgba(0, 0, 0, 0.9); }
+        .badge { background-color: rgba(0, 0, 0, 0.6); color: var(--accent-yellow); padding: 0.6rem 1.2rem; border-radius: 30px; font-size: 0.95rem; font-weight: bold; display: inline-block; margin-top: 1.5rem; border: 1px solid var(--accent-yellow); }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; color: #ffffff; }
+        .hero h1 span { color: var(--accent-yellow); }
 
-        .nav-links a:hover {
-            color: var(--accent-yellow);
-            transition: 0.3s;
-        }
+        section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--accent-yellow); margin: 0.5rem auto 0; border-radius: 2px; }
 
-        /* DROPDOWN MENU */
-        .dropdown {
-            position: relative;
-            padding: 10px 0;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--card-bg);
-            min-width: 170px;
-            box-shadow: 0px 8px 20px rgba(0,0,0,0.6);
-            z-index: 2000;
-            border-radius: 8px;
-            border: 1px solid #2a2a2a;
-            top: 100%;
-            left: 0;
-            list-style: none;
-            padding: 0.5rem 0;
-        }
-
-        .dropdown-content li a {
-            color: var(--text-light);
-            padding: 0.7rem 1.2rem;
-            display: block;
-            white-space: nowrap;
-            font-size: 0.95rem;
-            transition: 0.2s;
-        }
-
-        .dropdown-content li a:hover {
-            background-color: rgba(255, 199, 0, 0.1);
-            color: var(--accent-yellow);
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 8rem 2rem 4rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('images/TeamPhoto1.png') center/cover no-repeat;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
-        }
-
-        .badge {
-            background-color: rgba(0, 0, 0, 0.6);
-            color: var(--accent-yellow);
-            padding: 0.6rem 1.2rem;
-            border-radius: 30px;
-            font-size: 0.95rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 1.5rem;
-            border: 1px solid var(--accent-yellow);
-            backdrop-filter: blur(5px);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-            box-shadow: 0 4px 15px rgba(255, 199, 0, 0.2);
-            letter-spacing: 0.5px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-
-        .hero h1 span {
-            color: var(--accent-yellow);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #F3F4F6;
-            margin-bottom: 0;
-            font-weight: 500;
-        }
-
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent-yellow);
-            margin: 0.5rem auto 0;
-            border-radius: 2px;
-        }
-
-        /* ΣΧΕΤΙΚΑ ΜΕ ΕΜΑΣ */
-        .about-container {
-            background-color: var(--card-bg);
-            padding: 3.5rem 2.5rem;
-            border-radius: 12px;
-            border: 1px solid #2a2a2a;
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
+        .about-container { background-color: var(--card-bg); padding: 3.5rem 2.5rem; border-radius: 12px; border: 1px solid #2a2a2a; text-align: center; font-size: 1.1rem; line-height: 1.8; }
         
-        .about-container strong {
-            color: var(--accent-yellow);
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .card { background-color: var(--card-bg); border-radius: 12px; padding: 2.5rem 1.5rem; border: 1px solid #2a2a2a; transition: 0.3s; text-align: center; cursor: pointer; }
+        .card:hover { border-color: var(--accent-yellow); transform: translateY(-5px); box-shadow: 0 8px 25px rgba(255, 199, 0, 0.15); }
+        .team-img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem auto; border: 3px solid var(--accent-yellow); }
 
-        /* Η ΟΜΑΔΑ (CLICKABLE CARDS) */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
+        .support-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+        .support-card { background-color: var(--card-bg); padding: 3rem 2rem; border-radius: 12px; border: 1px solid #2a2a2a; transition: all 0.3s ease; text-align: center; display: flex; flex-direction: column; justify-content: space-between;}
+        .support-card:hover { border-color: var(--accent-yellow); transform: translateY(-8px) scale(1.02); box-shadow: 0 10px 30px rgba(255, 199, 0, 0.2); }
+        .support-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #fff; }
+        .support-card h3 i { color: var(--accent-yellow); margin-right: 10px; }
+        
+        .contact-section { background-color: #1a1a1a; padding: 3rem; border-radius: 12px; border: 1px solid #333; max-width: 800px; margin: 0 auto; }
+        .input-group { display: flex; flex-direction: column; text-align: left; margin-bottom: 1.5rem; }
+        .input-group input, .input-group textarea { background-color: #2a2a2a; border: 1px solid #444; padding: 1rem; border-radius: 8px; color: #fff; }
+        .btn-primary { background-color: var(--accent-yellow); color: #000; border: none; padding: 1rem 2rem; border-radius: 8px; font-weight: bold; cursor: pointer; display: inline-block; text-align: center; transition: 0.3s; }
+        .btn-primary:hover { background-color: #e6b300; transform: translateY(-2px); }
+        .btn-secondary { border: 2px solid var(--accent-green); color: var(--accent-green); background: transparent; padding: 1rem 2rem; border-radius: 8px; font-weight: bold; cursor: pointer; display: inline-block; text-align: center; transition: 0.3s; }
+        .btn-secondary:hover { background-color: var(--accent-green); color: #000; transform: translateY(-2px); }
 
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 2.5rem 1.5rem;
-            border: 1px solid #2a2a2a;
-            transition: 0.3s;
-            text-align: center;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '\f067';
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            opacity: 0.5;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            border-color: var(--accent-yellow);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(255, 199, 0, 0.15);
-        }
-
-        .card:hover::before {
-            color: var(--accent-yellow);
-            opacity: 1;
-        }
-
-        .team-img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 1.5rem auto;
-            display: block;
-            border: 3px solid var(--accent-yellow);
-            background-color: #2a2a2a;
-        }
-
-        .card h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        /* MODAL ΓΙΑ ΤΗΝ ΟΜΑΔΑ */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            z-index: 3000;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-            opacity: 0;
-            animation: fadeIn 0.3s forwards;
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-box {
-            background-color: var(--card-bg);
-            width: 100%;
-            max-width: 600px;
-            border-radius: 12px;
-            border: 1px solid var(--accent-yellow);
-            padding: 2.5rem;
-            position: relative;
-            transform: translateY(20px);
-            animation: slideUp 0.3s forwards;
-            text-align: center;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            font-size: 2rem;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .close-modal:hover {
-            color: var(--accent-yellow);
-        }
-
-        .modal-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid var(--accent-yellow);
-            margin-bottom: 1.5rem;
-            object-fit: cover;
-        }
-
-        .modal-role {
-            color: var(--accent-yellow);
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .modal-bio {
-            color: var(--text-light);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .modal-interests {
-            text-align: left;
-            background: #2a2a2a;
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-green);
-        }
-
-        .modal-interests h4 {
-            color: #fff;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .modal-interests p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        @keyframes fadeIn { to { opacity: 1; } }
-        @keyframes slideUp { to { transform: translateY(0); } }
-
-        /* ΥΠΟΣΤΗΡΙΞΗ & ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ */
-        .support-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .support-card {
-            background-color: var(--card-bg);
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            border: 1px solid #2a2a2a;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.3s ease;
-        }
-
-        .support-card:hover {
-            border-color: var(--accent-yellow);
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(255, 199, 0, 0.2);
-        }
-
-        .support-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .support-card h3 i {
-            color: var(--accent-yellow);
-            margin-right: 10px;
-        }
-
-        .support-card p {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .contact-section {
-            background-color: #1a1a1a;
-            padding: 3rem;
-            border-radius: 12px;
-            border: 1px solid #333;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-
-        .input-group label {
-            margin-bottom: 0.5rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .input-group input, .input-group textarea {
-            background-color: #2a2a2a;
-            border: 1px solid #444;
-            padding: 1rem;
-            border-radius: 8px;
-            color: #fff;
-            font-family: inherit;
-            transition: 0.3s;
-        }
-
-        .input-group input:focus, .input-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-yellow);
-            background-color: #333;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-            display: inline-block;
-            border: none;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background-color: var(--accent-yellow);
-            color: #000;
-        }
-
-        .btn-primary:hover {
-            background-color: #e6b300;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            border: 2px solid var(--accent-green);
-            color: var(--accent-green);
-            background: transparent;
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--accent-green);
-            color: #000;
-            transform: translateY(-2px);
-        }
-
-        #form-result {
-            margin-top: 1rem;
-            text-align: center;
-            font-weight: bold;
-            display: none;
-        }
-
-        footer {
-            background-color: #0a0a0a;
-            text-align: center;
-            padding: 3rem 2rem;
-            border-top: 1px solid #2a2a2a;
-            color: var(--text-muted);
-        }
-
-        .social-link {
-            color: var(--accent-yellow);
-            font-size: 1.8rem;
-            transition: 0.3s;
-        }
-
-        .social-link:hover {
-            color: var(--accent-green);
-        }
-
-        .floating-cta {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: var(--accent-yellow);
-            color: #000;
-            padding: 0.9rem 1.5rem;
-            border-radius: 30px;
-            font-weight: bold;
-            box-shadow: 0 4px 20px rgba(255, 199, 0, 0.4);
-            z-index: 1500;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-            animation: pulse 2s infinite;
-        }
-
-        .floating-cta:hover {
-            transform: scale(1.05);
-            background-color: #fff;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 199, 0, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 199, 0, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 199, 0, 0); }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .nav-links { display: none; }
-            .support-grid { grid-template-columns: 1fr; }
-        }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 3000; justify-content: center; align-items: center; padding: 1rem; }
+        .modal-box { background: var(--card-bg); width: 100%; max-width: 600px; border-radius: 12px; border: 1px solid var(--accent-yellow); padding: 2.5rem; position: relative; }
+        .close-modal { position: absolute; top: 1rem; right: 1.5rem; font-size: 2rem; cursor: pointer; color: var(--text-muted); }
+        .modal-role { color: var(--accent-yellow); font-weight: bold; text-transform: uppercase; margin-bottom: 1rem; }
+        
+        .floating-cta { position: fixed; bottom: 25px; right: 25px; background-color: var(--accent-yellow); color: #000; padding: 0.9rem 1.5rem; border-radius: 30px; font-weight: bold; z-index: 1500; display: flex; align-items: center; gap: 8px; transition: 0.3s; box-shadow: 0 4px 20px rgba(255, 199, 0, 0.4); animation: pulse 2s infinite; }
+        .floating-cta:hover { transform: scale(1.05); background-color: #fff; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 199, 0, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(255, 199, 0, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 199, 0, 0); } }
+        
+        footer { background-color: #0a0a0a; text-align: center; padding: 3rem 2rem; border-top: 1px solid #2a2a2a; color: var(--text-muted); margin-top: 4rem; }
+        .social-link { color: var(--accent-yellow); font-size: 1.8rem; transition: 0.3s; margin: 0 10px; }
+        .social-link:hover { color: var(--accent-green); }
     </style>
 </head>
 <body>
 
-    <a href="#sponsors" class="floating-cta">
-        <span>🇵🇷</span> Στηρίξτε μας στο Πουέρτο Ρίκο!
-    </a>
+    <a href="#sponsors" class="floating-cta"><span>🇵🇷</span> Στηρίξτε μας στο Πουέρτο Ρίκο!</a>
 
     <header>
         <nav>
-            <a href="index.html" class="logo-container">
-                <img src="images/logo.png" alt="Monkey Business Logo" class="site-logo">
-                <span class="logo-text">Monkey Business</span>
-            </a>
+            <a href="index.html" class="logo-container"><img src="images/logo.png" alt="Logo" class="site-logo"><span class="logo-text">Monkey Business</span></a>
             <ul class="nav-links">
                 <li class="dropdown">
                     <a href="index.html" style="color: var(--accent-yellow); display: flex; align-items: center; gap: 5px; cursor: pointer;">
@@ -568,15 +99,9 @@
                 <li><a href="mocs.html">Lego MOCs</a></li>
                 <li><a href="history.html">Ιστορικό</a></li>
                 <li style="display: flex; gap: 1rem; align-items: center; margin-left: 1rem;">
-                    <a href="https://linktr.ee/monkeybusiness_wro" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;" title="Linktree">
-                        <i class="fa-solid fa-link"></i>
-                    </a>
-                    <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;" title="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@MonkeyBusinessGr" target="_blank" rel="noopener noreferrer" style="color: var(--accent-yellow); font-size: 1.2rem;" title="YouTube">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
+                    <a href="https://linktr.ee/monkeybusiness_wro" target="_blank" class="social-link" style="font-size: 1.2rem;"><i class="fa-solid fa-link"></i></a>
+                    <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" class="social-link" style="font-size: 1.2rem;"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@MonkeyBusinessGr" target="_blank" class="social-link" style="font-size: 1.2rem;"><i class="fa-brands fa-youtube"></i></a>
                 </li>
             </ul>
         </nav>
@@ -593,211 +118,125 @@
     <section id="about">
         <h2 class="section-title">Σχετικά με Εμάς</h2>
         <div class="about-container">
-            <p>
-                Η <strong>Monkey Business</strong> δεν είναι απλώς μια ομάδα ρομποτικής. Είμαστε μια παρέα φοιτητών από τη Θεσσαλονίκη που μοιράζεται ένα κοινό, άσβεστο πάθος: την καινοτομία, τη μηχανική και την επίλυση πολύπλοκων προβλημάτων. Μέσα από χρόνια διαρκούς πειραματισμού, αμέτρητων ξενυχτιών πάνω από κώδικες, αλλά και σπουδαίων επιτυχιών, έχουμε καταφέρει να στεφθούμε <strong>δύο φορές Πρωταθλητές Ελλάδος</strong>.
-            </p>
+            <p>Η <strong>Monkey Business</strong> δεν είναι απλώς μια ομάδα ρομποτικής. Είμαστε μια παρέα φοιτητών από τη Θεσσαλονίκη που μοιράζεται ένα κοινό, άσβεστο πάθος: την καινοτομία, τη μηχανική και την επίλυση πολύπλοκων προβλημάτων. Μέσα από χρόνια διαρκούς πειραματισμού έχουμε καταφέρει να στεφθούμε <strong>δύο φορές Πρωταθλητές Ελλάδος</strong>.</p>
             <br>
-            <p>
-                Σήμερα, εκπροσωπούμε με υπερηφάνεια τη χώρα μας στην πιο απαιτητική κατηγορία του World Robot Olympiad (RoboMission Senior). Το βλέμμα μας είναι σταθερά προσηλωμένο στον επόμενο μεγάλο μας στόχο: να σταθούμε στην κορυφή του <strong>Παγκόσμιου Τελικού στο Πουέρτο Ρίκο</strong>! Παράλληλα με τον πρωταθλητισμό, πιστεύουμε ακράδαντα στη δύναμη του STEM και επιδιώκουμε μέσα από την πορεία μας να εμπνεύσουμε τη νέα γενιά να ανακαλύψει τη μαγεία της τεχνολογίας.
-            </p>
+            <p>Σήμερα, εκπροσωπούμε με υπερηφάνεια τη χώρα μας στην κατηγορία RoboMission Senior. Το βλέμμα μας είναι σταθερά προσηλωμένο στον επόμενο μεγάλο μας στόχο: τον <strong>Παγκόσμιο Τελικό στο Πουέρτο Ρίκο</strong>! Παράλληλα, μοιραζόμαστε την τεχνογνωσία μας για να στηρίξουμε την κοινότητα της ρομποτικής.</p>
         </div>
     </section>
 
     <section id="team">
         <h2 class="section-title">Η Ομάδα μας</h2>
         <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem;">Πατήστε πάνω σε κάθε μέλος για να δείτε το αναλυτικό του προφίλ.</p>
-        
         <div class="grid">
-            <div class="card" onclick="openMember('foivos')">
-                <img src="images/Φοίβος.png" alt="Φοίβος" class="team-img">
-                <h3>Φοίβος-Παναγιώτης Φιλιππίδης</h3>
-                <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Προπονητής / Coach</p>
-            </div>
-            <div class="card" onclick="openMember('giorgos')">
-                <img src="images/Γιώργος.png" alt="Γιώργος" class="team-img">
-                <h3>Γεώργιος Τριανταφυλλίδης</h3>
-                <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Κατασκευαστής / Hardware</p>
-            </div>
-            <div class="card" onclick="openMember('thanos')">
-                <img src="images/Θάνος.png" alt="Θάνος" class="team-img">
-                <h3>Αθανάσιος Τριανταφυλλίδης</h3>
-                <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Προγραμματιστής / Software</p>
-            </div>
-            <div class="card" onclick="openMember('christos')">
-                <img src="images/Χρήστος.png" alt="Χρήστος" class="team-img">
-                <h3>Χρήστος Κατσιαμάνης</h3>
-                <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Σύνδεση Hardware & Software</p>
-            </div>
+            <div class="card" onclick="openMember('foivos')"><img src="images/Φοίβος.png" alt="Φοίβος" class="team-img"><h3>Φοίβος-Παναγιώτης Φιλιππίδης</h3><p style="color:var(--accent-yellow); font-weight:bold;">Coach</p></div>
+            <div class="card" onclick="openMember('giorgos')"><img src="images/Γιώργος.png" alt="Γιώργος" class="team-img"><h3>Γεώργιος Τριανταφυλλίδης</h3><p style="color:var(--accent-yellow); font-weight:bold;">Hardware</p></div>
+            <div class="card" onclick="openMember('thanos')"><img src="images/Θάνος.png" alt="Θάνος" class="team-img"><h3>Αθανάσιος Τριανταφυλλίδης</h3><p style="color:var(--accent-yellow); font-weight:bold;">Software</p></div>
+            <div class="card" onclick="openMember('christos')"><img src="images/Χρήστος.png" alt="Χρήστος" class="team-img"><h3>Χρήστος Κατσιαμάνης</h3><p style="color:var(--accent-yellow); font-weight:bold;">Hardware & Software</p></div>
         </div>
     </section>
 
     <section id="sponsors">
         <h2 class="section-title">Στηρίξτε την Προσπάθεια</h2>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; max-width: 800px; margin-inline: auto;">
-            Το ταξίδι για το Πουέρτο Ρίκο απαιτεί πόρους. Μπορείτε να γίνετε κομμάτι της προσπάθειάς μας, είτε στηρίζοντάς μας ως επίσημοι χορηγοί, είτε αποκτώντας το αποκλειστικό μας εκπαιδευτικό υλικό!
-        </p>
-
         <div class="support-grid">
             <div class="support-card">
                 <div>
                     <h3><i class="fa-solid fa-handshake"></i> Εταιρική Χορηγία</h3>
-                    <p>Συνδέστε το brand σας με την καινοτομία και τη νεανική επιχειρηματικότητα. Δείτε τα ανταποδοτικά οφέλη χορηγίας για την εκπροσώπηση της Ελλάδας στον Παγκόσμιο Τελικό.</p>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Συνδέστε το brand σας με την καινοτομία. Δείτε τα ανταποδοτικά οφέλη χορηγίας για την εκπροσώπηση της Ελλάδας.</p>
                 </div>
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <a href="https://drive.google.com/file/d/1QmoXx-4uDo63x6xJRmePUCUA-Gggmwdn/preview" target="_blank" class="btn btn-primary">Φυλλάδιο (PDF)</a>
-                    <a href="https://drive.google.com/file/d/1MJS3PRTvV_GLZcWqLnWKzUhVMBp23Dnr/preview" target="_blank" class="btn btn-secondary">Παρουσίαση (PDF)</a>
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                    <a href="https://drive.google.com/file/d/1QmoXx-4uDo63x6xJRmePUCUA-Gggmwdn/preview" target="_blank" class="btn-primary">Φυλλάδιο (PDF)</a>
+                    <a href="https://drive.google.com/file/d/1MJS3PRTvV_GLZcWqLnWKzUhVMBp23Dnr/preview" target="_blank" class="btn-secondary">Παρουσίαση (PDF)</a>
                 </div>
             </div>
-
             <div class="support-card" style="border-color: var(--accent-yellow);">
                 <div>
                     <h3><i class="fa-solid fa-cubes"></i> Αγορά Lego MOCs</h3>
-                    <p>Ενισχύστε μας άμεσα και έμπρακτα, αποκτώντας τις αναλυτικές οδηγίες κατασκευής (Building Instructions) από τους πολυβραβευμένους, custom μηχανισμούς της ομάδας μας.</p>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Ενισχύστε μας άμεσα αποκτώντας τις αναλυτικές οδηγίες κατασκευής από τους custom μηχανισμούς μας.</p>
                 </div>
-                <a href="mocs.html" class="btn btn-primary">Εξερευνήστε τα MOCs</a>
+                <a href="mocs.html" class="btn-primary" style="width: 100%;">Εξερευνήστε τα MOCs</a>
             </div>
         </div>
 
         <div class="contact-section">
             <h3 style="text-align: center; color: #fff; margin-bottom: 2rem; font-size: 1.8rem;">Επικοινωνήστε Μαζί μας</h3>
-            <form class="contact-form" id="contact-form">
-                
+            <form id="contact-form">
                 <input type="hidden" name="access_key" value="c22e2af7-d409-40f2-8daf-07d9a73021a7">
                 <input type="hidden" name="subject" value="Νέο Μήνυμα από Monkey Business Website!">
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
-                    <div class="input-group">
-                        <label for="name">Ονοματεπώνυμο / Εταιρεία</label>
-                        <input type="text" id="name" name="Name" required placeholder="π.χ. Γιάννης Παπαδόπουλος">
-                    </div>
-                    <div class="input-group">
-                        <label for="email">Email Επικοινωνίας</label>
-                        <input type="email" id="email" name="Email" required placeholder="π.χ. example@domain.com">
-                    </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="input-group"><label>Όνομα / Εταιρεία</label><input type="text" name="Name" required></div>
+                    <div class="input-group"><label>Email</label><input type="email" name="Email" required></div>
                 </div>
-                <div class="input-group">
-                    <label for="subject_input">Θέμα</label>
-                    <input type="text" id="subject_input" name="User_Subject" required placeholder="π.χ. Ενδιαφέρον για Χορηγία">
-                </div>
-                <div class="input-group">
-                    <label for="message">Μήνυμα</label>
-                    <textarea id="message" name="Message" rows="5" required placeholder="Πώς μπορούμε να συνεργαστούμε;"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%; margin-top: 1rem;">Αποστολή Μηνύματος</button>
-                <div id="form-result"></div>
+                <div class="input-group"><label>Θέμα</label><input type="text" name="User_Subject" required></div>
+                <div class="input-group"><label>Μήνυμα</label><textarea name="Message" rows="5" required></textarea></div>
+                <button type="submit" class="btn-primary" id="submit-btn" style="width: 100%; border: none;">Αποστολή Μηνύματος</button>
+                <div id="form-result" style="margin-top:1rem; text-align:center; display:none; font-weight:bold;"></div>
             </form>
         </div>
     </section>
 
-    <footer id="contact">
-        <p>Monkey Business Robotics Team © 2026</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Email: monkeybusinesswro@gmail.com</p>
-        
-        <div style="margin-top: 1.2rem; display: flex; justify-content: center; gap: 1.5rem;">
-            <a href="https://linktr.ee/monkeybusiness_wro" target="_blank" rel="noopener noreferrer" class="social-link" title="Linktree">
-                <i class="fa-solid fa-link"></i>
-            </a>
-            <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.youtube.com/@MonkeyBusinessGr" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-        </div>
-    </footer>
-
-    <!-- MODAL ΓΙΑ ΤΑ ΜΕΛΗ ΤΗΣ ΟΜΑΔΑΣ -->
     <div id="memberModal" class="modal-overlay" onclick="closeMember()">
         <div class="modal-box" onclick="event.stopPropagation()">
             <span class="close-modal" onclick="closeMember()">&times;</span>
-            <img id="m-img" src="" alt="Team Member" class="modal-img">
-            <h2 id="m-name" style="color: #fff; margin-bottom: 0.5rem;"></h2>
-            <div id="m-role" class="modal-role"></div>
-            
-            <p id="m-bio" class="modal-bio"></p>
-            
-            <div class="modal-interests">
-                <h4><i class="fa-solid fa-star" style="color: var(--accent-yellow); margin-right: 8px;"></i> Ενδιαφέροντα & Skills</h4>
-                <p id="m-interests"></p>
+            <img id="m-img" src="" class="modal-img" style="display:block; margin:0 auto 1rem auto; width:120px; height:120px; border-radius:50%; border:3px solid var(--accent-yellow);">
+            <h2 id="m-name" style="color:#fff; text-align:center;"></h2>
+            <div id="m-role" class="modal-role" style="text-align:center;"></div>
+            <p id="m-bio" class="modal-bio" style="margin-bottom:1.5rem; text-align: left; color: var(--text-light); line-height: 1.7;"></p>
+            <div style="background:#2a2a2a; padding:1rem; border-radius:8px; text-align: left; border-left: 4px solid var(--accent-green);">
+                <h4 style="color:#fff; margin-bottom:0.5rem;"><i class="fa-solid fa-star" style="color: var(--accent-yellow); margin-right: 8px;"></i> Ενδιαφέροντα & Skills</h4>
+                <p id="m-interests" style="font-size: 0.9rem; color: var(--text-muted);"></p>
             </div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT -->
+    <footer>
+        <p>Monkey Business Robotics Team © 2026</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Email: monkeybusinesswro@gmail.com</p>
+        <div style="margin-top: 1.2rem; display: flex; justify-content: center; gap: 1.5rem;">
+            <a href="https://linktr.ee/monkeybusiness_wro" target="_blank" class="social-link"><i class="fa-solid fa-link"></i></a>
+            <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@MonkeyBusinessGr" target="_blank" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </footer>
+
     <script>
         const form = document.getElementById('contact-form');
         const result = document.getElementById('form-result');
         const submitBtn = document.getElementById('submit-btn');
-
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            const formData = new FormData(form);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
-
             submitBtn.disabled = true;
             submitBtn.innerText = "Αποστολή...";
-            result.style.display = "block";
-            result.style.color = "var(--accent-yellow)";
-            result.innerText = "Παρακαλώ περιμένετε...";
-
             fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
-            })
-            .then(async (response) => {
-                let jsonResponse = await response.json();
-                if (response.status == 200) {
-                    result.style.color = "var(--accent-green)";
-                    result.innerText = "Το μήνυμά σας στάλθηκε με επιτυχία! Σας ευχαριστούμε.";
-                    form.reset();
-                } else {
-                    result.style.color = "#ff4d4d";
-                    result.innerText = jsonResponse.message || "Κάτι πήγε στραβά, προσπαθήστε ξανά.";
-                }
-            })
-            .catch(error => {
-                console.log(error);
-                result.style.color = "#ff4d4d";
-                result.innerText = "Σφάλμα σύνδεσης. Ελέγξτε το internet σας.";
-            })
-            .then(() => {
-                submitBtn.disabled = false;
-                submitBtn.innerText = "Αποστολή Μηνύματος";
-            });
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(Object.fromEntries(new FormData(form)))
+            }).then(async (r) => {
+                let res = await r.json();
+                result.style.display = "block";
+                result.innerText = res.success ? "Το μήνυμά σας στάλθηκε με επιτυχία! Σας ευχαριστούμε." : "Κάτι πήγε στραβά, προσπαθήστε ξανά.";
+                result.style.color = res.success ? "var(--accent-green)" : "#ff4d4d";
+                form.reset();
+            }).catch(() => { result.style.display = "block"; result.style.color = "#ff4d4d"; result.innerText = "Σφάλμα σύνδεσης."; }).then(() => { submitBtn.disabled = false; submitBtn.innerText = "Αποστολή Μηνύματος"; });
         });
 
         const teamData = {
             'foivos': {
-                name: "Φοίβος-Παναγιώτης Φιλιππίδης",
-                role: "Προπονητής / Coach",
-                img: "images/Φοίβος.png",
+                name: "Φοίβος-Παναγιώτης Φιλιππίδης", role: "Προπονητής / Coach", img: "images/Φοίβος.png",
                 bio: "Ο άνθρωπος που κρατάει τις ισορροπίες (και τα νεύρα μας) σταθερά εντός πίστας. Τελειόφοιτος Ηλεκτρολόγων Μηχανικών στο ΑΠΘ, μετράει χρόνια στα χαρακώματα της εκπαιδευτικής ρομποτικής ως coach, έχοντας καθοδηγήσει πάνω από 50 ομάδες σε εθνικές και παγκόσμιες διοργανώσεις.",
                 interests: "Όταν δεν προσπαθεί να λύσει άλυτα bugs, παίζει αγωνιστικό σκάκι, στήνει εντυπωσιακά ενυδρεία (aquascaping), ασχολείται με το web development και παίζει κλασική κιθάρα και πιάνο."
             },
             'giorgos': {
-                name: "Γεώργιος Τριανταφυλλίδης",
-                role: "Κατασκευαστής / Hardware",
-                img: "images/Γιώργος.png",
+                name: "Γεώργιος Τριανταφυλλίδης", role: "Κατασκευαστής / Hardware", img: "images/Γιώργος.png",
                 bio: "Φοιτητής Μηχανολόγων Μηχανικών στο ΑΠΘ και ο βασικός «μάγος» πίσω από το hardware. Ο Γιώργος βλέπει τα τουβλάκια Lego σαν κομμάτια παζλ υψηλής τεχνολογίας και φημίζεται για τα ασυνήθιστα, out-of-the-box σχέδιά του που δοκιμάζουν τα όρια της φυσικής.",
                 interests: "CAD Design, 3D printing, κατασκευαστικές πατέντες που σπάνε τα χρονόμετρα και ατέλειωτες ώρες πειραματισμού στο εργαστήριο."
             },
             'thanos': {
-                name: "Αθανάσιος Τριανταφυλλίδης",
-                role: "Προγραμματιστής / Software",
-                img: "images/Θάνος.png",
+                name: "Αθανάσιος Τριανταφυλλίδης", role: "Προγραμματιστής / Software", img: "images/Θάνος.png",
                 bio: "Φοιτητής Εφαρμοσμένης Πληροφορικής στο ΠΑΜΑΚ και ο αδιαμφισβήτητος εγκέφαλος του κώδικα. Ο Θάνος μετατρέπει τις πιο τρελές ιδέες της ομάδας σε καθαρούς, αστραπιαίους αλγορίθμους που κάνουν το ρομπότ να κινείται σαν σε αυτόματο πιλότο.",
                 interests: "Python, αλγοριθμική βελτιστοποίηση, τεχνητή νοημοσύνη (AI) και κυνήγια χαμένων millisecond στις στροφές της πίστας."
             },
             'christos': {
-                name: "Χρήστος Κατσιαμάνης",
-                role: "Σύνδεση Hardware & Software",
-                img: "images/Χρήστος.png",
+                name: "Χρήστος Κατσιαμάνης", role: "Σύνδεση Hardware & Software", img: "images/Χρήστος.png",
                 bio: "Φοιτητής Ιατρικής στο ΑΠΘ (εισαγωγή 2025, 20ός). Με διακρίσεις σε πανελλήνιο επίπεδο, ο Χρήστος συνδέει αρμονικά το hardware με τον κώδικα, δίνοντας στο ρομπότ τη συνολική σταθερότητα που χρειάζεται τη στιγμή της κρίσης.",
                 interests: "Πρώην πρωταθλητής σε ρητορικούς αγώνες, παίζει παραδοσιακή μουσική στο κανονάκι, έχει πτυχίο στη βυζαντινή μουσική και λατρεύει τη βιολογία, τη λογοτεχνία και τη στατιστική."
             }
@@ -810,14 +249,9 @@
             document.getElementById('m-role').innerText = data.role;
             document.getElementById('m-bio').innerText = data.bio;
             document.getElementById('m-interests').innerText = data.interests;
-            
             document.getElementById('memberModal').style.display = 'flex';
         }
-
-        function closeMember() {
-            document.getElementById('memberModal').style.display = 'none';
-        }
+        function closeMember() { document.getElementById('memberModal').style.display = 'none'; }
     </script>
-
 </body>
 </html>
