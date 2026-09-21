@@ -195,6 +195,73 @@
             color: #fff;
         }
 
+
+
+        .hero-countdown {
+            max-width: 720px;
+            margin: 1.8rem auto 0;
+            text-shadow: none;
+        }
+
+        .hero-countdown-label {
+            margin-bottom: 0.75rem;
+            color: #f3f4f6;
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.65rem;
+        }
+
+        .countdown-unit {
+            padding: 0.8rem 0.65rem 0.7rem;
+            border: 1px solid rgba(255, 199, 0, 0.42);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.58);
+            backdrop-filter: blur(7px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .countdown-value {
+            display: block;
+            color: var(--accent-yellow);
+            font-size: clamp(1.55rem, 3.4vw, 2.15rem);
+            font-weight: 900;
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .countdown-name {
+            display: block;
+            margin-top: 0.35rem;
+            color: #e5e7eb;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .countdown-date {
+            margin-top: 0.6rem;
+            color: #d1d5db;
+            font-size: 0.76rem;
+        }
+
+        .countdown-finished {
+            padding: 1rem;
+            border: 1px solid rgba(255, 199, 0, 0.55);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.62);
+            color: var(--accent-yellow);
+            font-size: 1.05rem;
+            font-weight: 900;
+        }
+
         .hero-actions {
             display: flex;
             justify-content: center;
@@ -790,6 +857,24 @@
                 letter-spacing: 0.06em;
             }
 
+
+            .hero-countdown {
+                margin-top: 1.45rem;
+            }
+
+            .countdown-grid {
+                gap: 0.45rem;
+            }
+
+            .countdown-unit {
+                padding: 0.7rem 0.3rem 0.62rem;
+            }
+
+            .countdown-name {
+                font-size: 0.6rem;
+                letter-spacing: 0.025em;
+            }
+
             .hero-actions {
                 flex-direction: column;
                 align-items: center;
@@ -943,9 +1028,9 @@
 <li><a href="#sponsors">Υποστήριξη</a></li>
 </ul>
 </li>
-<li><a href="mocs.html">Lego MOCs</a></li>
 <li><a href="history.html">Ιστορικό</a></li>
 <li><a href="press.html">Τύπος &amp; ΜΜΕ</a></li>
+<li><a href="mocs.html">Lego MOCs</a></li>
 <li class="nav-socials" style="display: flex; gap: 1rem; align-items: center; margin-left: 1rem;">
 <a aria-label="Linktree" class="social-link" href="https://linktr.ee/monkeybusiness_wro" rel="noopener noreferrer" style="font-size: 1.2rem;" target="_blank" title="Linktree">
 <i class="fa-solid fa-link"></i>
@@ -970,6 +1055,17 @@
                 Από τη Θεσσαλονίκη στον <strong>Παγκόσμιο Τελικό WRO</strong> στο Πουέρτο Ρίκο.
                 Τον Δεκέμβριο του 2026 εκπροσωπούμε ξανά την Ελλάδα στη RoboMission Senior.
             </p>
+
+<div class="hero-countdown" aria-label="Αντίστροφη μέτρηση για τον Παγκόσμιο Τελικό WRO 2026">
+<div class="hero-countdown-label"><i class="fa-regular fa-clock" style="margin-right: 7px;"></i>Μέχρι τον Παγκόσμιο Τελικό</div>
+<div class="countdown-grid" id="wro-countdown">
+<div class="countdown-unit"><span class="countdown-value" id="countdown-days">--</span><span class="countdown-name">Ημέρες</span></div>
+<div class="countdown-unit"><span class="countdown-value" id="countdown-hours">--</span><span class="countdown-name">Ώρες</span></div>
+<div class="countdown-unit"><span class="countdown-value" id="countdown-minutes">--</span><span class="countdown-name">Λεπτά</span></div>
+<div class="countdown-unit"><span class="countdown-value" id="countdown-seconds">--</span><span class="countdown-name">Δευτερόλεπτα</span></div>
+</div>
+<div class="countdown-date">8 Δεκεμβρίου 2026 · San Juan, Puerto Rico 🇵🇷</div>
+</div>
 <div class="hero-actions">
 <a class="hero-btn hero-btn-secondary" href="#team">
 <i class="fa-solid fa-users" style="margin-right: 8px;"></i>Γνωρίστε την ομάδα
@@ -1102,13 +1198,6 @@
 <a class="btn btn-secondary" href="https://drive.google.com/file/d/1pK2BJzyjI2GZLmQSq5C4g2hQG9PuxxfR/view?usp=drivesdk" target="_blank">Παρουσίαση (PDF)</a>
 </div>
 </div>
-<div class="support-card" style="border-color: var(--accent-yellow);">
-<div>
-<h3><i class="fa-solid fa-cubes"></i> Αγορά Lego MOCs</h3>
-<p>Ενισχύστε μας άμεσα και έμπρακτα, αποκτώντας τις αναλυτικές οδηγίες κατασκευής (Building Instructions) από τους πολυβραβευμένους, custom μηχανισμούς της ομάδας μας.</p>
-</div>
-<a class="btn btn-primary" href="mocs.html">Εξερευνήστε τα MOCs</a>
-</div>
 </div>
 <div class="contact-section">
 <h3 style="text-align: center; color: #fff; margin-bottom: 2rem; font-size: 1.8rem;">Επικοινωνήστε Μαζί μας</h3>
@@ -1137,6 +1226,22 @@
 <button class="btn btn-primary" id="submit-btn" style="width: 100%; margin-top: 1rem;" type="submit">Αποστολή Μηνύματος</button>
 <div id="form-result"></div>
 </form>
+</div>
+</section>
+
+<section id="mocs-home">
+<h2 class="section-title">LEGO MOCs</h2>
+<p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; max-width: 800px; margin-inline: auto;">
+            Ανακαλύψτε τους custom μηχανισμούς και τις κατασκευές της Monkey Business. Μέσα από τις αναλυτικές Building Instructions μπορείτε να αξιοποιήσετε τις ιδέες μας στις δικές σας κατασκευές και ταυτόχρονα να στηρίξετε την πορεία της ομάδας προς τον Παγκόσμιο Τελικό.
+        </p>
+<div style="max-width: 800px; margin: 0 auto;">
+<div class="support-card" style="border-color: var(--accent-yellow);">
+<div>
+<h3><i class="fa-solid fa-cubes"></i> Monkey Business LEGO MOCs</h3>
+<p>Αναλυτικές οδηγίες κατασκευής (Building Instructions) για custom μηχανισμούς της ομάδας μας, σχεδιασμένους μέσα από την εμπειρία μας στην αγωνιστική ρομποτική.</p>
+</div>
+<a class="btn btn-primary" href="mocs.html">Εξερευνήστε τα MOCs</a>
+</div>
 </div>
 </section>
 <footer id="contact">
@@ -1298,6 +1403,54 @@
         window.addEventListener('resize', function () {
             if (window.innerWidth > 768) setMenu(false);
         });
+    })();
+</script>
+
+
+<script>
+    (function () {
+        // Official WRO 2026 countdown target: start of 8 Dec 2026 in Puerto Rico (AST, UTC-4).
+        const target = new Date('2026-12-08T00:00:00-04:00').getTime();
+        const countdown = document.getElementById('wro-countdown');
+        if (!countdown) return;
+
+        const daysEl = document.getElementById('countdown-days');
+        const hoursEl = document.getElementById('countdown-hours');
+        const minutesEl = document.getElementById('countdown-minutes');
+        const secondsEl = document.getElementById('countdown-seconds');
+        const wrapper = countdown.closest('.hero-countdown');
+
+        function updateCountdown() {
+            const distance = target - Date.now();
+
+            if (distance <= 0) {
+                if (wrapper) {
+                    wrapper.innerHTML = '<div class="countdown-finished">🇵🇷 Ο Παγκόσμιος Τελικός WRO 2026 ξεκίνησε!</div>';
+                }
+                return false;
+            }
+
+            const day = 1000 * 60 * 60 * 24;
+            const hour = 1000 * 60 * 60;
+            const minute = 1000 * 60;
+
+            const days = Math.floor(distance / day);
+            const hours = Math.floor((distance % day) / hour);
+            const minutes = Math.floor((distance % hour) / minute);
+            const seconds = Math.floor((distance % minute) / 1000);
+
+            daysEl.textContent = String(days);
+            hoursEl.textContent = String(hours).padStart(2, '0');
+            minutesEl.textContent = String(minutes).padStart(2, '0');
+            secondsEl.textContent = String(seconds).padStart(2, '0');
+            return true;
+        }
+
+        if (updateCountdown()) {
+            const timer = setInterval(function () {
+                if (!updateCountdown()) clearInterval(timer);
+            }, 1000);
+        }
     })();
 </script>
 
