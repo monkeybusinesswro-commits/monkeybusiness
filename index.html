@@ -680,11 +680,84 @@
         }
 
         /* SUPPORT SECTION */
-        .support-grid {
+        .support-intro {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 850px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.04rem;
+        }
+
+        .support-mission {
+            max-width: 1000px;
+            margin: 0 auto 3rem;
+            padding: 2.2rem;
+            background: linear-gradient(145deg, rgba(255, 199, 0, 0.06), rgba(255, 255, 255, 0.015));
+            border: 1px solid #323232;
+            border-radius: 14px;
+        }
+
+        .support-points {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin-bottom: 2rem;
+        }
+
+        .support-point {
+            padding: 0.35rem 1.5rem;
+            text-align: center;
+        }
+
+        .support-point + .support-point {
+            border-left: 1px solid #343434;
+        }
+
+        .support-point i {
+            display: block;
+            color: var(--accent-yellow);
+            font-size: 1.45rem;
+            margin-bottom: 0.65rem;
+        }
+
+        .support-point strong {
+            display: block;
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .support-point span {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.45;
+        }
+
+        .support-cta {
+            padding-top: 1.8rem;
+            border-top: 1px solid #343434;
+            text-align: center;
+        }
+
+        .support-cta h3 {
+            color: #fff;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .support-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .support-actions .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         .support-card {
@@ -926,7 +999,12 @@
             }
 
             /* mobile nav handled below */
-            .support-grid { grid-template-columns: 1fr; }
+            .support-points { grid-template-columns: 1fr; gap: 1.15rem; }
+            .support-point { padding: 0.9rem 0.4rem; }
+            .support-point + .support-point { border-left: 0; border-top: 1px solid #343434; padding-top: 1.5rem; }
+            .support-mission { padding: 1.5rem; }
+            .support-actions { flex-direction: column; }
+            .support-actions .btn { width: 100%; }
         }
     
 
@@ -1213,19 +1291,34 @@
 </div>
 </section>
 <section id="sponsors">
-<h2 class="section-title">Στηρίξτε την Προσπάθεια</h2>
-<p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; max-width: 800px; margin-inline: auto;">
-            Το ταξίδι για το Πουέρτο Ρίκο απαιτεί πόρους. Μπορείτε να γίνετε κομμάτι της προσπάθειάς μας, είτε στηρίζοντάς μας ως επίσημοι χορηγοί, είτε αποκτώντας το αποκλειστικό μας εκπαιδευτικό υλικό!
+<h2 class="section-title">Στηρίξτε την αποστολή μας στο Puerto Rico</h2>
+<p class="support-intro">
+            Μετά την κατάκτηση της 1ης θέσης στον WRO Hellas 2026, η MonkeyBusiness προκρίθηκε στον Παγκόσμιο Τελικό του World Robot Olympiad στο Puerto Rico. Για να βρεθούμε εκεί τον Δεκέμβριο, αναζητούμε εταιρείες και οργανισμούς που θέλουν να στηρίξουν την ελληνική αποστολή μας.
         </p>
-<div class="support-grid">
-<div class="support-card">
-<div>
-<h3><i class="fa-solid fa-handshake"></i> Εταιρική Χορηγία</h3>
-<p>Συνδέστε το brand σας με την καινοτομία και τη νεανική επιχειρηματικότητα. Δείτε τα ανταποδοτικά οφέλη χορηγίας για την εκπροσώπηση της Ελλάδας στον Παγκόσμιο Τελικό.</p>
+<div class="support-mission">
+<div class="support-points">
+<div class="support-point">
+<i class="fa-solid fa-trophy"></i>
+<strong>Ο στόχος</strong>
+<span>Συμμετοχή της MonkeyBusiness στον WRO World Final 2026.</span>
 </div>
-<div style="display: flex; flex-direction: column; gap: 10px;">
-<a class="btn btn-primary" href="https://drive.google.com/file/d/1QmoXx-4uDo63x6xJRmePUCUA-Gggmwdn/preview" target="_blank">Φυλλάδιο (PDF)</a>
-<a class="btn btn-secondary" href="https://drive.google.com/file/d/1pK2BJzyjI2GZLmQSq5C4g2hQG9PuxxfR/view?usp=drivesdk" target="_blank">Παρουσίαση (PDF)</a>
+<div class="support-point">
+<i class="fa-solid fa-plane-departure"></i>
+<strong>Η υποστήριξη</strong>
+<span>Κάλυψη αναγκών της αποστολής και της παρουσίας μας στο Puerto Rico.</span>
+</div>
+<div class="support-point">
+<i class="fa-solid fa-handshake"></i>
+<strong>Η συνεργασία</strong>
+<span>Δυνατότητες προβολής και ανταποδοτικών παροχών για τους χορηγούς μας.</span>
+</div>
+</div>
+<div class="support-cta">
+<h3>Ενδιαφέρεστε να στηρίξετε τη MonkeyBusiness;</h3>
+<div class="support-actions">
+<a class="btn btn-primary" href="#contact-form"><i class="fa-solid fa-envelope"></i> Επικοινωνήστε μαζί μας</a>
+<a class="btn btn-secondary" href="https://drive.google.com/file/d/1QmoXx-4uDo63x6xJRmePUCUA-Gggmwdn/preview" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Χορηγικό φυλλάδιο</a>
+<a class="btn btn-secondary" href="https://drive.google.com/file/d/1pK2BJzyjI2GZLmQSq5C4g2hQG9PuxxfR/view?usp=drivesdk" target="_blank" rel="noopener"><i class="fa-solid fa-display"></i> Αναλυτική παρουσίαση</a>
 </div>
 </div>
 </div>
