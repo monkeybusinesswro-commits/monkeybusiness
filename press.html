@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TH73SJJYVT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TH73SJJYVT');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Δημοσιεύσεις, ρεπορτάζ και τηλεοπτικές εμφανίσεις της Monkey Business Robotics, Πρωταθλήτριας Ελλάδας WRO 2026 και εκπροσώπου της Ελλάδας στον Παγκόσμιο Τελικό στο Πουέρτο Ρίκο.">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Τύπος & ΜΜΕ | Monkey Business Robotics">
+    <meta property="og:description" content="Δημοσιεύσεις και εμφανίσεις της Monkey Business Robotics στον Τύπο και τα ΜΜΕ.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://monkeybusiness-robotics.com/press.html">
+    <meta property="og:image" content="https://monkeybusiness-robotics.com/images/history/WRO26NATIONAL1.png">
+
+    <link rel="canonical" href="https://monkeybusiness-robotics.com/press.html">
+    <title>Τύπος & ΜΜΕ | Monkey Business Robotics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --card-bg-soft: #181818;
+            --accent-yellow: #FFC700;
+            --accent-green: #10B981;
+            --text-light: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border: #2a2a2a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: rgba(18, 18, 18, 0.96);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(8px);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .site-logo {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--accent-yellow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-yellow);
+        }
+
+        .social-nav {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-left: 1rem;
+        }
+
+        .social-nav a {
+            font-size: 1.2rem;
+        }
+
+        .menu-toggle {
+            display: none;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: var(--text-light);
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* HERO */
+        .press-hero {
+            min-height: 72vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 9rem 2rem 5rem;
+            position: relative;
+            background:
+                linear-gradient(180deg, rgba(8,8,8,0.48) 0%, rgba(8,8,8,0.82) 72%, #121212 100%),
+                url('images/history/WRO26NATIONAL1.png') center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.55rem 1rem;
+            border: 1px solid rgba(255, 199, 0, 0.55);
+            background: rgba(0,0,0,0.55);
+            color: var(--accent-yellow);
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.4rem;
+            backdrop-filter: blur(6px);
+        }
+
+        .press-hero h1 {
+            font-size: clamp(2.6rem, 6vw, 4.6rem);
+            line-height: 1.05;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 4px 18px rgba(0,0,0,0.75);
+        }
+
+        .press-hero h1 span {
+            color: var(--accent-yellow);
+        }
+
+        .press-hero p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: #E5E7EB;
+            font-size: 1.15rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.85);
+        }
+
+        .hero-note {
+            margin-top: 1.8rem;
+            display: inline-flex;
+            gap: 0.7rem;
+            align-items: center;
+            color: #D1D5DB;
+            font-size: 0.93rem;
+        }
+
+        /* MAIN LAYOUT */
+        main {
+            padding-bottom: 5rem;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4.8rem 2rem 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title-wrap h2 {
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 0.45rem;
+        }
+
+        .section-title-wrap h2::after {
+            content: '';
+            width: 56px;
+            height: 4px;
+            background: var(--accent-yellow);
+            display: block;
+            margin-top: 0.65rem;
+            border-radius: 3px;
+        }
+
+        .section-title-wrap p {
+            color: var(--text-muted);
+            margin-top: 1rem;
+            max-width: 720px;
+        }
+
+        .year-chip {
+            color: var(--accent-yellow);
+            border: 1px solid rgba(255,199,0,0.42);
+            background: rgba(255,199,0,0.06);
+            padding: 0.45rem 0.85rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        /* FEATURED 2026 */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .featured-card {
+            background: linear-gradient(145deg, #222 0%, #191919 100%);
+            border: 1px solid #343434;
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 390px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .featured-card::before {
+            content: '';
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 3px;
+            background: var(--accent-yellow);
+        }
+
+        .featured-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,199,0,0.55);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+        }
+
+        .media-brand {
+            padding: 1.6rem 1.6rem 0.4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-name {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: 0.2px;
+        }
+
+        .type-badge {
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            color: var(--accent-yellow);
+            background: rgba(255,199,0,0.08);
+            border: 1px solid rgba(255,199,0,0.2);
+            border-radius: 999px;
+            padding: 0.35rem 0.6rem;
+            white-space: nowrap;
+        }
+
+        .featured-body {
+            padding: 0.55rem 1.6rem 1.6rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .media-date {
+            color: var(--text-muted);
+            font-size: 0.87rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .featured-body h3 {
+            font-size: 1.3rem;
+            line-height: 1.35;
+            margin-bottom: 0.85rem;
+            color: #fff;
+        }
+
+        .featured-body p {
+            color: #C7CBD1;
+            font-size: 0.97rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-actions {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .read-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: #111;
+            background: var(--accent-yellow);
+            border-radius: 8px;
+            padding: 0.7rem 1rem;
+            font-weight: 800;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .read-link:hover {
+            background: #FFD83D;
+            transform: translateY(-2px);
+        }
+
+        .coverage-note {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            text-align: right;
+        }
+
+        /* ARCHIVE CARDS */
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .archive-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.45rem;
+            display: flex;
+            flex-direction: column;
+            min-height: 325px;
+            transition: transform 0.22s ease, border-color 0.22s ease;
+        }
+
+        .archive-card:hover {
+            transform: translateY(-4px);
+            border-color: #464646;
+        }
+
+        .archive-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .archive-brand {
+            font-weight: 800;
+            color: var(--accent-yellow);
+            font-size: 1.02rem;
+        }
+
+        .archive-card .media-date {
+            font-size: 0.8rem;
+            white-space: nowrap;
+            margin: 0;
+        }
+
+        .archive-card h3 {
+            font-size: 1.08rem;
+            line-height: 1.4;
+            margin-bottom: 0.85rem;
+        }
+
+        .archive-card p {
+            color: var(--text-muted);
+            font-size: 0.91rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .archive-card .read-link {
+            margin-top: auto;
+            align-self: flex-start;
+            background: transparent;
+            color: var(--accent-yellow);
+            border: 1px solid rgba(255,199,0,0.45);
+            padding: 0.58rem 0.8rem;
+        }
+
+        .archive-card .read-link:hover {
+            background: rgba(255,199,0,0.08);
+        }
+
+        /* TV CARD */
+        .tv-card {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            background: linear-gradient(145deg, #1f1f1f, #181818);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.6rem;
+        }
+
+        .tv-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            font-size: 2.2rem;
+            color: var(--accent-yellow);
+            background: rgba(255,199,0,0.07);
+            border: 1px solid rgba(255,199,0,0.22);
+        }
+
+        .tv-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .tv-content p {
+            color: var(--text-muted);
+            max-width: 850px;
+        }
+
+        .tv-meta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin-top: 0.85rem;
+            color: #D1D5DB;
+            font-size: 0.86rem;
+        }
+
+        /* EXPLANATORY NOTE */
+        .context-box {
+            margin-top: 2.5rem;
+            border-left: 3px solid var(--accent-yellow);
+            background: rgba(255,199,0,0.045);
+            padding: 1.2rem 1.35rem;
+            border-radius: 0 10px 10px 0;
+            color: #C9CDD3;
+            font-size: 0.9rem;
+        }
+
+        .context-box strong {
+            color: #fff;
+        }
+
+        /* PRESS CONTACT */
+        .press-contact {
+            margin-top: 5rem;
+            background: linear-gradient(135deg, rgba(255,199,0,0.1), rgba(255,199,0,0.025));
+            border: 1px solid rgba(255,199,0,0.28);
+            border-radius: 16px;
+            padding: 2.4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .press-contact h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .press-contact p {
+            color: #C7CBD1;
+            max-width: 700px;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            background: var(--accent-yellow);
+            color: #111;
+            font-weight: 800;
+            border-radius: 9px;
+            padding: 0.8rem 1.15rem;
+            white-space: nowrap;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            background: #FFD83D;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 5rem;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            background: #0f0f0f;
+        }
+
+        .footer-socials {
+            margin-top: 1.2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--text-light);
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-yellow);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 980px) {
+            .archive-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .logo-text {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.95rem 1.2rem;
+                position: relative;
+            }
+
+            .site-logo {
+                height: 36px;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .menu-toggle {
+                display: inline-grid;
+                place-items: center;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: calc(100% + 1px);
+                left: 0;
+                right: 0;
+                padding: 1rem 1.2rem 1.3rem;
+                background: rgba(18,18,18,0.99);
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links > li > a {
+                display: block;
+                padding: 0.8rem 0;
+                border-bottom: 1px solid #242424;
+            }
+
+            .social-nav {
+                margin: 0.8rem 0 0;
+                justify-content: center;
+                gap: 1.5rem;
+            }
+
+            .featured-grid,
+            .archive-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .press-hero {
+                min-height: 68vh;
+                padding-inline: 1.2rem;
+            }
+
+            .press-hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 4rem 1.2rem 0;
+            }
+
+            .section-heading {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .tv-card {
+                grid-template-columns: 1fr;
+            }
+
+            .tv-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.65rem;
+            }
+
+            .press-contact {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1.7rem;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .logo-text {
+                display: none;
+            }
+
+            .media-brand {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 0.55rem;
+            }
+
+            .card-actions {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .coverage-note {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo-container" aria-label="Monkey Business - Αρχική">
+                <img src="images/logo.png" alt="Monkey Business Logo" class="site-logo">
+                <span class="logo-text">Monkey Business</span>
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Άνοιγμα μενού" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Αρχική</a></li>
+                <li><a href="mocs.html">Lego MOCs</a></li>
+                <li><a href="history.html">Ιστορικό</a></li>
+                <li><a href="press.html" class="active">Τύπος &amp; ΜΜΕ</a></li>
+                <li class="social-nav">
+                    <a href="https://linktr.ee/monkeybusiness_wro" target="_blank" rel="noopener noreferrer" title="Linktree" aria-label="Linktree"><i class="fa-solid fa-link"></i></a>
+                    <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@MonkeyBusinessGr" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="press-hero">
+        <div class="hero-content">
+            <div class="eyebrow"><i class="fa-solid fa-newspaper"></i> PRESS &amp; MEDIA</div>
+            <h1>Τύπος <span>&amp; ΜΜΕ</span></h1>
+            <p>
+                Δημοσιεύσεις, ρεπορτάζ και τηλεοπτικές εμφανίσεις που καταγράφουν την πορεία της ομάδας μας —
+                από τις πρώτες διακρίσεις μέχρι την πρόκριση στον Παγκόσμιο Τελικό WRO 2026 στο Πουέρτο Ρίκο.
+            </p>
+            <div class="hero-note"><i class="fa-solid fa-location-dot"></i> Θεσσαλονίκη → San Juan, Puerto Rico · WRO 2026</div>
+        </div>
+    </section>
+
+    <main>
+        <!-- 2026 FEATURED COVERAGE -->
+        <section class="section" id="road-to-puerto-rico">
+            <div class="section-heading">
+                <div class="section-title-wrap">
+                    <h2>Road to Puerto Rico</h2>
+                    <p>Οι πιο πρόσφατες δημοσιεύσεις που παρουσιάζουν ειδικά τη MonkeyBusiness, την κατάκτηση της 1ης θέσης στη RoboMission Senior και την πρόκριση στον Παγκόσμιο Τελικό WRO 2026.</p>
+                </div>
+                <span class="year-chip">2026</span>
+            </div>
+
+            <div class="featured-grid">
+                <article class="featured-card">
+                    <div class="media-brand">
+                        <div class="brand-name">Thes.gr</div>
+                        <span class="type-badge">Δημοσίευση</span>
+                    </div>
+                    <div class="featured-body">
+                        <div class="media-date"><i class="fa-regular fa-calendar"></i> 17 Σεπτεμβρίου 2026</div>
+                        <h3>Η MonkeyBusiness από τη Θεσσαλονίκη πρωταθλήτρια Ελλάδας στη WRO 2026 – Πρόκριση στον Παγκόσμιο Τελικό στο Πουέρτο Ρίκο</h3>
+                        <p>Αναλυτική παρουσίαση της φετινής επιτυχίας, της σύνθεσης της ομάδας, της σύνδεσής της με τη Θεσσαλονίκη και της πορείας προς τον Παγκόσμιο Τελικό.</p>
+                        <div class="card-actions">
+                            <a class="read-link" href="https://www.thes.gr/koinonia/i-monkeybusiness-apo-ti-thessaloniki-protathlitria-elladas-sti-wro-2026-prokrisi-ston-pagkosmio-teliko-sto-pouerto-riko/" target="_blank" rel="noopener noreferrer">
+                                Διαβάστε το άρθρο <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <span class="coverage-note">Άμεση κάλυψη της ομάδας</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="featured-card">
+                    <div class="media-brand">
+                        <div class="brand-name">Thestival</div>
+                        <span class="type-badge">Δημοσίευση</span>
+                    </div>
+                    <div class="featured-body">
+                        <div class="media-date"><i class="fa-regular fa-calendar"></i> 7 Σεπτεμβρίου 2026</div>
+                        <h3>Η MonkeyBusiness από τη Θεσσαλονίκη πρωταθλήτρια Ελλάδας στη WRO 2026 – Πρόκριση στον Παγκόσμιο Τελικό στο Πουέρτο Ρίκο</h3>
+                        <p>Ρεπορτάζ για την επικράτηση στη RoboMission Senior, τη διαφορά από τη δεύτερη ομάδα και τον επόμενο μεγάλο σταθμό στο San Juan του Πουέρτο Ρίκο.</p>
+                        <div class="card-actions">
+                            <a class="read-link" href="https://www.thestival.gr/eidiseis/koinonia/i-monkeybusiness-apo-ti-thessaloniki-protathlitria-e/" target="_blank" rel="noopener noreferrer">
+                                Διαβάστε το άρθρο <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <span class="coverage-note">Άμεση κάλυψη της ομάδας</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 2024 WORLD FINAL -->
+        <section class="section" id="world-final-2024">
+            <div class="section-heading">
+                <div class="section-title-wrap">
+                    <h2>Παγκόσμιος Τελικός WRO — Σμύρνη</h2>
+                    <p>Το 2024 η ομάδα αγωνίστηκε με την ονομασία <strong>Earphones</strong>. Η πορεία μέχρι και μετά τον Παγκόσμιο Τελικό καλύφθηκε από ελληνικά και διεθνή μέσα.</p>
+                </div>
+                <span class="year-chip">2024</span>
+            </div>
+
+            <div class="archive-grid">
+                <article class="archive-card">
+                    <div class="archive-top">
+                        <span class="archive-brand">News 24/7</span>
+                        <span class="media-date">09.12.2024</span>
+                    </div>
+                    <h3>Πήγαμε στην Ολυμπιάδα Ρομποτικής στη Σμύρνη: και τα ρομπότ έπαιξαν τένις</h3>
+                    <p>Εκτενές reportage από τη διοργάνωση, με ξεχωριστή αναφορά στους Earphones, φωτογραφία της ομάδας και δηλώσεις του προπονητή Φοίβου Φιλιππίδη.</p>
+                    <a class="read-link" href="https://www.news247.gr/magazine/reportage/stin-olimpiada-rompotikis-ta-rompot-epaixan-kai-tenis-alla-oxi-opos-fantazesai/" target="_blank" rel="noopener noreferrer">Δείτε το reportage <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </article>
+
+                <article class="archive-card">
+                    <div class="archive-top">
+                        <span class="archive-brand">Η Καθημερινή</span>
+                        <span class="media-date">19.12.2024</span>
+                    </div>
+                    <h3>Ελληνικές διακρίσεις στην Παγκόσμια Ολυμπιάδα Ρομποτικής WRO 2024</h3>
+                    <p>Αναφορά στην 25η θέση παγκοσμίως και 4η στην Ευρώπη των Earphones στη RoboMission Λυκείου, ανάμεσα στις διακρίσεις της ελληνικής αποστολής.</p>
+                    <a class="read-link" href="https://www.kathimerini.gr/life/563376808/ellinikes-diakriseis-stin-pagkosmia-olympiada-rompotikis-wro-2024/" target="_blank" rel="noopener noreferrer">Διαβάστε το άρθρο <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </article>
+
+                <article class="archive-card">
+                    <div class="archive-top">
+                        <span class="archive-brand">Greek Reporter</span>
+                        <span class="media-date">20.12.2024</span>
+                    </div>
+                    <h3>Greek Teams Excel at 2024 World Robot Olympiad</h3>
+                    <p>Αγγλόφωνη κάλυψη των ελληνικών διακρίσεων, με ειδική αναφορά στην 25η θέση παγκοσμίως και 4η στην Ευρώπη της ομάδας από τη Θεσσαλονίκη.</p>
+                    <a class="read-link" href="https://greekreporter.com/2024/12/20/greek-teams-excel-2024-world-robot-olympiad/" target="_blank" rel="noopener noreferrer">Read the article <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </article>
+
+                <article class="archive-card">
+                    <div class="archive-top">
+                        <span class="archive-brand">Η Καθημερινή</span>
+                        <span class="media-date">17.07.2024</span>
+                    </div>
+                    <h3>Πανέτοιμη για την Παγκόσμια Ολυμπιάδα Ρομποτικής 2024 η ελληνική αποστολή</h3>
+                    <p>Παρουσίαση των επτά ελληνικών ομάδων που προκρίθηκαν στη Σμύρνη, ανάμεσά τους οι Earphones από τη Θεσσαλονίκη στη RoboMission.</p>
+                    <a class="read-link" href="https://www.kathimerini.gr/life/563130475/panetoimi-gia-tin-pagkosmia-olympiada-rompotikis-2024-i-elliniki-apostoli/" target="_blank" rel="noopener noreferrer">Διαβάστε το άρθρο <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </article>
+
+                <article class="archive-card">
+                    <div class="archive-top">
+                        <span class="archive-brand">The President</span>
+                        <span class="media-date">18.07.2024</span>
+                    </div>
+                    <h3>Με πρωτότυπα έργα οι επτά ομάδες της ελληνικής αποστολής στην Παγκόσμια Ολυμπιάδα Ρομποτικής 2024</h3>
+                    <p>Αναφορά στην πρόκριση της ομάδας Earphones και στην ελληνική αποστολή που ταξίδεψε στον Παγκόσμιο Τελικό της Σμύρνης.</p>
+                    <a class="read-link" href="https://www.thepresident.gr/2024/07/18/me-prototypa-erga-oi-epta-omades-tis-ellinikis-apostolis-stin-pagkosmia-olympiada-rompotikis-2024/" target="_blank" rel="noopener noreferrer">Διαβάστε το άρθρο <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </article>
+
+                <article class="archive-card">
+                    <div class="archive-top">
+                        <span class="archive-brand">ProtoThema</span>
+                        <span class="media-date">16.07.2024</span>
+                    </div>
+                    <h3>Με 7 ομάδες η Ελλάδα στην Παγκόσμια Ολυμπιάδα Ρομποτικής 2024</h3>
+                    <p>Παρουσίαση της ελληνικής αποστολής και αναφορά στους Earphones από τη Θεσσαλονίκη ως εκπροσώπους της RoboMission Λυκείου.</p>
+                    <a class="read-link" href="https://www.protothema.gr/greece/article/1520326/me-7-omades-i-ellada-stin-pagosmia-olubiada-robotikis-2024/" target="_blank" rel="noopener noreferrer">Διαβάστε το άρθρο <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </article>
+            </div>
+
+            <div class="context-box">
+                <strong>Σημείωση:</strong> Το 2024 η ομάδα συμμετείχε στις διοργανώσεις WRO με την ονομασία <strong>Earphones</strong>. Για αυτό οι σχετικές δημοσιεύσεις χρησιμοποιούν εκείνη την ονομασία, παρότι αποτελούν μέρος της αγωνιστικής ιστορίας της σημερινής Monkey Business.
+            </div>
+        </section>
+
+        <!-- PROJECTS / TV -->
+        <section class="section" id="projects-media">
+            <div class="section-heading">
+                <div class="section-title-wrap">
+                    <h2>Projects &amp; τηλεοπτικές εμφανίσεις</h2>
+                    <p>Η παρουσία της ομάδας στα ΜΜΕ δεν περιορίζεται στις αγωνιστικές διοργανώσεις, αλλά περιλαμβάνει και projects τεχνολογίας και τεχνητής νοημοσύνης.</p>
+                </div>
+                <span class="year-chip">Media</span>
+            </div>
+
+            <div class="archive-grid" style="margin-bottom: 1.25rem;">
+                <article class="archive-card">
+                    <div class="archive-top">
+                        <span class="archive-brand">Μακεδονία / emakedonia.gr</span>
+                        <span class="media-date">13.04.2024</span>
+                    </div>
+                    <h3>Θεσσαλονίκη: Μαθητές πειραματικών σχολείων κατασκεύασαν εφαρμογές του αύριο</h3>
+                    <p>Ρεπορτάζ για το project «ChatGPT και Ανθρώπινες Εκφράσεις», με φωτογραφία και αναφορά στους Θανάση Τριανταφυλλίδη, Φοίβο Φιλιππίδη και Γιώργο Τριανταφυλλίδη.</p>
+                    <a class="read-link" href="https://www.emakedonia.gr/thessaloniki-mathites-peiramatikon-scholeion-kataskeyasan-efarmoges-toy-ayrio-698335" target="_blank" rel="noopener noreferrer">Διαβάστε το άρθρο <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </article>
+            </div>
+
+            <div class="tv-card">
+                <div class="tv-icon"><i class="fa-solid fa-tv"></i></div>
+                <div class="tv-content">
+                    <h3>TV100 — Τηλεοπτική συνέντευξη</h3>
+                    <p>Στο πλαίσιο της παρουσίασης του project «ChatGPT και Ανθρώπινες Εκφράσεις», μέλη της ομάδας παρουσίασαν την ιδέα και τη δουλειά τους στο τηλεοπτικό κοινό της Θεσσαλονίκης μέσω της TV100.</p>
+                    <span class="tv-meta"><i class="fa-solid fa-video"></i> Τηλεοπτική εμφάνιση · Θεσσαλονίκη</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRESS CONTACT -->
+        <section class="section">
+            <div class="press-contact">
+                <div>
+                    <h2>Για δημοσιογράφους &amp; συνεργασίες</h2>
+                    <p>Για συνεντεύξεις, πληροφορίες για την ομάδα, φωτογραφικό υλικό ή επικοινωνία σχετικά με την αποστολή στον Παγκόσμιο Τελικό WRO 2026, μπορείτε να επικοινωνήσετε απευθείας μαζί μας.</p>
+                </div>
+                <a class="contact-btn" href="mailto:monkeybusinesswro@gmail.com?subject=Press%20%2F%20Media%20-%20Monkey%20Business">
+                    <i class="fa-solid fa-envelope"></i> monkeybusinesswro@gmail.com
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Monkey Business Robotics Team © 2026</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Email: monkeybusinesswro@gmail.com</p>
+        <div class="footer-socials">
+            <a href="https://linktr.ee/monkeybusiness_wro" target="_blank" rel="noopener noreferrer" title="Linktree" aria-label="Linktree"><i class="fa-solid fa-link"></i></a>
+            <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@MonkeyBusinessGr" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            const open = navLinks.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            menuToggle.innerHTML = open
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
