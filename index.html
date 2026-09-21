@@ -1,21 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="el">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TH73SJJYVT"></script>
-    <script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TH73SJJYVT"></script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-TH73SJJYVT');
     </script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monkey Business Robotics | WRO 2026</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Monkey Business Robotics | WRO 2026</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -675,231 +675,309 @@
                 min-height: 82px;
             }
 
-            .nav-links { display: none; }
+            /* mobile nav handled below */
             .support-grid { grid-template-columns: 1fr; }
         }
+    
+
+        /* MOBILE NAVIGATION */
+        .menu-toggle {
+            display: none;
+            border: 1px solid #2a2a2a;
+            background: var(--card-bg);
+            color: var(--text-light);
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            nav { position: relative; }
+
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .nav-links {
+                display: none !important;
+                position: absolute;
+                top: calc(100% + 1px);
+                left: 0;
+                right: 0;
+                padding: 0.85rem 1.2rem 1.1rem;
+                background: rgba(18, 18, 18, 0.99);
+                border-bottom: 1px solid #2a2a2a;
+                box-shadow: 0 12px 28px rgba(0,0,0,0.38);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                max-height: calc(100vh - 78px);
+                overflow-y: auto;
+            }
+
+            .nav-links.open {
+                display: flex !important;
+            }
+
+            .nav-links > li > a,
+            .dropdown > a {
+                display: flex !important;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 0.82rem 0;
+                border-bottom: 1px solid #242424;
+            }
+
+            .dropdown {
+                padding: 0;
+            }
+
+            .dropdown-content,
+            .dropdown:hover .dropdown-content {
+                display: block;
+                position: static;
+                min-width: 0;
+                background: transparent;
+                box-shadow: none;
+                border: 0;
+                border-radius: 0;
+                padding: 0.15rem 0 0.55rem 0.8rem;
+            }
+
+            .dropdown-content li a {
+                padding: 0.58rem 0.7rem;
+                border: 0;
+                font-size: 0.92rem;
+                color: var(--text-muted);
+            }
+
+            .nav-links .nav-socials,
+            .nav-links .social-nav {
+                display: flex !important;
+                gap: 1.45rem !important;
+                align-items: center !important;
+                justify-content: center !important;
+                margin: 0.85rem 0 0 !important;
+                padding-top: 0.25rem;
+            }
+
+            .nav-links .nav-socials a,
+            .nav-links .social-nav a {
+                border: 0 !important;
+                padding: 0.45rem !important;
+                width: auto !important;
+            }
+        }
+
     </style>
 </head>
 <body>
-
-    <a href="#sponsors" class="floating-cta">
-        <span>🇵🇷</span> Στηρίξτε μας στο Πουέρτο Ρίκο!
+<a class="floating-cta" href="#sponsors">
+<span>🇵🇷</span> Στηρίξτε μας στο Πουέρτο Ρίκο!
     </a>
+<header>
+<nav>
+<a class="logo-container" href="index.html">
+<img alt="Monkey Business Logo" class="site-logo" src="images/logo.png"/>
+<span class="logo-text">Monkey Business</span>
+</a>
 
-    <header>
-        <nav>
-            <a href="index.html" class="logo-container">
-                <img src="images/logo.png" alt="Monkey Business Logo" class="site-logo">
-                <span class="logo-text">Monkey Business</span>
-            </a>
-            <ul class="nav-links">
-                <li class="dropdown">
-                    <a href="index.html" style="color: var(--accent-yellow); display: flex; align-items: center; gap: 5px; cursor: pointer;">
+<button aria-controls="nav-links" aria-expanded="false" aria-label="Άνοιγμα μενού" class="menu-toggle" id="menu-toggle">
+<i class="fa-solid fa-bars"></i>
+</button>
+<ul class="nav-links" id="nav-links">
+<li class="dropdown">
+<a href="index.html" style="color: var(--accent-yellow); display: flex; align-items: center; gap: 5px; cursor: pointer;">
                         Αρχική Σελίδα <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
-                    </a>
-                    <ul class="dropdown-content">
-                        <li><a href="#about">Σχετικά</a></li>
-                        <li><a href="#team">Η Ομάδα</a></li>
-                        <li><a href="#sponsors">Υποστήριξη</a></li>
-                    </ul>
-                </li>
-                <li><a href="mocs.html">Lego MOCs</a></li>
-                <li><a href="history.html">Ιστορικό</a></li>
-                <li style="display: flex; gap: 1rem; align-items: center; margin-left: 1rem;">
-                    <a href="https://linktr.ee/monkeybusiness_wro" target="_blank" rel="noopener noreferrer" class="social-link" style="font-size: 1.2rem;" title="Linktree">
-                        <i class="fa-solid fa-link"></i>
-                    </a>
-                    <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" rel="noopener noreferrer" class="social-link" style="font-size: 1.2rem;" title="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@MonkeyBusinessGr" target="_blank" rel="noopener noreferrer" class="social-link" style="font-size: 1.2rem;" title="YouTube">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-kicker">
-                <i class="fa-solid fa-trophy"></i>
+</a>
+<ul class="dropdown-content">
+<li><a href="#about">Σχετικά</a></li>
+<li><a href="#team">Η Ομάδα</a></li>
+<li><a href="#sponsors">Υποστήριξη</a></li>
+</ul>
+</li>
+<li><a href="mocs.html">Lego MOCs</a></li>
+<li><a href="history.html">Ιστορικό</a></li>
+<li><a href="press.html">Τύπος &amp; ΜΜΕ</a></li>
+<li class="nav-socials" style="display: flex; gap: 1rem; align-items: center; margin-left: 1rem;">
+<a aria-label="Linktree" class="social-link" href="https://linktr.ee/monkeybusiness_wro" rel="noopener noreferrer" style="font-size: 1.2rem;" target="_blank" title="Linktree">
+<i class="fa-solid fa-link"></i>
+</a>
+<a aria-label="Instagram" class="social-link" href="https://www.instagram.com/monkeybusiness_wro/" rel="noopener noreferrer" style="font-size: 1.2rem;" target="_blank" title="Instagram">
+<i class="fa-brands fa-instagram"></i>
+</a>
+<a aria-label="YouTube" class="social-link" href="https://www.youtube.com/@MonkeyBusinessGr" rel="noopener noreferrer" style="font-size: 1.2rem;" target="_blank" title="YouTube">
+<i class="fa-brands fa-youtube"></i>
+</a>
+</li>
+</ul></nav>
+</header>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-kicker">
+<i class="fa-solid fa-trophy"></i>
                 Πρωταθλητές Ελλάδας WRO 2026
             </div>
-
-            <h1>Monkey Business <span>Robotics</span></h1>
-
-            <p class="hero-lead">
+<h1>Monkey Business <span>Robotics</span></h1>
+<p class="hero-lead">
                 Από τη Θεσσαλονίκη στον <strong>Παγκόσμιο Τελικό WRO</strong> στο Πουέρτο Ρίκο.
                 Τον Δεκέμβριο του 2026 εκπροσωπούμε ξανά την Ελλάδα στη RoboMission Senior.
             </p>
-
-            <div class="hero-actions">
-                <a href="#team" class="hero-btn hero-btn-secondary">
-                    <i class="fa-solid fa-users" style="margin-right: 8px;"></i>Γνωρίστε την ομάδα
+<div class="hero-actions">
+<a class="hero-btn hero-btn-secondary" href="#team">
+<i class="fa-solid fa-users" style="margin-right: 8px;"></i>Γνωρίστε την ομάδα
                 </a>
-                <a href="#sponsors" class="hero-btn hero-btn-primary">
-                    <i class="fa-solid fa-handshake-angle" style="margin-right: 8px;"></i>Στηρίξτε την αποστολή 🇵🇷
+<a class="hero-btn hero-btn-primary" href="#sponsors">
+<i class="fa-solid fa-handshake-angle" style="margin-right: 8px;"></i>Στηρίξτε την αποστολή 🇵🇷
                 </a>
-            </div>
-
-            <div class="hero-stats" aria-label="Βασικές διακρίσεις της ομάδας">
-                <div class="hero-stat">
-                    <strong>2×</strong>
-                    <span>Πρωταθλητές Ελλάδας</span>
-                </div>
-                <div class="hero-stat">
-                    <strong>2021</strong>
-                    <span>5η θέση World Final</span>
-                </div>
-                <div class="hero-stat">
-                    <strong>2024</strong>
-                    <span>25η θέση World Final</span>
-                </div>
-                <div class="hero-stat">
-                    <strong>2026</strong>
-                    <span>World Final · Puerto Rico</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2 class="section-title">Σχετικά με Εμάς</h2>
-        <div class="about-container">
-            <p>
+</div>
+<div aria-label="Βασικές διακρίσεις της ομάδας" class="hero-stats">
+<div class="hero-stat">
+<strong>2×</strong>
+<span>Πρωταθλητές Ελλάδας</span>
+</div>
+<div class="hero-stat">
+<strong>2021</strong>
+<span>5η θέση World Final</span>
+</div>
+<div class="hero-stat">
+<strong>2024</strong>
+<span>25η θέση World Final</span>
+</div>
+<div class="hero-stat">
+<strong>2026</strong>
+<span>World Final · Puerto Rico</span>
+</div>
+</div>
+</div>
+</section>
+<section id="about">
+<h2 class="section-title">Σχετικά με Εμάς</h2>
+<div class="about-container">
+<p>
                 Η <strong>Monkey Business</strong> δεν είναι απλώς μια ομάδα ρομποτικής. Είμαστε μια παρέα φοιτητών από τη Θεσσαλονίκη που μοιράζεται ένα κοινό, άσβεστο πάθος: την καινοτομία, τη μηχανική και την επίλυση πολύπλοκων προβλημάτων. Μέσα από χρόνια διαρκούς πειραματισμού, αμέτρητων ξενυχτιών πάνω από κώδικες, αλλά και σπουδαίων επιτυχιών, έχουμε καταφέρει να στεφθούμε <strong>δύο φορές Πρωταθλητές Ελλάδος</strong>.
             </p>
-            <br>
-            <p>
+<br/>
+<p>
                 Σήμερα, εκπροσωπούμε με υπερηφάνεια τη χώρα μας στην πιο απαιτητική κατηγορία του World Robot Olympiad (RoboMission Senior). Το βλέμμα μας είναι σταθερά προσηλωμένο στον επόμενο μεγάλο μας στόχο: να σταθούμε στην κορυφή του <strong>Παγκόσμιο Τελικού στο Πουέρτο Ρίκο</strong>! Παράλληλα με τον πρωταθλητισμό, πιστεύουμε ακράδαντα στη δύναμη του STEM και επιδιώκουμε μέσα από την πορεία μας να εμπνεύσουμε τη νέα γενιά να ανακαλύψει τη μαγεία της τεχνολογίας.
             </p>
-        </div>
-    </section>
-
-    <section id="team">
-        <h2 class="section-title">Η Ομάδα μας</h2>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem;">Πατήστε πάνω σε κάθε μέλος για να δείτε το αναλυτικό του προφίλ.</p>
-        
-        <div class="grid">
-            <div class="card" onclick="openMember('foivos')">
-                <img src="images/Φοίβος.png" alt="Φοίβος" class="team-img">
-                <h3>Φοίβος-Παναγιώτης Φιλιππίδης</h3>
-                <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Προπονητής / Coach</p>
-            </div>
-            <div class="card" onclick="openMember('giorgos')">
-                <img src="images/Γιώργος.png" alt="Γιώργος" class="team-img">
-                <h3>Γεώργιος Τριανταφυλλίδης</h3>
-                <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Κατασκευαστής / Hardware</p>
-            </div>
-            <div class="card" onclick="openMember('thanos')">
-                <img src="images/Θάνος.png" alt="Θάνος" class="team-img">
-                <h3>Αθανάσιος Τριανταφυλλίδης</h3>
-                <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Προγραμματιστής / Software</p>
-            </div>
-            <div class="card" onclick="openMember('christos')">
-                <img src="images/Χρήστος.png" alt="Χρήστος" class="team-img">
-                <h3>Χρήστος Κατσιαμάνης</h3>
-                <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Σύνδεση Hardware & Software</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="sponsors">
-        <h2 class="section-title">Στηρίξτε την Προσπάθεια</h2>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; max-width: 800px; margin-inline: auto;">
+</div>
+</section>
+<section id="team">
+<h2 class="section-title">Η Ομάδα μας</h2>
+<p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem;">Πατήστε πάνω σε κάθε μέλος για να δείτε το αναλυτικό του προφίλ.</p>
+<div class="grid">
+<div class="card" onclick="openMember('foivos')">
+<img alt="Φοίβος" class="team-img" src="images/Φοίβος.png"/>
+<h3>Φοίβος-Παναγιώτης Φιλιππίδης</h3>
+<p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Προπονητής / Coach</p>
+</div>
+<div class="card" onclick="openMember('giorgos')">
+<img alt="Γιώργος" class="team-img" src="images/Γιώργος.png"/>
+<h3>Γεώργιος Τριανταφυλλίδης</h3>
+<p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Κατασκευαστής / Hardware</p>
+</div>
+<div class="card" onclick="openMember('thanos')">
+<img alt="Θάνος" class="team-img" src="images/Θάνος.png"/>
+<h3>Αθανάσιος Τριανταφυλλίδης</h3>
+<p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Προγραμματιστής / Software</p>
+</div>
+<div class="card" onclick="openMember('christos')">
+<img alt="Χρήστος" class="team-img" src="images/Χρήστος.png"/>
+<h3>Χρήστος Κατσιαμάνης</h3>
+<p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Σύνδεση Hardware &amp; Software</p>
+</div>
+</div>
+</section>
+<section id="sponsors">
+<h2 class="section-title">Στηρίξτε την Προσπάθεια</h2>
+<p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; max-width: 800px; margin-inline: auto;">
             Το ταξίδι για το Πουέρτο Ρίκο απαιτεί πόρους. Μπορείτε να γίνετε κομμάτι της προσπάθειάς μας, είτε στηρίζοντάς μας ως επίσημοι χορηγοί, είτε αποκτώντας το αποκλειστικό μας εκπαιδευτικό υλικό!
         </p>
-
-        <div class="support-grid">
-            <div class="support-card">
-                <div>
-                    <h3><i class="fa-solid fa-handshake"></i> Εταιρική Χορηγία</h3>
-                    <p>Συνδέστε το brand σας με την καινοτομία και τη νεανική επιχειρηματικότητα. Δείτε τα ανταποδοτικά οφέλη χορηγίας για την εκπροσώπηση της Ελλάδας στον Παγκόσμιο Τελικό.</p>
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <a href="https://drive.google.com/file/d/1QmoXx-4uDo63x6xJRmePUCUA-Gggmwdn/preview" target="_blank" class="btn btn-primary">Φυλλάδιο (PDF)</a>
-                    <a href="https://drive.google.com/file/d/1pK2BJzyjI2GZLmQSq5C4g2hQG9PuxxfR/view?usp=drivesdk" target="_blank" class="btn btn-secondary">Παρουσίαση (PDF)</a>
-                </div>
-            </div>
-
-            <div class="support-card" style="border-color: var(--accent-yellow);">
-                <div>
-                    <h3><i class="fa-solid fa-cubes"></i> Αγορά Lego MOCs</h3>
-                    <p>Ενισχύστε μας άμεσα και έμπρακτα, αποκτώντας τις αναλυτικές οδηγίες κατασκευής (Building Instructions) από τους πολυβραβευμένους, custom μηχανισμούς της ομάδας μας.</p>
-                </div>
-                <a href="mocs.html" class="btn btn-primary">Εξερευνήστε τα MOCs</a>
-            </div>
-        </div>
-
-        <div class="contact-section">
-            <h3 style="text-align: center; color: #fff; margin-bottom: 2rem; font-size: 1.8rem;">Επικοινωνήστε Μαζί μας</h3>
-            <form class="contact-form" id="contact-form">
-                
-                <input type="hidden" name="access_key" value="c22e2af7-d409-40f2-8daf-07d9a73021a7">
-                <input type="hidden" name="subject" value="Νέο Μήνυμα από Monkey Business Website!">
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
-                    <div class="input-group">
-                        <label for="name">Ονοματεπώνυμο / Εταιρεία</label>
-                        <input type="text" id="name" name="Name" required placeholder="π.χ. Γιάννης Παπαδόπουλος">
-                    </div>
-                    <div class="input-group">
-                        <label for="email">Email Επικοινωνίας</label>
-                        <input type="email" id="email" name="Email" required placeholder="π.χ. example@domain.com">
-                    </div>
-                </div>
-                <div class="input-group">
-                    <label for="subject_input">Θέμα</label>
-                    <input type="text" id="subject_input" name="User_Subject" required placeholder="π.χ. Ενδιαφέρον για Χορηγία">
-                </div>
-                <div class="input-group">
-                    <label for="message">Μήνυμα</label>
-                    <textarea id="message" name="Message" rows="5" required placeholder="Πώς μπορούμε να συνεργαστούμε;"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%; margin-top: 1rem;">Αποστολή Μηνύματος</button>
-                <div id="form-result"></div>
-            </form>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <p>Monkey Business Robotics Team © 2026</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Email: monkeybusinesswro@gmail.com</p>
-        
-        <div style="margin-top: 1.2rem; display: flex; justify-content: center; gap: 1.5rem;">
-            <a href="https://linktr.ee/monkeybusiness_wro" target="_blank" rel="noopener noreferrer" class="social-link" title="Linktree">
-                <i class="fa-solid fa-link"></i>
-            </a>
-            <a href="https://www.instagram.com/monkeybusiness_wro/" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.youtube.com/@MonkeyBusinessGr" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-        </div>
-    </footer>
-
-    <!-- MODAL ΓΙΑ ΤΑ ΜΕΛΗ ΤΗΣ ΟΜΑΔΑΣ -->
-    <div id="memberModal" class="modal-overlay" onclick="closeMember()">
-        <div class="modal-box" onclick="event.stopPropagation()">
-            <span class="close-modal" onclick="closeMember()">&times;</span>
-            <img id="m-img" src="" alt="Team Member" class="modal-img">
-            <h2 id="m-name" style="color: #fff; margin-bottom: 0.5rem;"></h2>
-            <div id="m-role" class="modal-role"></div>
-            
-            <p id="m-bio" class="modal-bio"></p>
-            
-            <div class="modal-interests">
-                <h4><i class="fa-solid fa-star" style="color: var(--accent-yellow); margin-right: 8px;"></i> Ενδιαφέροντα & Skills</h4>
-                <p id="m-interests"></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT -->
-    <script>
+<div class="support-grid">
+<div class="support-card">
+<div>
+<h3><i class="fa-solid fa-handshake"></i> Εταιρική Χορηγία</h3>
+<p>Συνδέστε το brand σας με την καινοτομία και τη νεανική επιχειρηματικότητα. Δείτε τα ανταποδοτικά οφέλη χορηγίας για την εκπροσώπηση της Ελλάδας στον Παγκόσμιο Τελικό.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<a class="btn btn-primary" href="https://drive.google.com/file/d/1QmoXx-4uDo63x6xJRmePUCUA-Gggmwdn/preview" target="_blank">Φυλλάδιο (PDF)</a>
+<a class="btn btn-secondary" href="https://drive.google.com/file/d/1pK2BJzyjI2GZLmQSq5C4g2hQG9PuxxfR/view?usp=drivesdk" target="_blank">Παρουσίαση (PDF)</a>
+</div>
+</div>
+<div class="support-card" style="border-color: var(--accent-yellow);">
+<div>
+<h3><i class="fa-solid fa-cubes"></i> Αγορά Lego MOCs</h3>
+<p>Ενισχύστε μας άμεσα και έμπρακτα, αποκτώντας τις αναλυτικές οδηγίες κατασκευής (Building Instructions) από τους πολυβραβευμένους, custom μηχανισμούς της ομάδας μας.</p>
+</div>
+<a class="btn btn-primary" href="mocs.html">Εξερευνήστε τα MOCs</a>
+</div>
+</div>
+<div class="contact-section">
+<h3 style="text-align: center; color: #fff; margin-bottom: 2rem; font-size: 1.8rem;">Επικοινωνήστε Μαζί μας</h3>
+<form class="contact-form" id="contact-form">
+<input name="access_key" type="hidden" value="c22e2af7-d409-40f2-8daf-07d9a73021a7"/>
+<input name="subject" type="hidden" value="Νέο Μήνυμα από Monkey Business Website!"/>
+<input class="hidden" name="botcheck" style="display: none;" type="checkbox"/>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+<div class="input-group">
+<label for="name">Ονοματεπώνυμο / Εταιρεία</label>
+<input id="name" name="Name" placeholder="π.χ. Γιάννης Παπαδόπουλος" required="" type="text"/>
+</div>
+<div class="input-group">
+<label for="email">Email Επικοινωνίας</label>
+<input id="email" name="Email" placeholder="π.χ. example@domain.com" required="" type="email"/>
+</div>
+</div>
+<div class="input-group">
+<label for="subject_input">Θέμα</label>
+<input id="subject_input" name="User_Subject" placeholder="π.χ. Ενδιαφέρον για Χορηγία" required="" type="text"/>
+</div>
+<div class="input-group">
+<label for="message">Μήνυμα</label>
+<textarea id="message" name="Message" placeholder="Πώς μπορούμε να συνεργαστούμε;" required="" rows="5"></textarea>
+</div>
+<button class="btn btn-primary" id="submit-btn" style="width: 100%; margin-top: 1rem;" type="submit">Αποστολή Μηνύματος</button>
+<div id="form-result"></div>
+</form>
+</div>
+</section>
+<footer id="contact">
+<p>Monkey Business Robotics Team © 2026</p>
+<p style="margin-top: 0.5rem; font-size: 0.9rem;">Email: monkeybusinesswro@gmail.com</p>
+<div style="margin-top: 1.2rem; display: flex; justify-content: center; gap: 1.5rem;">
+<a class="social-link" href="https://linktr.ee/monkeybusiness_wro" rel="noopener noreferrer" target="_blank" title="Linktree">
+<i class="fa-solid fa-link"></i>
+</a>
+<a class="social-link" href="https://www.instagram.com/monkeybusiness_wro/" rel="noopener noreferrer" target="_blank" title="Instagram">
+<i class="fa-brands fa-instagram"></i>
+</a>
+<a class="social-link" href="https://www.youtube.com/@MonkeyBusinessGr" rel="noopener noreferrer" target="_blank" title="YouTube">
+<i class="fa-brands fa-youtube"></i>
+</a>
+</div>
+</footer>
+<!-- MODAL ΓΙΑ ΤΑ ΜΕΛΗ ΤΗΣ ΟΜΑΔΑΣ -->
+<div class="modal-overlay" id="memberModal" onclick="closeMember()">
+<div class="modal-box" onclick="event.stopPropagation()">
+<span class="close-modal" onclick="closeMember()">×</span>
+<img alt="Team Member" class="modal-img" id="m-img" src=""/>
+<h2 id="m-name" style="color: #fff; margin-bottom: 0.5rem;"></h2>
+<div class="modal-role" id="m-role"></div>
+<p class="modal-bio" id="m-bio"></p>
+<div class="modal-interests">
+<h4><i class="fa-solid fa-star" style="color: var(--accent-yellow); margin-right: 8px;"></i> Ενδιαφέροντα &amp; Skills</h4>
+<p id="m-interests"></p>
+</div>
+</div>
+</div>
+<!-- JAVASCRIPT -->
+<script>
         const form = document.getElementById('contact-form');
         const result = document.getElementById('form-result');
         const submitBtn = document.getElementById('submit-btn');
@@ -992,6 +1070,44 @@
             document.getElementById('memberModal').style.display = 'none';
         }
     </script>
+
+<script>
+    (function () {
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('nav-links');
+        if (!toggle || !menu) return;
+
+        const icon = toggle.querySelector('i');
+
+        function setMenu(open) {
+            menu.classList.toggle('open', open);
+            toggle.setAttribute('aria-expanded', String(open));
+            toggle.setAttribute('aria-label', open ? 'Κλείσιμο μενού' : 'Άνοιγμα μενού');
+            if (icon) {
+                icon.classList.toggle('fa-bars', !open);
+                icon.classList.toggle('fa-xmark', open);
+            }
+        }
+
+        toggle.addEventListener('click', function () {
+            setMenu(!menu.classList.contains('open'));
+        });
+
+        menu.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                if (window.innerWidth <= 768) setMenu(false);
+            });
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') setMenu(false);
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768) setMenu(false);
+        });
+    })();
+</script>
 
 </body>
 </html>
