@@ -466,6 +466,139 @@
         @keyframes fadeIn { to { opacity: 1; } }
         @keyframes slideUp { to { transform: translateY(0); } }
 
+
+        /* PRESS / MEDIA TEASER */
+        .media-section {
+            padding-top: 4rem;
+        }
+
+        .media-intro {
+            max-width: 760px;
+            margin: -1.6rem auto 2.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .media-card {
+            background: linear-gradient(145deg, #222 0%, #191919 100%);
+            border: 1px solid #303030;
+            border-radius: 14px;
+            padding: 1.65rem;
+            min-height: 295px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .media-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent-yellow);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .media-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 199, 0, 0.65);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.34);
+        }
+
+        .media-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .media-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .media-outlet {
+            color: var(--accent-yellow);
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: 0.01em;
+        }
+
+        .media-type {
+            padding: 0.3rem 0.65rem;
+            border-radius: 999px;
+            border: 1px solid #3a3a3a;
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .media-date {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .media-card h3 {
+            color: #fff;
+            font-size: 1.12rem;
+            line-height: 1.42;
+            margin-bottom: 0.85rem;
+        }
+
+        .media-card p {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            line-height: 1.65;
+            margin-bottom: 1.4rem;
+        }
+
+        .media-card-link {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-yellow);
+            font-weight: 700;
+            font-size: 0.92rem;
+        }
+
+        .media-card-link i {
+            transition: transform 0.25s ease;
+        }
+
+        .media-card:hover .media-card-link i {
+            transform: translate(2px, -2px);
+        }
+
+        .media-more {
+            display: flex;
+            justify-content: center;
+            margin-top: 2.2rem;
+        }
+
+        .media-more .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
         /* SUPPORT SECTION */
         .support-grid {
             display: grid;
@@ -673,6 +806,15 @@
 
             .hero-stat {
                 min-height: 82px;
+            }
+
+
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .media-card {
+                min-height: 0;
             }
 
             /* mobile nav handled below */
@@ -892,6 +1034,56 @@
 <h3>Χρήστος Κατσιαμάνης</h3>
 <p style="color: var(--accent-yellow); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.5rem;">Σύνδεση Hardware &amp; Software</p>
 </div>
+</div>
+</section>
+
+<section class="media-section" id="media">
+<h2 class="section-title">Η Monkey Business στα ΜΜΕ</h2>
+<p class="media-intro">
+            Δημοσιεύσεις και ρεπορτάζ που καταγράφουν την αγωνιστική πορεία της ομάδας — από την πρόκριση στο Πουέρτο Ρίκο μέχρι τις διεθνείς διακρίσεις μας.
+        </p>
+<div class="media-grid">
+<article class="media-card">
+<div class="media-card-top">
+<span class="media-outlet">Thes.gr</span>
+<span class="media-type">2026 · Δημοσίευση</span>
+</div>
+<div class="media-date"><i class="fa-regular fa-calendar" style="margin-right: 6px;"></i>17 Σεπτεμβρίου 2026</div>
+<h3>Η MonkeyBusiness πρωταθλήτρια Ελλάδας στη WRO 2026 — πρόκριση στον Παγκόσμιο Τελικό</h3>
+<p>Παρουσίαση της φετινής επιτυχίας, της ομάδας και της πορείας από τη Θεσσαλονίκη προς το Puerto Rico.</p>
+<a class="media-card-link" href="https://www.thes.gr/koinonia/i-monkeybusiness-apo-ti-thessaloniki-protathlitria-elladas-sti-wro-2026-prokrisi-ston-pagkosmio-teliko-sto-pouerto-riko/" rel="noopener noreferrer" target="_blank">
+                    Διαβάστε το άρθρο <i class="fa-solid fa-arrow-up-right-from-square"></i>
+</a>
+</article>
+<article class="media-card">
+<div class="media-card-top">
+<span class="media-outlet">Thestival</span>
+<span class="media-type">2026 · Δημοσίευση</span>
+</div>
+<div class="media-date"><i class="fa-regular fa-calendar" style="margin-right: 6px;"></i>7 Σεπτεμβρίου 2026</div>
+<h3>Πρωταθλήτρια Ελλάδας η MonkeyBusiness — επόμενος σταθμός ο Παγκόσμιος Τελικός στο Puerto Rico</h3>
+<p>Ρεπορτάζ για την κατάκτηση της 1ης θέσης στη RoboMission Senior και τη νέα διεθνή πρόκληση της ομάδας.</p>
+<a class="media-card-link" href="https://www.thestival.gr/eidiseis/koinonia/i-monkeybusiness-apo-ti-thessaloniki-protathlitria-e/" rel="noopener noreferrer" target="_blank">
+                    Διαβάστε το άρθρο <i class="fa-solid fa-arrow-up-right-from-square"></i>
+</a>
+</article>
+<article class="media-card">
+<div class="media-card-top">
+<span class="media-outlet">News 24/7</span>
+<span class="media-type">2024 · Reportage</span>
+</div>
+<div class="media-date"><i class="fa-regular fa-calendar" style="margin-right: 6px;"></i>9 Δεκεμβρίου 2024</div>
+<h3>Στην Παγκόσμια Ολυμπιάδα Ρομποτικής στη Σμύρνη</h3>
+<p>Εκτενές reportage από τον WRO World Final 2024, με αναφορά στην ομάδα, φωτογραφία και δηλώσεις του προπονητή.</p>
+<a class="media-card-link" href="https://www.news247.gr/magazine/reportage/stin-olimpiada-rompotikis-ta-rompot-epaixan-kai-tenis-alla-oxi-opos-fantazesai/" rel="noopener noreferrer" target="_blank">
+                    Δείτε το reportage <i class="fa-solid fa-arrow-up-right-from-square"></i>
+</a>
+</article>
+</div>
+<div class="media-more">
+<a class="btn btn-secondary" href="press.html">
+<i class="fa-solid fa-newspaper"></i> Όλες οι δημοσιεύσεις &amp; εμφανίσεις
+            </a>
 </div>
 </section>
 <section id="sponsors">
