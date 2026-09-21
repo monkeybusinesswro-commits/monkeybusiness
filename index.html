@@ -13,7 +13,7 @@
     </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Monkey Business Robotics | WRO 2026</title>
+<title>MonkeyBusiness Robotics | WRO 2026</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
 <style>
         * {
@@ -197,68 +197,81 @@
 
 
 
-        .hero-countdown {
-            max-width: 720px;
-            margin: 1.8rem auto 0;
-            text-shadow: none;
+        .countdown-strip {
+            width: 100%;
+            padding: 0.9rem 2rem;
+            background: #0d0d0d;
+            border-top: 1px solid rgba(255, 199, 0, 0.22);
+            border-bottom: 1px solid #262626;
         }
 
-        .hero-countdown-label {
-            margin-bottom: 0.75rem;
-            color: #f3f4f6;
-            font-size: 0.82rem;
+        .countdown-strip-inner {
+            max-width: 1040px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .countdown-strip-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 0.12rem;
+        }
+
+        .countdown-strip-copy span {
+            color: var(--accent-yellow);
+            font-size: 0.72rem;
             font-weight: 800;
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
 
-        .countdown-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 0.65rem;
+        .countdown-strip-copy strong {
+            color: #fff;
+            font-size: 0.98rem;
         }
 
-        .countdown-unit {
-            padding: 0.8rem 0.65rem 0.7rem;
-            border: 1px solid rgba(255, 199, 0, 0.42);
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.58);
-            backdrop-filter: blur(7px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-        }
-
-        .countdown-value {
-            display: block;
-            color: var(--accent-yellow);
-            font-size: clamp(1.55rem, 3.4vw, 2.15rem);
-            font-weight: 900;
-            line-height: 1;
+        .countdown-inline {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
             font-variant-numeric: tabular-nums;
         }
 
-        .countdown-name {
+        .countdown-inline > div {
+            min-width: 48px;
+            text-align: center;
+        }
+
+        .countdown-inline b {
             display: block;
-            margin-top: 0.35rem;
-            color: #e5e7eb;
-            font-size: 0.7rem;
+            color: var(--accent-yellow);
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .countdown-inline small {
+            display: block;
+            margin-top: 0.18rem;
+            color: #9ca3af;
+            font-size: 0.56rem;
             font-weight: 700;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.035em;
             text-transform: uppercase;
         }
 
-        .countdown-date {
-            margin-top: 0.6rem;
-            color: #d1d5db;
-            font-size: 0.76rem;
+        .countdown-inline > i {
+            color: #555;
+            font-style: normal;
+            font-weight: 800;
+            transform: translateY(-6px);
         }
 
         .countdown-finished {
-            padding: 1rem;
-            border: 1px solid rgba(255, 199, 0, 0.55);
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.62);
             color: var(--accent-yellow);
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             font-weight: 900;
         }
 
@@ -858,21 +871,31 @@
             }
 
 
-            .hero-countdown {
-                margin-top: 1.45rem;
+            .countdown-strip {
+                padding: 0.8rem 1rem;
             }
 
-            .countdown-grid {
-                gap: 0.45rem;
+            .countdown-strip-inner {
+                flex-direction: column;
+                gap: 0.7rem;
             }
 
-            .countdown-unit {
-                padding: 0.7rem 0.3rem 0.62rem;
+            .countdown-strip-copy {
+                text-align: center;
             }
 
-            .countdown-name {
-                font-size: 0.6rem;
-                letter-spacing: 0.025em;
+            .countdown-inline {
+                width: 100%;
+                justify-content: center;
+                gap: 0.4rem;
+            }
+
+            .countdown-inline > div {
+                min-width: 43px;
+            }
+
+            .countdown-inline b {
+                font-size: 1.22rem;
             }
 
             .hero-actions {
@@ -1010,8 +1033,8 @@
 <header>
 <nav>
 <a class="logo-container" href="index.html">
-<img alt="Monkey Business Logo" class="site-logo" src="images/logo.png"/>
-<span class="logo-text">Monkey Business</span>
+<img alt="MonkeyBusiness Logo" class="site-logo" src="images/logo.png"/>
+<span class="logo-text">MonkeyBusiness</span>
 </a>
 
 <button aria-controls="nav-links" aria-expanded="false" aria-label="Άνοιγμα μενού" class="menu-toggle" id="menu-toggle">
@@ -1050,22 +1073,12 @@
 <i class="fa-solid fa-trophy"></i>
                 Πρωταθλητές Ελλάδας WRO 2026
             </div>
-<h1>Monkey Business <span>Robotics</span></h1>
+<h1>MonkeyBusiness <span>Robotics</span></h1>
 <p class="hero-lead">
                 Από τη Θεσσαλονίκη στον <strong>Παγκόσμιο Τελικό WRO</strong> στο Πουέρτο Ρίκο.
                 Τον Δεκέμβριο του 2026 εκπροσωπούμε ξανά την Ελλάδα στη RoboMission Senior.
             </p>
 
-<div class="hero-countdown" aria-label="Αντίστροφη μέτρηση για τον Παγκόσμιο Τελικό WRO 2026">
-<div class="hero-countdown-label"><i class="fa-regular fa-clock" style="margin-right: 7px;"></i>Μέχρι τον Παγκόσμιο Τελικό</div>
-<div class="countdown-grid" id="wro-countdown">
-<div class="countdown-unit"><span class="countdown-value" id="countdown-days">--</span><span class="countdown-name">Ημέρες</span></div>
-<div class="countdown-unit"><span class="countdown-value" id="countdown-hours">--</span><span class="countdown-name">Ώρες</span></div>
-<div class="countdown-unit"><span class="countdown-value" id="countdown-minutes">--</span><span class="countdown-name">Λεπτά</span></div>
-<div class="countdown-unit"><span class="countdown-value" id="countdown-seconds">--</span><span class="countdown-name">Δευτερόλεπτα</span></div>
-</div>
-<div class="countdown-date">8 Δεκεμβρίου 2026 · San Juan, Puerto Rico 🇵🇷</div>
-</div>
 <div class="hero-actions">
 <a class="hero-btn hero-btn-secondary" href="#team">
 <i class="fa-solid fa-users" style="margin-right: 8px;"></i>Γνωρίστε την ομάδα
@@ -1094,11 +1107,28 @@
 </div>
 </div>
 </section>
+<div class="countdown-strip" aria-label="Αντίστροφη μέτρηση για τον Παγκόσμιο Τελικό WRO 2026">
+<div class="countdown-strip-inner">
+<div class="countdown-strip-copy">
+<span><i class="fa-regular fa-clock"></i> WRO World Final 2026</span>
+<strong>Puerto Rico · 8 Δεκεμβρίου</strong>
+</div>
+<div class="countdown-inline" id="wro-countdown">
+<div><b id="countdown-days">--</b><small>Ημέρες</small></div>
+<i>:</i>
+<div><b id="countdown-hours">--</b><small>Ώρες</small></div>
+<i>:</i>
+<div><b id="countdown-minutes">--</b><small>Λεπτά</small></div>
+<i>:</i>
+<div><b id="countdown-seconds">--</b><small>Δευτ.</small></div>
+</div>
+</div>
+</div>
 <section id="about">
 <h2 class="section-title">Σχετικά με Εμάς</h2>
 <div class="about-container">
 <p>
-                Η <strong>Monkey Business</strong> δεν είναι απλώς μια ομάδα ρομποτικής. Είμαστε μια παρέα φοιτητών από τη Θεσσαλονίκη που μοιράζεται ένα κοινό, άσβεστο πάθος: την καινοτομία, τη μηχανική και την επίλυση πολύπλοκων προβλημάτων. Μέσα από χρόνια διαρκούς πειραματισμού, αμέτρητων ξενυχτιών πάνω από κώδικες, αλλά και σπουδαίων επιτυχιών, έχουμε καταφέρει να στεφθούμε <strong>δύο φορές Πρωταθλητές Ελλάδος</strong>.
+                Η <strong>MonkeyBusiness</strong> δεν είναι απλώς μια ομάδα ρομποτικής. Είμαστε μια παρέα φοιτητών από τη Θεσσαλονίκη που μοιράζεται ένα κοινό, άσβεστο πάθος: την καινοτομία, τη μηχανική και την επίλυση πολύπλοκων προβλημάτων. Μέσα από χρόνια διαρκούς πειραματισμού, αμέτρητων ξενυχτιών πάνω από κώδικες, αλλά και σπουδαίων επιτυχιών, έχουμε καταφέρει να στεφθούμε <strong>δύο φορές Πρωταθλητές Ελλάδος</strong>.
             </p>
 <br/>
 <p>
@@ -1134,7 +1164,7 @@
 </section>
 
 <section class="media-section" id="media">
-<h2 class="section-title">Η Monkey Business στα ΜΜΕ</h2>
+<h2 class="section-title">Η MonkeyBusiness στα ΜΜΕ</h2>
 <p class="media-intro">
             Δημοσιεύσεις και ρεπορτάζ που καταγράφουν την αγωνιστική πορεία της ομάδας — από την πρόκριση στο Πουέρτο Ρίκο μέχρι τις διεθνείς διακρίσεις μας.
         </p>
@@ -1203,7 +1233,7 @@
 <h3 style="text-align: center; color: #fff; margin-bottom: 2rem; font-size: 1.8rem;">Επικοινωνήστε Μαζί μας</h3>
 <form class="contact-form" id="contact-form">
 <input name="access_key" type="hidden" value="c22e2af7-d409-40f2-8daf-07d9a73021a7"/>
-<input name="subject" type="hidden" value="Νέο Μήνυμα από Monkey Business Website!"/>
+<input name="subject" type="hidden" value="Νέο Μήνυμα από MonkeyBusiness Website!"/>
 <input class="hidden" name="botcheck" style="display: none;" type="checkbox"/>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
 <div class="input-group">
@@ -1232,12 +1262,12 @@
 <section id="mocs-home">
 <h2 class="section-title">LEGO MOCs</h2>
 <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem; max-width: 800px; margin-inline: auto;">
-            Ανακαλύψτε τους custom μηχανισμούς και τις κατασκευές της Monkey Business. Μέσα από τις αναλυτικές Building Instructions μπορείτε να αξιοποιήσετε τις ιδέες μας στις δικές σας κατασκευές και ταυτόχρονα να στηρίξετε την πορεία της ομάδας προς τον Παγκόσμιο Τελικό.
+            Ανακαλύψτε τους custom μηχανισμούς και τις κατασκευές της MonkeyBusiness. Μέσα από τις αναλυτικές Building Instructions μπορείτε να αξιοποιήσετε τις ιδέες μας στις δικές σας κατασκευές και ταυτόχρονα να στηρίξετε την πορεία της ομάδας προς τον Παγκόσμιο Τελικό.
         </p>
 <div style="max-width: 800px; margin: 0 auto;">
 <div class="support-card" style="border-color: var(--accent-yellow);">
 <div>
-<h3><i class="fa-solid fa-cubes"></i> Monkey Business LEGO MOCs</h3>
+<h3><i class="fa-solid fa-cubes"></i> MonkeyBusiness LEGO MOCs</h3>
 <p>Αναλυτικές οδηγίες κατασκευής (Building Instructions) για custom μηχανισμούς της ομάδας μας, σχεδιασμένους μέσα από την εμπειρία μας στην αγωνιστική ρομποτική.</p>
 </div>
 <a class="btn btn-primary" href="mocs.html">Εξερευνήστε τα MOCs</a>
@@ -1245,7 +1275,7 @@
 </div>
 </section>
 <footer id="contact">
-<p>Monkey Business Robotics Team © 2026</p>
+<p>MonkeyBusiness Robotics Team © 2026</p>
 <p style="margin-top: 0.5rem; font-size: 0.9rem;">Email: monkeybusinesswro@gmail.com</p>
 <div style="margin-top: 1.2rem; display: flex; justify-content: center; gap: 1.5rem;">
 <a class="social-link" href="https://linktr.ee/monkeybusiness_wro" rel="noopener noreferrer" target="_blank" title="Linktree">
@@ -1418,7 +1448,7 @@
         const hoursEl = document.getElementById('countdown-hours');
         const minutesEl = document.getElementById('countdown-minutes');
         const secondsEl = document.getElementById('countdown-seconds');
-        const wrapper = countdown.closest('.hero-countdown');
+        const wrapper = countdown.closest('.countdown-strip-inner');
 
         function updateCountdown() {
             const distance = target - Date.now();
