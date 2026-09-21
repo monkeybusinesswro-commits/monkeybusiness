@@ -12,7 +12,25 @@
     </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Lego MOCs | MonkeyBusiness Robotics</title>
+<meta name="description" content="LEGO robotics MOCs και building instructions από τη MonkeyBusiness Robotics, με custom μηχανισμούς και robot designs για εκπαιδευτική ρομποτική."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#121212"/>
+<link rel="canonical" href="https://monkeybusiness-robotics.com/mocs.html"/>
+<link rel="icon" type="image/png" href="images/logo.png"/>
+<link rel="apple-touch-icon" href="images/logo.png"/>
+<meta property="og:locale" content="el_GR"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="MonkeyBusiness Robotics"/>
+<meta property="og:title" content="LEGO MOCs | MonkeyBusiness Robotics"/>
+<meta property="og:description" content="LEGO robotics MOCs και building instructions από τη MonkeyBusiness Robotics, με custom μηχανισμούς και robot designs για εκπαιδευτική ρομποτική."/>
+<meta property="og:url" content="https://monkeybusiness-robotics.com/mocs.html"/>
+<meta property="og:image" content="https://monkeybusiness-robotics.com/images/mocs/example1.png"/>
+<meta property="og:image:alt" content="LEGO robotics MOC της MonkeyBusiness Robotics"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="LEGO MOCs | MonkeyBusiness Robotics"/>
+<meta name="twitter:description" content="LEGO robotics MOCs και building instructions από τη MonkeyBusiness Robotics, με custom μηχανισμούς και robot designs για εκπαιδευτική ρομποτική."/>
+<meta name="twitter:image" content="https://monkeybusiness-robotics.com/images/mocs/example1.png"/>
+<title>LEGO MOCs | MonkeyBusiness Robotics</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
 <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -20,19 +38,96 @@
         body { background-color: var(--bg-color); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
 
-        header { background-color: rgba(18, 18, 18, 0.95); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid #2a2a2a; }
-        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; }
-        .logo-container { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .site-logo { height: 40px; width: auto; display: block; }
-        .logo-text { font-size: 1.4rem; font-weight: bold; color: var(--accent-yellow); text-transform: uppercase; letter-spacing: 1px; }
-        .nav-links { display: flex; list-style: none; gap: 1.5rem; align-items: center; }
-        .nav-links a:hover { color: var(--accent-yellow); transition: 0.3s; }
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .site-logo {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
         
-        .dropdown { position: relative; padding: 10px 0; }
-        .dropdown-content { display: none; position: absolute; background-color: var(--card-bg); min-width: 170px; box-shadow: 0px 8px 20px rgba(0,0,0,0.6); z-index: 2000; border-radius: 8px; border: 1px solid #2a2a2a; top: 100%; left: 0; list-style: none; padding: 0.5rem 0; }
-        .dropdown-content li a { color: var(--text-light); padding: 0.7rem 1.2rem; display: block; white-space: nowrap; font-size: 0.95rem; transition: 0.2s; }
-        .dropdown-content li a:hover { background-color: rgba(255, 199, 0, 0.1); color: var(--accent-yellow); }
-        .dropdown:hover .dropdown-content { display: block; }
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--accent-yellow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-yellow);
+            transition: 0.3s;
+        }
+
+        /* DROPDOWN MENU */
+        .dropdown {
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--card-bg);
+            min-width: 170px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.6);
+            z-index: 2000;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            top: 100%;
+            left: 0;
+            list-style: none;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-content li a {
+            color: var(--text-light);
+            padding: 0.7rem 1.2rem;
+            display: block;
+            white-space: nowrap;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: rgba(255, 199, 0, 0.1);
+            color: var(--accent-yellow);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
         .page-header { text-align: center; padding: 10rem 2rem 5rem; background: linear-gradient(180deg, #1a1a1a 0%, var(--bg-color) 100%); border-bottom: 1px solid #2a2a2a; }
         .page-header h1 { font-size: 3rem; color: #fff; margin-bottom: 1rem; }
@@ -65,7 +160,7 @@
         .disabled-btn { background-color: #333; color: #777; padding: 0.9rem; text-align: center; border-radius: 8px; font-weight: bold; display: flex; justify-content: center; align-items: center; gap: 8px; cursor: not-allowed; }
 
         footer { background-color: #0a0a0a; text-align: center; padding: 3rem 2rem; border-top: 1px solid #2a2a2a; color: var(--text-muted); margin-top: 4rem; }
-        .social-link { color: var(--accent-yellow); font-size: 1.8rem; transition: 0.3s; margin: 0 10px; }
+        .social-link { color: var(--accent-yellow); font-size: 1.8rem; transition: 0.3s; }
         .social-link:hover { color: var(--accent-green); }
 
         @media (max-width: 768px) {
