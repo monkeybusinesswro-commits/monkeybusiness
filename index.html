@@ -1120,6 +1120,247 @@
             }
         }
 
+    
+
+        /* ===== MOBILE POLISH 2026-09 ===== */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.85rem 1rem !important;
+            }
+
+            .site-logo {
+                height: 34px !important;
+            }
+
+            .logo-text {
+                display: inline !important;
+                font-size: 1.02rem !important;
+                letter-spacing: 0.4px !important;
+            }
+
+            .menu-toggle {
+                width: 42px !important;
+                height: 42px !important;
+                flex: 0 0 42px;
+            }
+
+            .nav-links {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                max-height: calc(100dvh - 68px) !important;
+                overscroll-behavior: contain;
+            }
+
+            footer {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .logo-text {
+                display: none !important;
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .card:hover,
+            .media-card:hover,
+            .support-card:hover,
+            .timeline-content:hover,
+            .stat-card:hover,
+            .featured-card:hover,
+            .archive-card:hover,
+            .moc-card:hover,
+            .read-link:hover,
+            .btn:hover,
+            .hero-btn:hover,
+            .floating-cta:hover {
+                transform: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto !important;
+                padding: 6.7rem 1rem 2.25rem !important;
+                background-position: 52% center !important;
+            }
+
+            .hero-kicker {
+                margin-bottom: 1rem !important;
+                padding: 0.48rem 0.8rem !important;
+                font-size: 0.7rem !important;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.35rem, 12vw, 3.45rem) !important;
+                line-height: 1 !important;
+                margin-bottom: 0.85rem !important;
+            }
+
+            .hero-lead {
+                font-size: 1rem !important;
+                line-height: 1.55 !important;
+            }
+
+            .hero-actions {
+                margin-top: 1.45rem !important;
+                gap: 0.7rem !important;
+            }
+
+            .hero-btn {
+                width: 100% !important;
+                min-width: 0 !important;
+                max-width: 340px;
+                padding: 0.82rem 1rem !important;
+            }
+
+            .hero-stats {
+                width: 100% !important;
+                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+                margin-top: 1.55rem !important;
+                border-radius: 10px !important;
+            }
+
+            .hero-stat {
+                min-height: 72px !important;
+                padding: 0.7rem 0.35rem !important;
+            }
+
+            .hero-stat strong {
+                font-size: 1.08rem !important;
+            }
+
+            .hero-stat span {
+                font-size: 0.66rem !important;
+                line-height: 1.25 !important;
+            }
+
+            .countdown-strip {
+                padding: 0.72rem 0.9rem !important;
+            }
+
+            .countdown-strip-inner {
+                gap: 0.55rem !important;
+            }
+
+            .countdown-strip-copy strong {
+                font-size: 0.9rem !important;
+            }
+
+            .countdown-inline {
+                gap: 0.28rem !important;
+            }
+
+            .countdown-inline > div {
+                min-width: 39px !important;
+            }
+
+            .countdown-inline b {
+                font-size: 1.12rem !important;
+            }
+
+            .countdown-inline small {
+                font-size: 0.58rem !important;
+            }
+
+            section {
+                padding: 3.6rem 1rem !important;
+            }
+
+            .section-title {
+                font-size: 1.85rem !important;
+                line-height: 1.18 !important;
+                margin-bottom: 2.25rem !important;
+            }
+
+            .about-container {
+                padding: 2rem 1.25rem !important;
+                font-size: 1rem !important;
+                line-height: 1.7 !important;
+            }
+
+            .grid {
+                gap: 1.2rem !important;
+            }
+
+            .card {
+                padding: 2rem 1.15rem !important;
+            }
+
+            .team-img {
+                width: 112px !important;
+                height: 112px !important;
+                margin-bottom: 1.1rem !important;
+            }
+
+            .modal-box {
+                padding: 2rem 1.2rem 1.3rem !important;
+                max-height: 88dvh !important;
+                overflow-y: auto;
+            }
+
+            .modal-img {
+                width: 120px !important;
+                height: 120px !important;
+            }
+
+            .media-section {
+                padding-top: 3.2rem !important;
+            }
+
+            .media-intro {
+                margin: -1rem auto 1.8rem !important;
+                font-size: 0.98rem !important;
+            }
+
+            .media-grid {
+                gap: 1rem !important;
+            }
+
+            .media-card {
+                padding: 1.3rem !important;
+            }
+
+            .support-intro {
+                margin-bottom: 1.8rem !important;
+                font-size: 0.98rem !important;
+            }
+
+            .support-mission {
+                margin-bottom: 2rem !important;
+                padding: 1.35rem !important;
+            }
+
+            .contact-section {
+                padding: 1.4rem !important;
+            }
+
+            .contact-form {
+                gap: 1.15rem !important;
+            }
+
+            .input-group input,
+            .input-group textarea {
+                font-size: 16px !important;
+            }
+
+            .floating-cta {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .hero-stat span {
+                font-size: 0.61rem !important;
+            }
+
+            .countdown-inline > i {
+                margin-inline: -0.08rem;
+            }
+        }
+
     </style>
 </head>
 <body>
