@@ -543,6 +543,172 @@
             color: #fff;
         }
 
+
+
+        /* PRESS KIT */
+        .press-kit {
+            margin-top: 5rem;
+            background: #171717;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 2.2rem;
+        }
+
+        .press-kit-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 2rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .press-kit-head h2 {
+            font-size: 1.85rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .press-kit-head p {
+            color: var(--text-muted);
+            max-width: 760px;
+        }
+
+        .press-kit-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: var(--accent-yellow);
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.6rem;
+        }
+
+        .press-kit-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 1.25rem;
+        }
+
+        .press-kit-card {
+            background: var(--card-bg-soft);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.45rem;
+        }
+
+        .press-kit-card h3 {
+            font-size: 1.08rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .press-kit-bio {
+            color: #D1D5DB;
+            font-size: 0.96rem;
+        }
+
+        .kit-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 1.05rem;
+        }
+
+        .kit-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            border: 1px solid #3a3a3a;
+            background: #202020;
+            color: var(--text-light);
+            border-radius: 8px;
+            padding: 0.65rem 0.85rem;
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+
+        .kit-btn:hover {
+            border-color: rgba(255,199,0,0.65);
+            color: var(--accent-yellow);
+            transform: translateY(-1px);
+        }
+
+        .fact-list {
+            display: grid;
+            gap: 0.85rem;
+            list-style: none;
+        }
+
+        .fact-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            color: #D1D5DB;
+            font-size: 0.93rem;
+        }
+
+        .fact-list i {
+            color: var(--accent-yellow);
+            width: 18px;
+            margin-top: 0.2rem;
+        }
+
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.85rem;
+            margin-top: 1.25rem;
+        }
+
+        .asset-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.95rem 1rem;
+            background: var(--card-bg-soft);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .asset-link:hover {
+            border-color: rgba(255,199,0,0.5);
+            transform: translateY(-2px);
+        }
+
+        .asset-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 9px;
+            background: rgba(255,199,0,0.08);
+            display: grid;
+            place-items: center;
+            color: var(--accent-yellow);
+            flex: 0 0 auto;
+        }
+
+        .asset-link strong {
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .asset-link span {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            margin-top: 0.1rem;
+        }
+
+        .copy-status {
+            margin-top: 0.7rem;
+            min-height: 1.2em;
+            color: var(--accent-green);
+            font-size: 0.8rem;
+        }
+
         /* PRESS CONTACT */
         .press-contact {
             margin-top: 5rem;
@@ -971,6 +1137,42 @@
                 gap: 1rem !important;
             }
 
+
+
+            .press-kit {
+                margin-top: 3.4rem;
+                padding: 1.25rem;
+                border-radius: 14px;
+            }
+
+            .press-kit-head {
+                display: block;
+                margin-bottom: 1.2rem;
+            }
+
+            .press-kit-head h2 {
+                font-size: 1.5rem;
+            }
+
+            .press-kit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .press-kit-card {
+                padding: 1.15rem;
+            }
+
+            .asset-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .kit-actions {
+                flex-direction: column;
+            }
+
+            .kit-btn {
+                width: 100%;
+            }
             .press-contact {
                 padding: 1.35rem !important;
             }
@@ -1182,6 +1384,53 @@
 </div>
 </div>
 </section>
+
+<!-- PRESS KIT -->
+<section class="section" id="press-kit">
+<div class="press-kit">
+<div class="press-kit-head">
+<div>
+<div class="press-kit-label"><i class="fa-solid fa-folder-open"></i> Press Kit</div>
+<h2>Υλικό για ΜΜΕ</h2>
+<p>Συνοπτικές πληροφορίες και βασικό φωτογραφικό υλικό για δημοσιογράφους, συντάκτες και συνεργάτες που παρουσιάζουν τη MonkeyBusiness.</p>
+</div>
+</div>
+<div class="press-kit-grid">
+<div class="press-kit-card">
+<h3>Σύντομη παρουσίαση</h3>
+<p class="press-kit-bio" id="press-bio">Η MonkeyBusiness είναι ομάδα εκπαιδευτικής ρομποτικής από τη Θεσσαλονίκη. Το 2026 κατέκτησε την 1η θέση στην κατηγορία RoboMission Senior του WRO Hellas και προκρίθηκε στον Παγκόσμιο Τελικό WRO 2026 στο San Juan του Puerto Rico. Το 2024, αγωνιζόμενη με την ονομασία Earphones, κατέλαβε την 25η θέση παγκοσμίως και την 4η θέση στην Ευρώπη στον Παγκόσμιο Τελικό WRO της Σμύρνης.</p>
+<div class="kit-actions">
+<button class="kit-btn" id="copy-bio" type="button"><i class="fa-regular fa-copy"></i> Αντιγραφή κειμένου</button>
+</div>
+<div class="copy-status" id="copy-status" aria-live="polite"></div>
+</div>
+<div class="press-kit-card">
+<h3>Βασικά στοιχεία</h3>
+<ul class="fact-list">
+<li><i class="fa-solid fa-location-dot"></i><span><strong>Έδρα:</strong> Θεσσαλονίκη, Ελλάδα</span></li>
+<li><i class="fa-solid fa-trophy"></i><span><strong>2026:</strong> 1η θέση WRO Hellas · RoboMission Senior</span></li>
+<li><i class="fa-solid fa-earth-americas"></i><span><strong>Επόμενος σταθμός:</strong> WRO World Final 2026 · San Juan, Puerto Rico</span></li>
+<li><i class="fa-solid fa-medal"></i><span><strong>2024:</strong> 25η θέση παγκοσμίως · 4η στην Ευρώπη</span></li>
+</ul>
+</div>
+</div>
+<div class="asset-grid">
+<a class="asset-link" href="images/logo.png" download>
+<div class="asset-icon"><i class="fa-regular fa-image"></i></div>
+<div><strong>Λογότυπο ομάδας</strong><span>PNG</span></div>
+</a>
+<a class="asset-link" href="images/TeamPhoto1.png" download>
+<div class="asset-icon"><i class="fa-solid fa-users"></i></div>
+<div><strong>Φωτογραφία ομάδας</strong><span>Υψηλή ανάλυση</span></div>
+</a>
+<a class="asset-link" href="images/history/WRO26NATIONAL1.png" download>
+<div class="asset-icon"><i class="fa-solid fa-robot"></i></div>
+<div><strong>WRO Hellas 2026</strong><span>Φωτογραφία διοργάνωσης</span></div>
+</a>
+</div>
+</div>
+</section>
+
 <!-- PRESS CONTACT -->
 <section class="section">
 <div class="press-contact">
@@ -1205,6 +1454,24 @@
 </div>
 </footer>
 
+
+<script>
+    (function () {
+        const copyBtn = document.getElementById('copy-bio');
+        const bio = document.getElementById('press-bio');
+        const status = document.getElementById('copy-status');
+        if (!copyBtn || !bio) return;
+
+        copyBtn.addEventListener('click', async function () {
+            try {
+                await navigator.clipboard.writeText(bio.textContent.trim());
+                if (status) status.textContent = 'Το κείμενο αντιγράφηκε.';
+            } catch (err) {
+                if (status) status.textContent = 'Επιλέξτε το κείμενο και αντιγράψτε το χειροκίνητα.';
+            }
+        });
+    })();
+</script>
 
 <script>
     (function () {
