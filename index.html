@@ -812,6 +812,33 @@
             margin-bottom: 2rem;
         }
 
+
+        /* SPONSORS 2026 */
+        .sponsor-showcase { max-width: 1040px; margin: 0 auto 3rem; }
+        .sponsor-kicker { color: var(--accent-yellow); text-transform: uppercase; letter-spacing: .16em; font-size: .75rem; font-weight: 800; text-align:center; margin-bottom: .7rem; }
+        .sponsor-tier { text-align:center; margin: 2.2rem auto; }
+        .sponsor-tier-label { display:flex; justify-content:center; align-items:center; gap:.65rem; color:#f1f1f1; font-size:.9rem; text-transform:uppercase; letter-spacing:.12em; margin-bottom:1.2rem; }
+        .sponsor-tier-label:before,.sponsor-tier-label:after {content:''; height:1px; width:65px; background:#444;}
+        .sponsor-tier-label.gold {color:#ffc700;} .sponsor-tier-label.silver {color:#d0d7e0;} .sponsor-tier-label.bronze {color:#d7a27b;}
+        .sponsor-grid { display:flex; justify-content:center; flex-wrap:wrap; gap:1rem; }
+        .sponsor-logo-card { background:#f8fafc; color:#64748b; border-radius:14px; min-height:116px; width:min(100%,260px); display:flex; flex-direction:column; justify-content:center; align-items:center; padding:1.4rem; gap:.55rem; border:2px solid transparent; text-align:center; }
+        .sponsor-tier.gold-tier .sponsor-logo-card {width:min(100%,355px);min-height:155px; border-color:#ffc700;}
+        .sponsor-tier.silver-tier .sponsor-logo-card {width:min(100%,290px);border-color:#b8c0cc;}
+        .sponsor-logo-card i {font-size:2.1rem;} .sponsor-logo-card span {font-size:.8rem;font-weight:600;}
+        .sponsor-logo-card img {max-width:100%; max-height:96px; object-fit:contain;}
+        .sponsor-tier-note { font-size:.85rem; color:var(--text-muted); margin:1rem auto 0; }
+        .sponsor-progress-panel { background:linear-gradient(135deg,#242424,#191919); border:1px solid #45402c; border-radius:18px; padding:2rem; margin:2.5rem auto; max-width:850px; }
+        .sponsor-progress-top {display:flex; align-items:end; justify-content:space-between; gap:1rem; margin-bottom:1rem;}
+        .sponsor-progress-top h3 {font-size:1.25rem; color:#fff;}
+        .sponsor-progress-percent {font-weight:800;font-size:1.75rem;color:var(--accent-yellow);line-height:1;white-space:nowrap;}
+        .sponsor-progress-track {height:16px;border-radius:999px;background:#393939;overflow:hidden;position:relative;}
+        .sponsor-progress-fill {width:0%;height:100%;border-radius:999px;background:linear-gradient(90deg,#e3a900,#ffc700);transition:width .5s ease;}
+        .sponsor-progress-note {color:var(--text-muted);font-size:.87rem;margin-top:.95rem;}
+        .sponsor-progress-panel:not(.is-configured) .sponsor-progress-track {background:repeating-linear-gradient(110deg,#393939 0px,#393939 14px,#414141 14px,#414141 28px);}
+        .sponsor-invite {text-align:center;background:rgba(255,199,0,.045);border:1px solid #3c382b;border-radius:16px;padding:1.8rem;max-width:850px;margin:2rem auto 0;}
+        .sponsor-invite h3 {color:#fff;margin-bottom:.55rem;} .sponsor-invite p {color:var(--text-muted);margin:0 auto 1.3rem;max-width:660px;}
+        @media(max-width:600px){.sponsor-progress-panel{padding:1.3rem}.sponsor-progress-top h3{font-size:1.05rem}.sponsor-progress-percent{font-size:1.35rem}.sponsor-logo-card,.sponsor-tier.gold-tier .sponsor-logo-card,.sponsor-tier.silver-tier .sponsor-logo-card{width:100%;}}
+
         /* CONTACT FORM */
         .contact-section {
             background-color: #1a1a1a;
@@ -1546,36 +1573,34 @@
 </div>
 </section>
 <section id="sponsors">
-<h2 class="section-title">Στηρίξτε την αποστολή μας στο Puerto Rico</h2>
-<p class="support-intro">
-            Μετά την κατάκτηση της 1ης θέσης στον WRO Hellas 2026, η MonkeyBusiness προκρίθηκε στον Παγκόσμιο Τελικό του World Robot Olympiad στο Puerto Rico. Για να βρεθούμε εκεί τον Δεκέμβριο, αναζητούμε εταιρείες και οργανισμούς που θέλουν να στηρίξουν την ελληνική αποστολή μας.
-        </p>
-<div class="support-mission">
-<div class="support-points">
-<div class="support-point">
-<i class="fa-solid fa-trophy"></i>
-<strong>Ο στόχος</strong>
-<span>Συμμετοχή της MonkeyBusiness στον WRO World Final 2026.</span>
+<h2 class="section-title">Οι Χορηγοί μας</h2>
+<p class="support-intro">Στο ταξίδι μας προς τον Παγκόσμιο Τελικό WRO 2026 στο Puerto Rico, έχουμε δίπλα μας ανθρώπους και επιχειρήσεις που πιστεύουν στην εκπαιδευτική ρομποτική. Τους ευχαριστούμε θερμά για την εμπιστοσύνη και τη στήριξή τους.</p>
+<div class="sponsor-showcase">
+  <div class="sponsor-kicker">Our Partners · WRO 2026</div>
+  <!-- ΑΝΤΙΚΑΤΑΣΤΗΣΤΕ ΤΑ PLACEHOLDERS ΜΕ ΕΓΚΕΚΡΙΜΕΝΑ ΛΟΓΟΤΥΠΑ ΚΑΙ ΟΝΟΜΑΤΑ. -->
+  <div class="sponsor-tier gold-tier">
+    <h3 class="sponsor-tier-label gold"><i class="fa-solid fa-award" aria-hidden="true"></i> Gold Sponsor</h3>
+    <div class="sponsor-grid"><div class="sponsor-logo-card"><i class="fa-regular fa-building" aria-hidden="true"></i><span>Λογότυπο χορηγού</span></div></div>
+  </div>
+  <div class="sponsor-tier silver-tier">
+    <h3 class="sponsor-tier-label silver">Silver Sponsors</h3>
+    <div class="sponsor-grid">
+      <div class="sponsor-logo-card"><i class="fa-regular fa-building" aria-hidden="true"></i><span>Λογότυπο χορηγού</span></div>
+      <div class="sponsor-logo-card"><i class="fa-regular fa-building" aria-hidden="true"></i><span>Λογότυπο χορηγού</span></div>
+    </div>
+  </div>
+  <div class="sponsor-tier">
+    <h3 class="sponsor-tier-label bronze">Community Supporters</h3>
+    <p class="sponsor-tier-note">Ένας χώρος για τις τοπικές επιχειρήσεις και τους υποστηρικτές που θα συμμετάσχουν στην προσπάθειά μας.</p>
+  </div>
+  <div class="sponsor-progress-panel" id="funding-progress">
+    <div class="sponsor-progress-top"><h3><i class="fa-solid fa-chart-line" style="color:var(--accent-yellow)" aria-hidden="true"></i> Η πορεία μας προς το Puerto Rico</h3><span class="sponsor-progress-percent" id="funding-percent">Σύντομα</span></div>
+    <div class="sponsor-progress-track" id="funding-track" role="progressbar" aria-label="Ποσοστό κάλυψης εξόδων αποστολής" aria-valuemin="0" aria-valuemax="100" aria-valuetext="Το ποσοστό θα ανακοινωθεί σύντομα"><div class="sponsor-progress-fill" id="funding-fill"></div></div>
+    <p class="sponsor-progress-note">Παρουσιάζουμε την πρόοδο κάλυψης των εξόδων της αποστολής, χωρίς δημοσιοποίηση του συνολικού προϋπολογισμού.</p>
+  </div>
+  <div class="sponsor-invite"><h3>Γίνετε μέρος της διαδρομής μας</h3><p>Κάθε συνεισφορά, μικρή ή μεγάλη, μας φέρνει πιο κοντά στον παγκόσμιο τελικό. Δεχόμαστε επίσης υποστήριξη σε είδος και συνεργασίες με τοπικές επιχειρήσεις.</p><div class="support-actions"><a class="btn btn-primary" href="#contact-form"><i class="fa-solid fa-handshake"></i> Γίνετε υποστηρικτής</a><a class="btn btn-secondary" href="https://drive.google.com/file/d/1pK2BJzyjI2GZLmQSq5C4g2hQG9PuxxfR/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-display"></i> Αναλυτική παρουσίαση</a></div></div>
 </div>
-<div class="support-point">
-<i class="fa-solid fa-plane-departure"></i>
-<strong>Η υποστήριξη</strong>
-<span>Κάλυψη αναγκών της αποστολής και της παρουσίας μας στο Puerto Rico.</span>
-</div>
-<div class="support-point">
-<i class="fa-solid fa-handshake"></i>
-<strong>Η συνεργασία</strong>
-<span>Δυνατότητες προβολής και ανταποδοτικών παροχών για τους χορηγούς μας.</span>
-</div>
-</div>
-<div class="support-cta">
-<h3>Ενδιαφέρεστε να στηρίξετε τη MonkeyBusiness;</h3>
-<div class="support-actions">
-<a class="btn btn-primary" href="#contact-form"><i class="fa-solid fa-envelope"></i> Επικοινωνήστε μαζί μας</a>
-<a class="btn btn-secondary" href="https://drive.google.com/file/d/1pK2BJzyjI2GZLmQSq5C4g2hQG9PuxxfR/view?usp=drivesdk" target="_blank" rel="noopener"><i class="fa-solid fa-display"></i> Αναλυτική παρουσίαση</a>
-</div>
-</div>
-</div>
+<!-- Το contact form διατηρείται ως έχει. -->
 <div class="contact-section">
 <h3 style="text-align: center; color: #fff; margin-bottom: 2rem; font-size: 1.8rem;">Επικοινωνήστε Μαζί μας</h3>
 <form class="contact-form" id="contact-form">
@@ -1831,5 +1856,19 @@
     })();
 </script>
 
+
+<script>
+  // PUBLIC DISPLAY ONLY: θέστε ένα στρογγυλοποιημένο ποσοστό (π.χ. 60), ΟΧΙ ποσά ή προϋπολογισμό.
+  // null = δεν εμφανίζεται ακόμη αριθμός, έως ότου υπολογιστεί/εγκριθεί το ποσοστό.
+  const publishedFundingPercent = null;
+  if (Number.isFinite(publishedFundingPercent)) {
+    const percentage = Math.min(100, Math.max(0, publishedFundingPercent));
+    document.getElementById('funding-progress').classList.add('is-configured');
+    document.getElementById('funding-percent').textContent = percentage + '%';
+    document.getElementById('funding-fill').style.width = percentage + '%';
+    document.getElementById('funding-track').setAttribute('aria-valuenow', String(percentage));
+    document.getElementById('funding-track').setAttribute('aria-valuetext', percentage + '% κάλυψη εξόδων');
+  }
+</script>
 </body>
 </html>
