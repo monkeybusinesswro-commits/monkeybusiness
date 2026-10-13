@@ -1577,15 +1577,15 @@
 <p class="support-intro">Στο ταξίδι μας προς τον Παγκόσμιο Τελικό WRO 2026 στο Puerto Rico, έχουμε δίπλα μας ανθρώπους και επιχειρήσεις που πιστεύουν στην εκπαιδευτική ρομποτική. Τους ευχαριστούμε θερμά για την εμπιστοσύνη και τη στήριξή τους.</p>
 <div class="sponsor-showcase">
   <div class="sponsor-kicker">Our Partners · WRO 2026</div>
-  <!-- ΑΝΤΙΚΑΤΑΣΤΗΣΤΕ ΤΑ PLACEHOLDERS ΜΕ ΕΓΚΕΚΡΙΜΕΝΑ ΛΟΓΟΤΥΠΑ ΚΑΙ ΟΝΟΜΑΤΑ. -->
+  <!-- Τα λογότυπα διαβάζονται από τον φάκελο images/sponsors/. -->
   <div class="sponsor-tier gold-tier">
     <h3 class="sponsor-tier-label gold"><i class="fa-solid fa-award" aria-hidden="true"></i> Gold Sponsor</h3>
-    <div class="sponsor-grid"><div class="sponsor-logo-card"><i class="fa-regular fa-building" aria-hidden="true"></i><span>Λογότυπο χορηγού</span></div></div>
+    <div class="sponsor-grid"><div class="sponsor-logo-card"><img src="images/sponsors/samaras.png" alt="Σαμαράς — Gold Sponsor" loading="lazy" /></div></div>
   </div>
   <div class="sponsor-tier silver-tier">
     <h3 class="sponsor-tier-label silver">Silver Sponsors</h3>
     <div class="sponsor-grid">
-      <div class="sponsor-logo-card"><i class="fa-regular fa-building" aria-hidden="true"></i><span>Λογότυπο χορηγού</span></div>
+      <div class="sponsor-logo-card"><img src="images/sponsors/makris.png" alt="Makris — Silver Sponsor" loading="lazy" /></div>
       <div class="sponsor-logo-card"><i class="fa-regular fa-building" aria-hidden="true"></i><span>Λογότυπο χορηγού</span></div>
     </div>
   </div>
@@ -1596,7 +1596,7 @@
   <div class="sponsor-progress-panel" id="funding-progress">
     <div class="sponsor-progress-top"><h3><i class="fa-solid fa-chart-line" style="color:var(--accent-yellow)" aria-hidden="true"></i> Η πορεία μας προς το Puerto Rico</h3><span class="sponsor-progress-percent" id="funding-percent">Σύντομα</span></div>
     <div class="sponsor-progress-track" id="funding-track" role="progressbar" aria-label="Ποσοστό κάλυψης εξόδων αποστολής" aria-valuemin="0" aria-valuemax="100" aria-valuetext="Το ποσοστό θα ανακοινωθεί σύντομα"><div class="sponsor-progress-fill" id="funding-fill"></div></div>
-    <p class="sponsor-progress-note">Παρουσιάζουμε την πρόοδο κάλυψης των εξόδων της αποστολής, χωρίς δημοσιοποίηση του συνολικού προϋπολογισμού.</p>
+    <p class="sponsor-progress-note">Η υποστήριξή σας μάς φέρνει όλο και πιο κοντά στον Παγκόσμιο Τελικό. Το ποσοστό εμφανίζεται κατά προσέγγιση.</p>
   </div>
   <div class="sponsor-invite"><h3>Γίνετε μέρος της διαδρομής μας</h3><p>Κάθε συνεισφορά, μικρή ή μεγάλη, μας φέρνει πιο κοντά στον παγκόσμιο τελικό. Δεχόμαστε επίσης υποστήριξη σε είδος και συνεργασίες με τοπικές επιχειρήσεις.</p><div class="support-actions"><a class="btn btn-primary" href="#contact-form"><i class="fa-solid fa-handshake"></i> Γίνετε υποστηρικτής</a><a class="btn btn-secondary" href="https://drive.google.com/file/d/1pK2BJzyjI2GZLmQSq5C4g2hQG9PuxxfR/view?usp=drivesdk" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-display"></i> Αναλυτική παρουσίαση</a></div></div>
 </div>
@@ -1859,8 +1859,8 @@
 
 <script>
   // PUBLIC DISPLAY ONLY: θέστε ένα στρογγυλοποιημένο ποσοστό (π.χ. 60), ΟΧΙ ποσά ή προϋπολογισμό.
-  // null = δεν εμφανίζεται ακόμη αριθμός, έως ότου υπολογιστεί/εγκριθεί το ποσοστό.
-  const publishedFundingPercent = null;
+  // Στρογγυλοποίηση στο πλησιέστερο 5% για να μη δημοσιοποιείται έμμεσα ο προϋπολογισμός.
+  const publishedFundingPercent = 45;
   if (Number.isFinite(publishedFundingPercent)) {
     const percentage = Math.min(100, Math.max(0, publishedFundingPercent));
     document.getElementById('funding-progress').classList.add('is-configured');
